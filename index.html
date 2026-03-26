@@ -27,25 +27,44 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 z-index:1000;
-background:rgba(0,0,0,0.8);
+background:rgba(0,0,0,0.85);
 }
 
 nav img{height:40px;}
 
+.nav-link{
+color:#aaa;
+text-decoration:none;
+font-size:14px;
+transition:0.3s;
+}
+.nav-link:hover{color:#d4af37;}
+
+.lang-toggle button{
+margin-left:5px;
+padding:5px 10px;
+background:none;
+border:1px solid #444;
+color:#aaa;
+cursor:pointer;
+}
+.lang-toggle .active{
+border-color:#d4af37;
+color:#d4af37;
+}
+
 /* HERO */
 .hero{
 height:100vh;
-position:relative;
 background:url('assets/hero.jpg') center/cover no-repeat;
+position:relative;
 }
-
 .overlay{
 position:absolute;
 width:100%;
 height:100%;
 background:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.95));
 }
-
 .hero-content{
 position:relative;
 z-index:2;
@@ -56,21 +75,15 @@ justify-content:center;
 padding-left:10%;
 max-width:700px;
 }
-
 .hero h1{
 font-size:64px;
 font-family:'Playfair Display';
 color:#d4af37;
 }
 
-/* SECTION */
-.section{
-padding:120px 10%;
-}
-
-.alt{
-background:#0b111f;
-}
+/* SECTIONS */
+.section{padding:120px 10%;}
+.alt{background:#0b111f;}
 
 .grid{
 display:grid;
@@ -91,18 +104,13 @@ background:rgba(255,255,255,0.04);
 h2{color:#d4af37;margin-bottom:20px;}
 p{color:#bbb;}
 
-/* IMAGE SECTION */
 .split{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:60px;
 align-items:center;
 }
-
-.split img{
-width:100%;
-border-radius:6px;
-}
+.split img{width:100%;border-radius:6px;}
 
 /* BUTTON */
 .btn{
@@ -112,6 +120,35 @@ color:black;
 border:none;
 cursor:pointer;
 font-weight:600;
+}
+.btn:hover{background:#f5d97a;}
+
+/* FORM */
+.form-box{
+margin-top:40px;
+border:1px solid rgba(255,255,255,0.1);
+padding:40px;
+background:#0b111f;
+}
+
+select{
+width:100%;
+padding:12px;
+margin-top:10px;
+background:white;
+color:black;
+border:none;
+}
+
+/* HUBSPOT FIX */
+.hs-form-frame input,
+.hs-form-frame textarea{
+background:white !important;
+color:black !important;
+}
+.hs-button{
+background:#d4af37 !important;
+color:black !important;
 }
 
 /* FOOTER */
@@ -126,6 +163,9 @@ grid-template-columns:repeat(4,1fr);
 
 footer img{height:40px;margin-bottom:20px;}
 
+/* LANG */
+.fr{display:none;}
+
 @media(max-width:900px){
 .split{grid-template-columns:1fr;}
 footer .grid{grid-template-columns:1fr 1fr;}
@@ -138,7 +178,17 @@ footer .grid{grid-template-columns:1fr 1fr;}
 
 <nav>
 <img src="logo.png">
-<button class="btn" onclick="scrollToSection('contact')">Request Access</button>
+
+<div style="display:flex;align-items:center;gap:25px;">
+<a href="#services" class="nav-link">Services</a>
+<a href="#programs" class="nav-link">Programs</a>
+<a href="#contact" class="nav-link">Contact</a>
+
+<div class="lang-toggle">
+<button onclick="setLang('en')" id="btn-en" class="active">EN</button>
+<button onclick="setLang('fr')" id="btn-fr">FR</button>
+</div>
+</div>
 </nav>
 
 <!-- HERO -->
@@ -147,14 +197,14 @@ footer .grid{grid-template-columns:1fr 1fr;}
 
 <div class="hero-content">
 <h1>Control the Outcome</h1>
-<p>Protection, intelligence and global response for high-net-worth families operating in complex environments.</p>
+<p>Protection, intelligence and global response for high-net-worth families.</p>
 <br>
 <button class="btn" onclick="scrollToSection('contact')">Private Access</button>
 </div>
 </section>
 
 <!-- SERVICES -->
-<section class="section">
+<section id="services" class="section">
 <h2>Integrated Risk Coverage</h2>
 
 <div class="grid">
@@ -168,69 +218,82 @@ footer .grid{grid-template-columns:1fr 1fr;}
 <!-- CONVOY -->
 <section class="section alt">
 <div class="split">
-
 <div>
 <h2>Secure Mobility</h2>
-<p>From daily movements to international travel, ARES ensures safe and controlled mobility in all environments.</p>
+<p>ARES ensures safe and controlled movement across all environments.</p>
 </div>
-
 <img src="assets/convoy.jpg">
-
 </div>
 </section>
 
 <!-- INTEL -->
 <section class="section">
 <div class="split">
-
 <img src="assets/intel.jpg">
-
 <div>
 <h2>Advanced Intelligence</h2>
-<p>We identify risks before they materialize, allowing proactive intervention and strategic control.</p>
+<p>We anticipate risks before they materialize.</p>
 </div>
-
 </div>
 </section>
 
 <!-- HOME -->
 <section class="section alt">
 <div class="split">
-
 <div>
-<h2>Family & Estate Protection</h2>
-<p>We secure residences, families and environments with discreet yet highly effective protocols.</p>
+<h2>Family Protection</h2>
+<p>We secure families, residences and environments.</p>
 </div>
-
 <img src="assets/home.jpg">
-
 </div>
 </section>
 
 <!-- PROGRAMS -->
-<section class="section">
+<section id="programs" class="section">
 <h2>Programs</h2>
 
 <div class="grid">
 <div class="card"><h3>Essential</h3><p>Monitoring and advisory.</p></div>
-<div class="card"><h3>Advanced</h3><p>Active protection and readiness.</p></div>
-<div class="card"><h3>Elite Command</h3><p>Full-spectrum operational control.</p></div>
+<div class="card"><h3>Advanced</h3><p>Active protection.</p></div>
+<div class="card"><h3>Elite Command</h3><p>Full operational control.</p></div>
 </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="section alt">
+
 <h2>Private Access</h2>
 
 <p>Access is restricted. Engagements are reviewed and approved selectively.</p>
 
-<br>
+<div class="form-box">
+
+<h3>Pre-Qualification</h3>
+
+<select>
+<option>Estimated Monthly Budget</option>
+<option>$3,000 – $10,000</option>
+<option>$10,000 – $25,000</option>
+<option>$25,000+</option>
+</select>
+
+<select>
+<option>Type of Need</option>
+<option>Family Protection</option>
+<option>Travel Security</option>
+<option>Crisis Situation</option>
+<option>Discreet Advisory</option>
+</select>
+
+<br><br>
 
 <script src="https://js-na3.hsforms.net/forms/embed/342880637.js" defer></script>
 <div class="hs-form-frame" 
 data-region="na3" 
 data-form-id="f419a4d0-ce75-4904-960f-c1fe7b3083dc" 
 data-portal-id="342880637">
+</div>
+
 </div>
 
 </section>
@@ -242,7 +305,7 @@ data-portal-id="342880637">
 
 <div>
 <img src="logo.png">
-<p style="color:#777;">Private security and intelligence operations.</p>
+<p style="color:#777;">Private security, intelligence and global response.</p>
 </div>
 
 <div>
@@ -276,6 +339,16 @@ data-portal-id="342880637">
 <script>
 function scrollToSection(id){
 document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+function setLang(lang){
+document.querySelectorAll('.en').forEach(el=>el.style.display = (lang==='en'?'block':'none'));
+document.querySelectorAll('.fr').forEach(el=>el.style.display = (lang==='fr'?'block':'none'));
+
+document.getElementById('btn-en').classList.remove('active');
+document.getElementById('btn-fr').classList.remove('active');
+
+document.getElementById('btn-'+lang).classList.add('active');
 }
 </script>
 
