@@ -11,9 +11,10 @@ margin:0;
 font-family:Arial;
 background:#05070d;
 color:white;
+overflow-x:hidden;
 }
 
-/* NAV */
+/* NAV FIX */
 nav{
 position:fixed;
 top:0;
@@ -22,33 +23,68 @@ background:black;
 padding:15px 30px;
 display:flex;
 justify-content:space-between;
+align-items:center;
 z-index:1000;
 }
 
-/* TOGGLE */
-button{
-cursor:pointer;
+.toggle{
+display:flex;
+gap:8px;
+}
+
+.toggle button{
 background:#111;
 border:1px solid #444;
 color:#aaa;
-padding:6px 12px;
+padding:6px 14px;
+cursor:pointer;
 }
-button.active{
+
+.toggle .active{
 color:#d4af37;
 border-color:#d4af37;
 }
 
-/* HERO */
+/* HERO FIX */
 .hero{
 height:100vh;
-background:url('assets/hero.jpg') center/cover;
+background:url('assets/hero.jpg') center/cover no-repeat;
 display:flex;
 align-items:center;
-padding:40px;
+padding:0 10%;
+position:relative;
+margin-top:60px;
 }
 
+.hero::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:700px;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+line-height:1.5;
+}
+
+/* SECTIONS */
 .section{
-padding:100px 40px;
+padding:100px 10%;
 }
 
 .alt{background:#0b111f;}
@@ -59,12 +95,16 @@ gap:40px;
 align-items:center;
 }
 
-.split img{width:50%;}
+.split img{
+width:50%;
+border-radius:6px;
+}
 
 /* FORM */
 .form{
 background:#0b111f;
 padding:30px;
+border:1px solid rgba(255,255,255,0.1);
 }
 
 input, select{
@@ -82,9 +122,14 @@ color:black;
 margin-top:15px;
 }
 
-/* LANG */
+/* LANG SYSTEM */
 .lang{display:none;}
 .active-lang{display:block;}
+
+@media(max-width:900px){
+.split{flex-direction:column;}
+.split img{width:100%;}
+}
 
 </style>
 </head>
@@ -94,51 +139,49 @@ margin-top:15px;
 <nav>
 <div>ARES OPSEC</div>
 
-<div>
+<div class="toggle">
 <button id="btn-en">EN</button>
 <button id="btn-fr">FR</button>
 </div>
+
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-
-<div>
+<div class="hero-content">
 
 <h1 class="lang en">Control the Outcome</h1>
 <h1 class="lang fr">Contrôler l’issue</h1>
 
 <p class="lang en">
-ARES delivers elite protection, intelligence and crisis response for high-net-worth families operating in complex environments.
+ARES delivers elite protection, intelligence and crisis response for high-net-worth families operating in complex and sensitive environments.
 </p>
 
 <p class="lang fr">
-ARES offre des services de protection, de renseignement et de gestion de crise pour des familles à haut patrimoine évoluant dans des environnements complexes.
+ARES offre des services de protection, de renseignement et de gestion de crise pour des familles à haut patrimoine évoluant dans des environnements sensibles et complexes.
 </p>
 
 </div>
-
 </section>
 
-<!-- SERVICES -->
+<!-- SECTION 1 -->
 <section class="section">
 
 <h2 class="lang en">Integrated Protection</h2>
 <h2 class="lang fr">Protection intégrée</h2>
 
 <p class="lang en">
-We combine physical security, cyber intelligence and strategic advisory into a unified protection system.
+Our approach combines physical security, cyber intelligence and strategic advisory into a unified and proactive protection system.
 </p>
 
 <p class="lang fr">
-Nous combinons la sécurité physique, le renseignement numérique et le conseil stratégique dans un système de protection unifié.
+Notre approche combine la sécurité physique, le renseignement numérique et le conseil stratégique dans un système de protection unifié et proactif.
 </p>
 
 </section>
 
 <!-- MOBILITY -->
 <section class="section alt">
-
 <div class="split">
 
 <div>
@@ -147,11 +190,11 @@ Nous combinons la sécurité physique, le renseignement numérique et le conseil
 <h2 class="lang fr">Mobilité sécurisée</h2>
 
 <p class="lang en">
-From daily movement to international travel, ARES ensures safe and controlled transitions across all environments.
+From daily movements to international travel, ARES ensures safe, controlled and discreet transitions.
 </p>
 
 <p class="lang fr">
-Des déplacements quotidiens aux voyages internationaux, ARES assure des transitions sécurisées et contrôlées.
+Des déplacements quotidiens aux voyages internationaux, ARES assure des transitions sécurisées, contrôlées et discrètes.
 </p>
 
 </div>
@@ -159,12 +202,10 @@ Des déplacements quotidiens aux voyages internationaux, ARES assure des transit
 <img src="assets/convoy.jpg">
 
 </div>
-
 </section>
 
 <!-- INTEL -->
 <section class="section">
-
 <div class="split">
 
 <img src="assets/intel.jpg">
@@ -175,22 +216,20 @@ Des déplacements quotidiens aux voyages internationaux, ARES assure des transit
 <h2 class="lang fr">Renseignement avancé</h2>
 
 <p class="lang en">
-We detect, anticipate and neutralize threats before they materialize.
+We anticipate, detect and neutralize threats before they materialize through continuous intelligence monitoring.
 </p>
 
 <p class="lang fr">
-Nous détectons, anticipons et neutralisons les menaces avant qu’elles ne se concrétisent.
+Nous anticipons, détectons et neutralisons les menaces avant qu’elles ne se concrétisent grâce à une surveillance continue.
 </p>
 
 </div>
 
 </div>
-
 </section>
 
 <!-- HOME -->
 <section class="section alt">
-
 <div class="split">
 
 <div>
@@ -199,11 +238,11 @@ Nous détectons, anticipons et neutralisons les menaces avant qu’elles ne se c
 <h2 class="lang fr">Protection familiale et résidentielle</h2>
 
 <p class="lang en">
-Your home and family are secured with discreet but highly effective protocols.
+We secure your residences, your family and your daily environments with discreet but highly effective protocols.
 </p>
 
 <p class="lang fr">
-Votre domicile et votre famille sont protégés par des protocoles discrets mais hautement efficaces.
+Nous sécurisons vos résidences, votre famille et vos environnements quotidiens avec des protocoles discrets mais hautement efficaces.
 </p>
 
 </div>
@@ -211,7 +250,6 @@ Votre domicile et votre famille sont protégés par des protocoles discrets mais
 <img src="assets/home.jpg">
 
 </div>
-
 </section>
 
 <!-- FORM -->
@@ -231,13 +269,6 @@ Votre domicile et votre famille sont protégés par des protocoles discrets mais
 <option>$25k+</option>
 </select>
 
-<select>
-<option>Type</option>
-<option>Family Protection</option>
-<option>Travel</option>
-<option>Crisis</option>
-</select>
-
 <input placeholder="Email">
 
 <button class="submit">Submit</button>
@@ -248,11 +279,9 @@ Votre domicile et votre famille sont protégés par des protocoles discrets mais
 
 <script>
 
-/* LANG SYSTEM */
 function setLang(lang){
 
 document.querySelectorAll('.lang').forEach(el=>el.classList.remove('active-lang'));
-
 document.querySelectorAll('.'+lang).forEach(el=>el.classList.add('active-lang'));
 
 document.getElementById('btn-en').classList.remove('active');
