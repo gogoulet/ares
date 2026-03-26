@@ -9,7 +9,6 @@
 
 <style>
 
-/* BASE */
 body{
 margin:0;
 font-family:'Inter',sans-serif;
@@ -41,21 +40,21 @@ gap:20px;
 align-items:center;
 }
 
-.menu a{
-color:#aaa;
-text-decoration:none;
-font-size:14px;
+/* TOGGLE FIX */
+.lang-toggle{
+display:flex;
+gap:5px;
+margin-left:10px;
 }
-
-.menu a:hover{color:#d4af37;}
 
 .lang-toggle button{
-background:none;
+background:#111;
 border:1px solid #444;
 color:#aaa;
-padding:4px 10px;
+padding:5px 12px;
 cursor:pointer;
 }
+
 .lang-toggle .active{
 color:#d4af37;
 border-color:#d4af37;
@@ -70,11 +69,6 @@ align-items:center;
 padding:0 10%;
 }
 
-.hero-content{
-max-width:600px;
-}
-
-/* SECTION */
 .section{
 padding:100px 10%;
 }
@@ -117,11 +111,6 @@ padding:30px;
 margin-top:20px;
 }
 
-/* IMPORTANT: HubSpot iframe fix minimal */
-.hs-form-frame iframe{
-background:white !important;
-}
-
 /* LANG */
 .fr{display:none;}
 
@@ -144,8 +133,8 @@ background:white !important;
 <a href="#contact">Contact</a>
 
 <div class="lang-toggle">
-<button onclick="setLang('en')" id="btn-en" class="active">EN</button>
-<button onclick="setLang('fr')" id="btn-fr">FR</button>
+<button id="btn-en" onclick="setLang('en')">EN</button>
+<button id="btn-fr" onclick="setLang('fr')">FR</button>
 </div>
 
 </div>
@@ -153,18 +142,20 @@ background:white !important;
 
 <!-- HERO -->
 <section class="hero">
-<div class="hero-content">
+
+<div>
 
 <h1 class="en">Control the Outcome</h1>
 <h1 class="fr">Contrôler l’issue</h1>
 
-<p class="en">Protection, intelligence and global response for high-net-worth families.</p>
-<p class="fr">Protection, intelligence et réponse globale pour des familles à haut patrimoine.</p>
+<p class="en">Protection, intelligence and global response.</p>
+<p class="fr">Protection, intelligence et réponse globale.</p>
 
 <br>
 <button class="btn" onclick="scrollToSection('contact')">Access</button>
 
 </div>
+
 </section>
 
 <!-- SERVICES -->
@@ -177,43 +168,75 @@ background:white !important;
 
 <div class="card">
 <h3>Security</h3>
-<p class="en">Close protection and estate security.</p>
-<p class="fr">Protection rapprochée et sécurité des propriétés.</p>
+<p class="en">Close protection.</p>
+<p class="fr">Protection rapprochée.</p>
 </div>
 
 <div class="card">
 <h3>Cyber</h3>
-<p class="en">Digital monitoring and privacy.</p>
-<p class="fr">Surveillance numérique et vie privée.</p>
+<p class="en">Digital monitoring.</p>
+<p class="fr">Surveillance numérique.</p>
 </div>
 
 <div class="card">
 <h3>Medical</h3>
-<p class="en">Global emergency response.</p>
-<p class="fr">Réponse médicale internationale.</p>
+<p class="en">Emergency response.</p>
+<p class="fr">Réponse médicale.</p>
 </div>
 
 </div>
 
 </section>
 
-<!-- IMAGE SECTION -->
+<!-- MOBILITY -->
 <section class="section alt">
-
 <div class="split">
 
 <div>
 <h2 class="en">Secure Mobility</h2>
 <h2 class="fr">Mobilité sécurisée</h2>
 
-<p class="en">Safe movement across all environments.</p>
-<p class="fr">Déplacements sécurisés dans tous les environnements.</p>
+<p class="en">Safe movement worldwide.</p>
+<p class="fr">Déplacements sécurisés à l'international.</p>
 </div>
 
 <img src="assets/convoy.jpg">
 
 </div>
+</section>
 
+<!-- 🔥 SECTION AJOUTÉE 1 -->
+<section class="section">
+<div class="split">
+
+<img src="assets/intel.jpg">
+
+<div>
+<h2 class="en">Advanced Intelligence</h2>
+<h2 class="fr">Renseignement avancé</h2>
+
+<p class="en">We detect threats before they emerge.</p>
+<p class="fr">Nous détectons les menaces avant qu'elles apparaissent.</p>
+</div>
+
+</div>
+</section>
+
+<!-- 🔥 SECTION AJOUTÉE 2 -->
+<section class="section alt">
+<div class="split">
+
+<div>
+<h2 class="en">Family & Estate Protection</h2>
+<h2 class="fr">Protection familiale et résidentielle</h2>
+
+<p class="en">We secure your most valuable environment.</p>
+<p class="fr">Nous sécurisons vos environnements les plus précieux.</p>
+</div>
+
+<img src="assets/home.jpg">
+
+</div>
 </section>
 
 <!-- PROGRAMS -->
@@ -226,20 +249,17 @@ background:white !important;
 
 <div class="card">
 <h3>Essential</h3>
-<p class="en">Monitoring and advisory.</p>
-<p class="fr">Surveillance et accompagnement.</p>
+<p>Monitoring</p>
 </div>
 
 <div class="card">
 <h3>Advanced</h3>
-<p class="en">Active protection.</p>
-<p class="fr">Protection active.</p>
+<p>Protection</p>
 </div>
 
 <div class="card">
 <h3>Elite</h3>
-<p class="en">Full operational control.</p>
-<p class="fr">Contrôle complet.</p>
+<p>Full control</p>
 </div>
 
 </div>
@@ -265,30 +285,34 @@ data-portal-id="342880637">
 
 </section>
 
-<!-- FOOTER -->
-<section class="section">
-<p style="color:#555;">ARES OPSEC — Confidential operations</p>
-</section>
-
 <script>
 
 function scrollToSection(id){
 document.getElementById(id).scrollIntoView({behavior:'smooth'});
 }
 
+/* 🔥 TOGGLE FIX FINAL */
 function setLang(lang){
 
+// texte
 document.querySelectorAll('.en').forEach(el=>{
-el.style.display = (lang==='en') ? '' : 'none';
+el.style.display = (lang==='en') ? 'block' : 'none';
 });
 
 document.querySelectorAll('.fr').forEach(el=>{
-el.style.display = (lang==='fr') ? '' : 'none';
+el.style.display = (lang==='fr') ? 'block' : 'none';
 });
 
-document.getElementById('btn-en').classList.toggle('active', lang==='en');
-document.getElementById('btn-fr').classList.toggle('active', lang==='fr');
+// boutons
+document.getElementById('btn-en').classList.remove('active');
+document.getElementById('btn-fr').classList.remove('active');
+
+document.getElementById('btn-'+lang).classList.add('active');
+
 }
+
+// default
+setLang('en');
 
 </script>
 
