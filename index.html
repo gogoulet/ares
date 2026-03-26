@@ -9,18 +9,24 @@
 
 <style>
 
-/* BASE */
+/* ===== BASE ===== */
 body{
 margin:0;
 font-family:'Inter',sans-serif;
 background:#05070d;
 color:#eaeaea;
+scroll-behavior:smooth;
 }
 
-h1,h2{font-family:'Playfair Display';color:#d4af37;}
+h1,h2,h3{
+font-family:'Playfair Display';
+color:#d4af37;
+margin-bottom:10px;
+}
+
 p{color:#bbb;}
 
-/* NAV */
+/* ===== NAV ===== */
 nav{
 position:fixed;
 top:0;
@@ -37,16 +43,28 @@ nav img{height:40px;}
 
 .menu{
 display:flex;
-gap:20px;
 align-items:center;
+gap:20px;
 }
 
-/* TOGGLE */
+.menu a{
+color:#aaa;
+text-decoration:none;
+font-size:14px;
+}
+.menu a:hover{color:#d4af37;}
+
+/* ===== TOGGLE ===== */
+.lang-toggle{
+display:flex;
+gap:5px;
+}
+
 .lang-toggle button{
 background:#111;
 border:1px solid #444;
 color:#aaa;
-padding:5px 12px;
+padding:5px 10px;
 cursor:pointer;
 }
 
@@ -55,21 +73,41 @@ color:#d4af37;
 border-color:#d4af37;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero{
 height:100vh;
 background:url('assets/hero.jpg') center/cover no-repeat;
 display:flex;
 align-items:center;
 padding:0 10%;
+position:relative;
 margin-top:60px;
 }
 
+.hero::after{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.9));
+top:0;
+left:0;
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:700px;
+}
+
+/* ===== SECTIONS ===== */
 .section{
 padding:100px 10%;
 }
 
-.alt{background:#0b111f;}
+.alt{
+background:#0b111f;
+}
 
 .grid{
 display:grid;
@@ -82,44 +120,59 @@ padding:20px;
 border:1px solid rgba(255,255,255,0.1);
 }
 
-/* SPLIT */
+/* ===== SPLIT ===== */
 .split{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:40px;
+gap:50px;
 align-items:center;
 }
 .split img{width:100%;}
 
-/* BUTTON */
+/* ===== BUTTON ===== */
 .btn{
 background:#d4af37;
 color:black;
-padding:10px 20px;
+padding:12px 22px;
 border:none;
 cursor:pointer;
+font-weight:600;
 }
 
-/* FORM */
+/* ===== FORM ===== */
 .form-box{
 background:#0b111f;
 padding:30px;
-margin-top:20px;
 border:1px solid rgba(255,255,255,0.1);
+margin-top:20px;
 }
 
-/* HUBSPOT WRAPPER FIX */
-.hs-wrapper{
-background:#0b111f;
-padding:20px;
+.prefilter{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+margin-bottom:20px;
 }
 
-/* LANG SYSTEM */
-.en, .fr { display:none; }
-.active-lang { display:block; }
+.prefilter select{
+padding:10px;
+background:#05070d;
+color:white;
+border:1px solid rgba(255,255,255,0.2);
+}
 
-@media(max-width:800px){
+/* ===== HUBSPOT SAFE ===== */
+.hs-form-frame iframe{
+background:white !important;
+}
+
+/* ===== LANG ===== */
+.en, .fr{display:none;}
+.active-lang{display:block;}
+
+@media(max-width:900px){
 .split{grid-template-columns:1fr;}
+.prefilter{grid-template-columns:1fr;}
 }
 
 </style>
@@ -131,7 +184,6 @@ padding:20px;
 <img src="logo.png">
 
 <div class="menu">
-
 <a href="#services">Services</a>
 <a href="#programs">Programs</a>
 <a href="#contact">Contact</a>
@@ -146,17 +198,18 @@ padding:20px;
 
 <!-- HERO -->
 <section class="hero">
-<div>
+<div class="hero-content">
 
 <h1 class="en">Control the Outcome</h1>
 <h1 class="fr">Contrôler l’issue</h1>
 
-<p class="en">Protection, intelligence and global response.</p>
-<p class="fr">Protection, intelligence et réponse globale.</p>
+<p class="en">Protection, intelligence and global response for high-net-worth families.</p>
+<p class="fr">Protection, renseignement et réponse globale pour des familles à haut patrimoine.</p>
 
 <br>
-<button class="btn en">Access</button>
-<button class="btn fr">Accès</button>
+
+<button class="btn en" onclick="goTo('contact')">Private Access</button>
+<button class="btn fr" onclick="goTo('contact')">Accès privé</button>
 
 </div>
 </section>
@@ -171,20 +224,101 @@ padding:20px;
 
 <div class="card">
 <h3>Security</h3>
-<p class="en">Close protection.</p>
-<p class="fr">Protection rapprochée.</p>
+<p class="en">Close protection and estate security.</p>
+<p class="fr">Protection rapprochée et sécurité des propriétés.</p>
 </div>
 
 <div class="card">
 <h3>Cyber</h3>
-<p class="en">Digital monitoring.</p>
-<p class="fr">Surveillance numérique.</p>
+<p class="en">Digital monitoring and privacy.</p>
+<p class="fr">Surveillance numérique et vie privée.</p>
 </div>
 
 <div class="card">
 <h3>Medical</h3>
-<p class="en">Emergency response.</p>
-<p class="fr">Réponse médicale.</p>
+<p class="en">Global emergency response.</p>
+<p class="fr">Réponse médicale internationale.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- MOBILITY -->
+<section class="section alt">
+<div class="split">
+
+<div>
+<h2 class="en">Secure Mobility</h2>
+<h2 class="fr">Mobilité sécurisée</h2>
+
+<p class="en">Safe movement across environments.</p>
+<p class="fr">Déplacements sécurisés dans tous les environnements.</p>
+</div>
+
+<img src="assets/convoy.jpg">
+
+</div>
+</section>
+
+<!-- INTEL -->
+<section class="section">
+<div class="split">
+
+<img src="assets/intel.jpg">
+
+<div>
+<h2 class="en">Advanced Intelligence</h2>
+<h2 class="fr">Renseignement avancé</h2>
+
+<p class="en">We detect threats before they emerge.</p>
+<p class="fr">Nous détectons les menaces avant qu’elles apparaissent.</p>
+</div>
+
+</div>
+</section>
+
+<!-- HOME -->
+<section class="section alt">
+<div class="split">
+
+<div>
+<h2 class="en">Family Protection</h2>
+<h2 class="fr">Protection familiale</h2>
+
+<p class="en">We secure your most valuable environment.</p>
+<p class="fr">Nous sécurisons vos environnements les plus précieux.</p>
+</div>
+
+<img src="assets/home.jpg">
+
+</div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs" class="section">
+
+<h2 class="en">Programs</h2>
+<h2 class="fr">Programmes</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Essential</h3>
+<p class="en">Monitoring and advisory.</p>
+<p class="fr">Surveillance et accompagnement.</p>
+</div>
+
+<div class="card">
+<h3>Advanced</h3>
+<p class="en">Active protection.</p>
+<p class="fr">Protection active.</p>
+</div>
+
+<div class="card">
+<h3>Elite</h3>
+<p class="en">Full operational control.</p>
+<p class="fr">Contrôle complet.</p>
 </div>
 
 </div>
@@ -194,11 +328,12 @@ padding:20px;
 <!-- CONTACT -->
 <section id="contact" class="section alt">
 
-<h2 class="en">Contact</h2>
-<h2 class="fr">Contact</h2>
+<h2 class="en">Private Access</h2>
+<h2 class="fr">Accès privé</h2>
 
 <div class="form-box">
 
+<div class="prefilter">
 <select>
 <option>Budget</option>
 <option>$3k–$10k</option>
@@ -206,7 +341,14 @@ padding:20px;
 <option>$25k+</option>
 </select>
 
-<div class="hs-wrapper">
+<select>
+<option>Need</option>
+<option>Family</option>
+<option>Travel</option>
+<option>Crisis</option>
+<option>Advisory</option>
+</select>
+</div>
 
 <script src="https://js-na3.hsforms.net/forms/embed/342880637.js" defer></script>
 <div class="hs-form-frame"
@@ -217,43 +359,34 @@ data-portal-id="342880637">
 
 </div>
 
-</div>
-
 </section>
 
 <script>
 
-/* LANG FIX PROPRE */
+function goTo(id){
+document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+/* LANG SYSTEM CLEAN */
 function setLang(lang){
 
-document.querySelectorAll('.en').forEach(el=>{
-el.classList.remove('active-lang');
-});
-document.querySelectorAll('.fr').forEach(el=>{
-el.classList.remove('active-lang');
-});
+document.querySelectorAll('.en').forEach(el=>el.classList.remove('active-lang'));
+document.querySelectorAll('.fr').forEach(el=>el.classList.remove('active-lang'));
 
-document.querySelectorAll('.'+lang).forEach(el=>{
-el.classList.add('active-lang');
-});
+document.querySelectorAll('.'+lang).forEach(el=>el.classList.add('active-lang'));
 
-document.getElementById('btn-en').classList.remove('active');
-document.getElementById('btn-fr').classList.remove('active');
-
-document.getElementById('btn-'+lang).classList.add('active');
+document.getElementById('btn-en').classList.toggle('active', lang==='en');
+document.getElementById('btn-fr').classList.toggle('active', lang==='fr');
 
 localStorage.setItem('lang', lang);
 }
 
-/* INIT */
-document.addEventListener('DOMContentLoaded', ()=>{
-const lang = localStorage.getItem('lang') || 'en';
-setLang(lang);
-});
-
-/* EVENTS */
 document.getElementById('btn-en').onclick = ()=>setLang('en');
 document.getElementById('btn-fr').onclick = ()=>setLang('fr');
+
+document.addEventListener('DOMContentLoaded', ()=>{
+setLang(localStorage.getItem('lang') || 'en');
+});
 
 </script>
 
