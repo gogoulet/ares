@@ -32,22 +32,34 @@ background:rgba(0,0,0,0.85);
 
 nav img{height:40px;}
 
+.nav-links{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
 .nav-link{
 color:#aaa;
 text-decoration:none;
 font-size:14px;
-transition:0.3s;
 }
 .nav-link:hover{color:#d4af37;}
 
+.lang-toggle{
+display:flex;
+gap:5px;
+margin-left:10px;
+}
+
 .lang-toggle button{
-margin-left:5px;
 padding:5px 10px;
 background:none;
 border:1px solid #444;
 color:#aaa;
 cursor:pointer;
+font-size:12px;
 }
+
 .lang-toggle .active{
 border-color:#d4af37;
 color:#d4af37;
@@ -63,7 +75,7 @@ position:relative;
 position:absolute;
 width:100%;
 height:100%;
-background:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.95));
+background:linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.95));
 }
 .hero-content{
 position:relative;
@@ -94,7 +106,6 @@ gap:40px;
 .card{
 padding:30px;
 border:1px solid rgba(255,255,255,0.08);
-transition:0.3s;
 }
 .card:hover{
 transform:translateY(-6px);
@@ -121,7 +132,6 @@ border:none;
 cursor:pointer;
 font-weight:600;
 }
-.btn:hover{background:#f5d97a;}
 
 /* FORM */
 .form-box{
@@ -131,6 +141,7 @@ padding:40px;
 background:#0b111f;
 }
 
+/* PRE-FILTER */
 select{
 width:100%;
 padding:12px;
@@ -140,16 +151,27 @@ color:white;
 border:1px solid rgba(255,255,255,0.2);
 }
 
-/* HUBSPOT FIX */
-.hs-form-frame input,
-.hs-form-frame textarea{
-background:#05070d !important;
-color:white !important;
-border:1px solid rgba(255,255,255,0.2) !important;
+/* ===== HUBSPOT SAFE FIX ===== */
+
+.hs-form-frame{
+background:#0b111f !important;
+padding:30px !important;
+border-radius:6px;
 }
-.hs-button{
-background:#d4af37 !important;
-color:black !important;
+
+/* IMPORTANT : iframe styling */
+.hs-form-frame iframe{
+filter:brightness(0.9) contrast(1.1);
+}
+
+/* fallback text */
+.hs-form-frame *{
+font-family:'Inter', sans-serif !important;
+}
+
+/* hide hubspot junk */
+.hs-form-frame iframe + div{
+display:none !important;
 }
 
 /* FOOTER */
@@ -180,7 +202,8 @@ footer .grid{grid-template-columns:1fr 1fr;}
 <nav>
 <img src="logo.png">
 
-<div style="display:flex;align-items:center;gap:25px;">
+<div class="nav-links">
+
 <a href="#services" class="nav-link en">Services</a>
 <a href="#services" class="nav-link fr">Services</a>
 
@@ -194,6 +217,7 @@ footer .grid{grid-template-columns:1fr 1fr;}
 <button onclick="setLang('en')" id="btn-en" class="active">EN</button>
 <button onclick="setLang('fr')" id="btn-fr">FR</button>
 </div>
+
 </div>
 </nav>
 
@@ -320,6 +344,7 @@ data-portal-id="342880637">
 </div>
 
 </div>
+
 </section>
 
 <!-- FOOTER -->
@@ -368,7 +393,7 @@ function scrollToSection(id){
 document.getElementById(id).scrollIntoView({behavior:'smooth'});
 }
 
-/* LANG SWITCH */
+/* LANG */
 function setLang(lang){
 
 document.querySelectorAll('.en').forEach(el=>{
