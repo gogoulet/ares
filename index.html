@@ -8,304 +8,253 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-/* ===== BASE ===== */
-*{box-sizing:border-box}
+
+/* BASE */
 body{
-  margin:0;
-  font-family:'Inter',sans-serif;
-  background:#05070d;
-  color:#eaeaea;
-  scroll-behavior:smooth;
+margin:0;
+font-family:'Inter',sans-serif;
+background:#05070d;
+color:#eaeaea;
 }
-h1,h2{font-family:'Playfair Display';color:#d4af37;margin:0 0 10px}
-p{color:#bbb;margin:0 0 10px}
 
-/* ===== NAV ===== */
+h1,h2{font-family:'Playfair Display';color:#d4af37;}
+p{color:#bbb;}
+
+/* NAV */
 nav{
-  position:fixed; top:0; left:0; right:0;
-  display:flex; justify-content:space-between; align-items:center;
-  padding:14px 32px;
-  background:rgba(0,0,0,0.9);
-  z-index:1000;
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:rgba(0,0,0,0.9);
+z-index:1000;
 }
-nav img{height:38px}
-.menu{display:flex; align-items:center; gap:18px}
-.menu a{color:#aaa; text-decoration:none; font-size:14px}
-.menu a:hover{color:#d4af37}
 
-/* TOGGLE (FIXÉ) */
-.lang-toggle{display:flex; gap:6px; margin-left:10px}
+nav img{height:40px;}
+
+.menu{
+display:flex;
+gap:20px;
+align-items:center;
+}
+
+/* TOGGLE */
 .lang-toggle button{
-  background:#111; border:1px solid #444; color:#aaa;
-  padding:5px 12px; cursor:pointer; font-size:12px;
-}
-.lang-toggle button.active{
-  color:#d4af37; border-color:#d4af37;
+background:#111;
+border:1px solid #444;
+color:#aaa;
+padding:5px 12px;
+cursor:pointer;
 }
 
-/* ===== HERO ===== */
+.lang-toggle .active{
+color:#d4af37;
+border-color:#d4af37;
+}
+
+/* HERO */
 .hero{
-  height:100vh;
-  background:url('assets/hero.jpg') center/cover no-repeat;
-  display:flex; align-items:center;
-  padding:0 10%;
-  margin-top:64px; /* espace pour nav */
+height:100vh;
+background:url('assets/hero.jpg') center/cover no-repeat;
+display:flex;
+align-items:center;
+padding:0 10%;
+margin-top:60px;
 }
-.hero .wrap{max-width:680px}
 
-/* ===== SECTIONS ===== */
-.section{padding:100px 10%}
-.alt{background:#0b111f}
+.section{
+padding:100px 10%;
+}
+
+.alt{background:#0b111f;}
 
 .grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:28px;
-}
-.card{
-  padding:22px;
-  border:1px solid rgba(255,255,255,0.1);
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 }
 
-/* SPLIT IMAGE/TEXTE */
-.split{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  align-items:center;
+.card{
+padding:20px;
+border:1px solid rgba(255,255,255,0.1);
 }
-.split img{width:100%; border-radius:6px}
+
+/* SPLIT */
+.split{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+.split img{width:100%;}
 
 /* BUTTON */
 .btn{
-  background:#d4af37; color:#000;
-  padding:10px 20px; border:none; cursor:pointer;
-  font-weight:600;
+background:#d4af37;
+color:black;
+padding:10px 20px;
+border:none;
+cursor:pointer;
 }
 
-/* ===== FORM BOX ===== */
+/* FORM */
 .form-box{
-  background:#0b111f;
-  padding:28px;
-  border:1px solid rgba(255,255,255,0.1);
+background:#0b111f;
+padding:30px;
+margin-top:20px;
+border:1px solid rgba(255,255,255,0.1);
 }
 
-/* Pré-qualification */
-.prefilter{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-  margin-top:10px;
-}
-.prefilter select{
-  width:100%;
-  padding:10px;
-  background:#05070d;
-  color:#fff;
-  border:1px solid rgba(255,255,255,0.2);
+/* HUBSPOT WRAPPER FIX */
+.hs-wrapper{
+background:#0b111f;
+padding:20px;
 }
 
-/* HubSpot (safe – pas d’overrides agressifs) */
-.hs-form-frame{margin-top:20px}
-.hs-form-frame iframe{
-  background:#fff !important; /* évite le bleu dark */
+/* LANG SYSTEM */
+.en, .fr { display:none; }
+.active-lang { display:block; }
+
+@media(max-width:800px){
+.split{grid-template-columns:1fr;}
 }
 
-/* ===== LANG ===== */
-.fr{display:none}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:900px){
-  .split{grid-template-columns:1fr}
-  .prefilter{grid-template-columns:1fr}
-}
 </style>
 </head>
 
 <body>
 
 <nav>
-  <img src="logo.png" alt="ARES">
-  <div class="menu">
-    <a href="#services">Services</a>
-    <a href="#programs">Programs</a>
-    <a href="#contact">Contact</a>
+<img src="logo.png">
 
-    <div class="lang-toggle">
-      <button id="btn-en">EN</button>
-      <button id="btn-fr">FR</button>
-    </div>
-  </div>
+<div class="menu">
+
+<a href="#services">Services</a>
+<a href="#programs">Programs</a>
+<a href="#contact">Contact</a>
+
+<div class="lang-toggle">
+<button id="btn-en">EN</button>
+<button id="btn-fr">FR</button>
+</div>
+
+</div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="wrap">
-    <h1 class="en">Control the Outcome</h1>
-    <h1 class="fr">Contrôler l’issue</h1>
+<div>
 
-    <p class="en">Protection, intelligence and global response for high-net-worth families.</p>
-    <p class="fr">Protection, renseignement et réponse globale pour des familles à haut patrimoine.</p>
+<h1 class="en">Control the Outcome</h1>
+<h1 class="fr">Contrôler l’issue</h1>
 
-    <br>
-    <button class="btn" onclick="goTo('contact')">Access</button>
-  </div>
+<p class="en">Protection, intelligence and global response.</p>
+<p class="fr">Protection, intelligence et réponse globale.</p>
+
+<br>
+<button class="btn en">Access</button>
+<button class="btn fr">Accès</button>
+
+</div>
 </section>
 
 <!-- SERVICES -->
 <section id="services" class="section">
-  <h2 class="en">Integrated Services</h2>
-  <h2 class="fr">Services intégrés</h2>
 
-  <div class="grid">
-    <div class="card">
-      <h3>Security</h3>
-      <p class="en">Close protection and estate security.</p>
-      <p class="fr">Protection rapprochée et sécurité des propriétés.</p>
-    </div>
-    <div class="card">
-      <h3>Cyber</h3>
-      <p class="en">Digital monitoring and privacy.</p>
-      <p class="fr">Surveillance numérique et vie privée.</p>
-    </div>
-    <div class="card">
-      <h3>Medical</h3>
-      <p class="en">Global emergency response.</p>
-      <p class="fr">Réponse médicale internationale.</p>
-    </div>
-  </div>
-</section>
+<h2 class="en">Integrated Services</h2>
+<h2 class="fr">Services intégrés</h2>
 
-<!-- MOBILITY -->
-<section class="section alt">
-  <div class="split">
-    <div>
-      <h2 class="en">Secure Mobility</h2>
-      <h2 class="fr">Mobilité sécurisée</h2>
-      <p class="en">Safe movement across environments.</p>
-      <p class="fr">Déplacements sécurisés dans tous les environnements.</p>
-    </div>
-    <img src="assets/convoy.jpg" alt="">
-  </div>
-</section>
+<div class="grid">
 
-<!-- INTEL -->
-<section class="section">
-  <div class="split">
-    <img src="assets/intel.jpg" alt="">
-    <div>
-      <h2 class="en">Advanced Intelligence</h2>
-      <h2 class="fr">Renseignement avancé</h2>
-      <p class="en">We detect threats before they emerge.</p>
-      <p class="fr">Nous détectons les menaces avant qu’elles apparaissent.</p>
-    </div>
-  </div>
-</section>
+<div class="card">
+<h3>Security</h3>
+<p class="en">Close protection.</p>
+<p class="fr">Protection rapprochée.</p>
+</div>
 
-<!-- HOME -->
-<section class="section alt">
-  <div class="split">
-    <div>
-      <h2 class="en">Family & Estate Protection</h2>
-      <h2 class="fr">Protection familiale et résidentielle</h2>
-      <p class="en">We secure your most valuable environment.</p>
-      <p class="fr">Nous sécurisons vos environnements les plus précieux.</p>
-    </div>
-    <img src="assets/home.jpg" alt="">
-  </div>
-</section>
+<div class="card">
+<h3>Cyber</h3>
+<p class="en">Digital monitoring.</p>
+<p class="fr">Surveillance numérique.</p>
+</div>
 
-<!-- PROGRAMS -->
-<section id="programs" class="section">
-  <h2 class="en">Programs</h2>
-  <h2 class="fr">Programmes</h2>
+<div class="card">
+<h3>Medical</h3>
+<p class="en">Emergency response.</p>
+<p class="fr">Réponse médicale.</p>
+</div>
 
-  <div class="grid">
-    <div class="card">
-      <h3>Essential</h3>
-      <p class="en">Monitoring and advisory.</p>
-      <p class="fr">Surveillance et accompagnement.</p>
-    </div>
-    <div class="card">
-      <h3>Advanced</h3>
-      <p class="en">Active protection.</p>
-      <p class="fr">Protection active.</p>
-    </div>
-    <div class="card">
-      <h3>Elite</h3>
-      <p class="en">Full operational control.</p>
-      <p class="fr">Contrôle complet.</p>
-    </div>
-  </div>
+</div>
+
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="section alt">
-  <h2 class="en">Private Access</h2>
-  <h2 class="fr">Accès privé</h2>
 
-  <p class="en">Access is restricted. Engagements are reviewed selectively.</p>
-  <p class="fr">L’accès est restreint. Les mandats sont sélectionnés avec soin.</p>
+<h2 class="en">Contact</h2>
+<h2 class="fr">Contact</h2>
 
-  <div class="form-box">
+<div class="form-box">
 
-    <!-- 💰 Pré-qualification (REMIS) -->
-    <div class="prefilter">
-      <select>
-        <option>Estimated Monthly Budget</option>
-        <option>$3,000 – $10,000</option>
-        <option>$10,000 – $25,000</option>
-        <option>$25,000+</option>
-      </select>
+<select>
+<option>Budget</option>
+<option>$3k–$10k</option>
+<option>$10k–$25k</option>
+<option>$25k+</option>
+</select>
 
-      <select>
-        <option>Type of Need</option>
-        <option>Family Protection</option>
-        <option>Travel Security</option>
-        <option>Crisis Situation</option>
-        <option>Discreet Advisory</option>
-      </select>
-    </div>
+<div class="hs-wrapper">
 
-    <!-- HubSpot -->
-    <script src="https://js-na3.hsforms.net/forms/embed/342880637.js" defer></script>
-    <div class="hs-form-frame"
-      data-region="na3"
-      data-form-id="f419a4d0-ce75-4904-960f-c1fe7b3083dc"
-      data-portal-id="342880637">
-    </div>
+<script src="https://js-na3.hsforms.net/forms/embed/342880637.js" defer></script>
+<div class="hs-form-frame"
+data-region="na3"
+data-form-id="f419a4d0-ce75-4904-960f-c1fe7b3083dc"
+data-portal-id="342880637">
+</div>
 
-  </div>
+</div>
+
+</div>
+
 </section>
 
-<footer class="section">
-  <p style="color:#555">ARES OPSEC — Confidential operations</p>
-</footer>
-
 <script>
-function goTo(id){
-  document.getElementById(id).scrollIntoView({behavior:'smooth'});
-}
 
-/* 🔁 TOGGLE FIX (robuste + persistant) */
-function applyLang(lang){
-  document.querySelectorAll('.en').forEach(el=> el.style.display = (lang==='en') ? '' : 'none');
-  document.querySelectorAll('.fr').forEach(el=> el.style.display = (lang==='fr') ? '' : 'none');
+/* LANG FIX PROPRE */
+function setLang(lang){
 
-  document.getElementById('btn-en').classList.toggle('active', lang==='en');
-  document.getElementById('btn-fr').classList.toggle('active', lang==='fr');
-
-  localStorage.setItem('lang', lang);
-}
-
-document.getElementById('btn-en').onclick = ()=> applyLang('en');
-document.getElementById('btn-fr').onclick = ()=> applyLang('fr');
-
-/* init */
-document.addEventListener('DOMContentLoaded', ()=>{
-  const lang = localStorage.getItem('lang') || 'en';
-  applyLang(lang);
+document.querySelectorAll('.en').forEach(el=>{
+el.classList.remove('active-lang');
 });
+document.querySelectorAll('.fr').forEach(el=>{
+el.classList.remove('active-lang');
+});
+
+document.querySelectorAll('.'+lang).forEach(el=>{
+el.classList.add('active-lang');
+});
+
+document.getElementById('btn-en').classList.remove('active');
+document.getElementById('btn-fr').classList.remove('active');
+
+document.getElementById('btn-'+lang).classList.add('active');
+
+localStorage.setItem('lang', lang);
+}
+
+/* INIT */
+document.addEventListener('DOMContentLoaded', ()=>{
+const lang = localStorage.getItem('lang') || 'en';
+setLang(lang);
+});
+
+/* EVENTS */
+document.getElementById('btn-en').onclick = ()=>setLang('en');
+document.getElementById('btn-fr').onclick = ()=>setLang('fr');
+
 </script>
 
 </body>
