@@ -1,179 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ARES OPSEC</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* ===== BASE ===== */
 body{
 margin:0;
-font-family:'Inter',sans-serif;
+font-family:Arial;
 background:#05070d;
-color:#eaeaea;
-scroll-behavior:smooth;
+color:white;
 }
 
-h1,h2,h3{
-font-family:'Playfair Display';
-color:#d4af37;
-margin-bottom:10px;
-}
-
-p{color:#bbb;}
-
-/* ===== NAV ===== */
+/* NAV */
 nav{
 position:fixed;
 top:0;
 width:100%;
+background:black;
+padding:15px 30px;
 display:flex;
 justify-content:space-between;
-align-items:center;
-padding:15px 40px;
-background:rgba(0,0,0,0.9);
 z-index:1000;
 }
 
-nav img{height:40px;}
-
-.menu{
-display:flex;
-align-items:center;
-gap:20px;
-}
-
-.menu a{
-color:#aaa;
-text-decoration:none;
-font-size:14px;
-}
-.menu a:hover{color:#d4af37;}
-
-/* ===== TOGGLE ===== */
-.lang-toggle{
-display:flex;
-gap:5px;
-}
-
-.lang-toggle button{
+/* TOGGLE */
+button{
+cursor:pointer;
 background:#111;
 border:1px solid #444;
 color:#aaa;
-padding:5px 10px;
-cursor:pointer;
+padding:6px 12px;
 }
-
-.lang-toggle .active{
+button.active{
 color:#d4af37;
 border-color:#d4af37;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
 height:100vh;
-background:url('assets/hero.jpg') center/cover no-repeat;
+background:url('assets/hero.jpg') center/cover;
 display:flex;
 align-items:center;
-padding:0 10%;
-position:relative;
-margin-top:60px;
+padding:40px;
 }
 
-.hero::after{
-content:"";
-position:absolute;
-width:100%;
-height:100%;
-background:linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.9));
-top:0;
-left:0;
-}
-
-.hero-content{
-position:relative;
-z-index:2;
-max-width:700px;
-}
-
-/* ===== SECTIONS ===== */
 .section{
-padding:100px 10%;
+padding:100px 40px;
 }
 
-.alt{
-background:#0b111f;
-}
+.alt{background:#0b111f;}
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
-
-.card{
-padding:20px;
-border:1px solid rgba(255,255,255,0.1);
-}
-
-/* ===== SPLIT ===== */
 .split{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
+display:flex;
+gap:40px;
 align-items:center;
 }
-.split img{width:100%;}
 
-/* ===== BUTTON ===== */
-.btn{
-background:#d4af37;
-color:black;
-padding:12px 22px;
-border:none;
-cursor:pointer;
-font-weight:600;
-}
+.split img{width:50%;}
 
-/* ===== FORM ===== */
-.form-box{
+/* FORM */
+.form{
 background:#0b111f;
 padding:30px;
-border:1px solid rgba(255,255,255,0.1);
-margin-top:20px;
 }
 
-.prefilter{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:15px;
-margin-bottom:20px;
-}
-
-.prefilter select{
-padding:10px;
+input, select{
+width:100%;
+padding:12px;
+margin-top:10px;
 background:#05070d;
+border:1px solid #444;
 color:white;
-border:1px solid rgba(255,255,255,0.2);
 }
 
-/* ===== HUBSPOT SAFE ===== */
-.hs-form-frame iframe{
-background:white !important;
+.submit{
+background:#d4af37;
+color:black;
+margin-top:15px;
 }
 
-/* ===== LANG ===== */
-.en, .fr{display:none;}
+/* LANG */
+.lang{display:none;}
 .active-lang{display:block;}
-
-@media(max-width:900px){
-.split{grid-template-columns:1fr;}
-.prefilter{grid-template-columns:1fr;}
-}
 
 </style>
 </head>
@@ -181,159 +92,138 @@ background:white !important;
 <body>
 
 <nav>
-<img src="logo.png">
+<div>ARES OPSEC</div>
 
-<div class="menu">
-<a href="#services">Services</a>
-<a href="#programs">Programs</a>
-<a href="#contact">Contact</a>
-
-<div class="lang-toggle">
+<div>
 <button id="btn-en">EN</button>
 <button id="btn-fr">FR</button>
-</div>
-
 </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-<div class="hero-content">
 
-<h1 class="en">Control the Outcome</h1>
-<h1 class="fr">Contrôler l’issue</h1>
+<div>
 
-<p class="en">Protection, intelligence and global response for high-net-worth families.</p>
-<p class="fr">Protection, renseignement et réponse globale pour des familles à haut patrimoine.</p>
+<h1 class="lang en">Control the Outcome</h1>
+<h1 class="lang fr">Contrôler l’issue</h1>
 
-<br>
+<p class="lang en">
+ARES delivers elite protection, intelligence and crisis response for high-net-worth families operating in complex environments.
+</p>
 
-<button class="btn en" onclick="goTo('contact')">Private Access</button>
-<button class="btn fr" onclick="goTo('contact')">Accès privé</button>
+<p class="lang fr">
+ARES offre des services de protection, de renseignement et de gestion de crise pour des familles à haut patrimoine évoluant dans des environnements complexes.
+</p>
 
 </div>
+
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="section">
+<section class="section">
 
-<h2 class="en">Integrated Services</h2>
-<h2 class="fr">Services intégrés</h2>
+<h2 class="lang en">Integrated Protection</h2>
+<h2 class="lang fr">Protection intégrée</h2>
 
-<div class="grid">
+<p class="lang en">
+We combine physical security, cyber intelligence and strategic advisory into a unified protection system.
+</p>
 
-<div class="card">
-<h3>Security</h3>
-<p class="en">Close protection and estate security.</p>
-<p class="fr">Protection rapprochée et sécurité des propriétés.</p>
-</div>
-
-<div class="card">
-<h3>Cyber</h3>
-<p class="en">Digital monitoring and privacy.</p>
-<p class="fr">Surveillance numérique et vie privée.</p>
-</div>
-
-<div class="card">
-<h3>Medical</h3>
-<p class="en">Global emergency response.</p>
-<p class="fr">Réponse médicale internationale.</p>
-</div>
-
-</div>
+<p class="lang fr">
+Nous combinons la sécurité physique, le renseignement numérique et le conseil stratégique dans un système de protection unifié.
+</p>
 
 </section>
 
 <!-- MOBILITY -->
 <section class="section alt">
+
 <div class="split">
 
 <div>
-<h2 class="en">Secure Mobility</h2>
-<h2 class="fr">Mobilité sécurisée</h2>
 
-<p class="en">Safe movement across environments.</p>
-<p class="fr">Déplacements sécurisés dans tous les environnements.</p>
+<h2 class="lang en">Secure Mobility</h2>
+<h2 class="lang fr">Mobilité sécurisée</h2>
+
+<p class="lang en">
+From daily movement to international travel, ARES ensures safe and controlled transitions across all environments.
+</p>
+
+<p class="lang fr">
+Des déplacements quotidiens aux voyages internationaux, ARES assure des transitions sécurisées et contrôlées.
+</p>
+
 </div>
 
 <img src="assets/convoy.jpg">
 
 </div>
+
 </section>
 
 <!-- INTEL -->
 <section class="section">
+
 <div class="split">
 
 <img src="assets/intel.jpg">
 
 <div>
-<h2 class="en">Advanced Intelligence</h2>
-<h2 class="fr">Renseignement avancé</h2>
 
-<p class="en">We detect threats before they emerge.</p>
-<p class="fr">Nous détectons les menaces avant qu’elles apparaissent.</p>
+<h2 class="lang en">Advanced Intelligence</h2>
+<h2 class="lang fr">Renseignement avancé</h2>
+
+<p class="lang en">
+We detect, anticipate and neutralize threats before they materialize.
+</p>
+
+<p class="lang fr">
+Nous détectons, anticipons et neutralisons les menaces avant qu’elles ne se concrétisent.
+</p>
+
 </div>
 
 </div>
+
 </section>
 
 <!-- HOME -->
 <section class="section alt">
+
 <div class="split">
 
 <div>
-<h2 class="en">Family Protection</h2>
-<h2 class="fr">Protection familiale</h2>
 
-<p class="en">We secure your most valuable environment.</p>
-<p class="fr">Nous sécurisons vos environnements les plus précieux.</p>
+<h2 class="lang en">Family & Estate Protection</h2>
+<h2 class="lang fr">Protection familiale et résidentielle</h2>
+
+<p class="lang en">
+Your home and family are secured with discreet but highly effective protocols.
+</p>
+
+<p class="lang fr">
+Votre domicile et votre famille sont protégés par des protocoles discrets mais hautement efficaces.
+</p>
+
 </div>
 
 <img src="assets/home.jpg">
 
 </div>
-</section>
-
-<!-- PROGRAMS -->
-<section id="programs" class="section">
-
-<h2 class="en">Programs</h2>
-<h2 class="fr">Programmes</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Essential</h3>
-<p class="en">Monitoring and advisory.</p>
-<p class="fr">Surveillance et accompagnement.</p>
-</div>
-
-<div class="card">
-<h3>Advanced</h3>
-<p class="en">Active protection.</p>
-<p class="fr">Protection active.</p>
-</div>
-
-<div class="card">
-<h3>Elite</h3>
-<p class="en">Full operational control.</p>
-<p class="fr">Contrôle complet.</p>
-</div>
-
-</div>
 
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section alt">
+<!-- FORM -->
+<section class="section">
 
-<h2 class="en">Private Access</h2>
-<h2 class="fr">Accès privé</h2>
+<h2 class="lang en">Private Access</h2>
+<h2 class="lang fr">Accès privé</h2>
 
-<div class="form-box">
+<div class="form">
 
-<div class="prefilter">
+<input placeholder="Name / Nom">
+
 <select>
 <option>Budget</option>
 <option>$3k–$10k</option>
@@ -342,20 +232,15 @@ background:white !important;
 </select>
 
 <select>
-<option>Need</option>
-<option>Family</option>
+<option>Type</option>
+<option>Family Protection</option>
 <option>Travel</option>
 <option>Crisis</option>
-<option>Advisory</option>
 </select>
-</div>
 
-<script src="https://js-na3.hsforms.net/forms/embed/342880637.js" defer></script>
-<div class="hs-form-frame"
-data-region="na3"
-data-form-id="f419a4d0-ce75-4904-960f-c1fe7b3083dc"
-data-portal-id="342880637">
-</div>
+<input placeholder="Email">
+
+<button class="submit">Submit</button>
 
 </div>
 
@@ -363,20 +248,17 @@ data-portal-id="342880637">
 
 <script>
 
-function goTo(id){
-document.getElementById(id).scrollIntoView({behavior:'smooth'});
-}
-
-/* LANG SYSTEM CLEAN */
+/* LANG SYSTEM */
 function setLang(lang){
 
-document.querySelectorAll('.en').forEach(el=>el.classList.remove('active-lang'));
-document.querySelectorAll('.fr').forEach(el=>el.classList.remove('active-lang'));
+document.querySelectorAll('.lang').forEach(el=>el.classList.remove('active-lang'));
 
 document.querySelectorAll('.'+lang).forEach(el=>el.classList.add('active-lang'));
 
-document.getElementById('btn-en').classList.toggle('active', lang==='en');
-document.getElementById('btn-fr').classList.toggle('active', lang==='fr');
+document.getElementById('btn-en').classList.remove('active');
+document.getElementById('btn-fr').classList.remove('active');
+
+document.getElementById('btn-'+lang).classList.add('active');
 
 localStorage.setItem('lang', lang);
 }
@@ -384,9 +266,7 @@ localStorage.setItem('lang', lang);
 document.getElementById('btn-en').onclick = ()=>setLang('en');
 document.getElementById('btn-fr').onclick = ()=>setLang('fr');
 
-document.addEventListener('DOMContentLoaded', ()=>{
 setLang(localStorage.getItem('lang') || 'en');
-});
 
 </script>
 
