@@ -123,7 +123,7 @@ font-weight:600;
 }
 .btn:hover{background:#f5d97a;}
 
-/* FORM */
+/* FORM BOX */
 .form-box{
 margin-top:40px;
 border:1px solid rgba(255,255,255,0.1);
@@ -131,24 +131,59 @@ padding:40px;
 background:#0b111f;
 }
 
+/* PRE-FILTER */
 select{
 width:100%;
 padding:12px;
 margin-top:10px;
-background:white;
-color:black;
-border:none;
+background:#05070d;
+color:white;
+border:1px solid rgba(255,255,255,0.2);
 }
 
-/* HUBSPOT FIX */
-.hs-form-frame input,
-.hs-form-frame textarea{
-background:white !important;
-color:black !important;
+/* ===== HUBSPOT FIX ===== */
+
+.hs-form-frame {
+    background:#0b111f !important;
+    padding:30px !important;
+    border-radius:6px;
 }
-.hs-button{
-background:#d4af37 !important;
-color:black !important;
+
+.hs-form-frame h1,
+.hs-form-frame h2,
+.hs-form-frame p,
+.hs-form-frame label {
+    color:#ddd !important;
+}
+
+.hs-form-frame input,
+.hs-form-frame textarea,
+.hs-form-frame select {
+    background:#05070d !important;
+    color:#fff !important;
+    border:1px solid rgba(255,255,255,0.2) !important;
+    padding:12px !important;
+}
+
+.hs-form-frame input::placeholder {
+    color:#777 !important;
+}
+
+.hs-form-frame .hs-button {
+    background:#d4af37 !important;
+    color:black !important;
+    font-weight:600 !important;
+    border:none !important;
+    padding:14px 28px !important;
+}
+
+.hs-form-frame .hs-button:hover {
+    background:#f5d97a !important;
+}
+
+/* HIDE HUBSPOT BRANDING */
+.hs-form-frame iframe + div {
+    display:none !important;
 }
 
 /* FOOTER */
@@ -162,9 +197,6 @@ grid-template-columns:repeat(4,1fr);
 }
 
 footer img{height:40px;margin-bottom:20px;}
-
-/* LANG */
-.fr{display:none;}
 
 @media(max-width:900px){
 .split{grid-template-columns:1fr;}
@@ -183,11 +215,6 @@ footer .grid{grid-template-columns:1fr 1fr;}
 <a href="#services" class="nav-link">Services</a>
 <a href="#programs" class="nav-link">Programs</a>
 <a href="#contact" class="nav-link">Contact</a>
-
-<div class="lang-toggle">
-<button onclick="setLang('en')" id="btn-en" class="active">EN</button>
-<button onclick="setLang('fr')" id="btn-fr">FR</button>
-</div>
 </div>
 </nav>
 
@@ -264,7 +291,7 @@ footer .grid{grid-template-columns:1fr 1fr;}
 
 <h2>Private Access</h2>
 
-<p>Access is restricted. Engagements are reviewed and approved selectively.</p>
+<p>Access is restricted. Engagements are reviewed selectively.</p>
 
 <div class="form-box">
 
@@ -305,7 +332,7 @@ data-portal-id="342880637">
 
 <div>
 <img src="logo.png">
-<p style="color:#777;">Private security, intelligence and global response.</p>
+<p style="color:#777;">Private security and intelligence operations.</p>
 </div>
 
 <div>
@@ -339,16 +366,6 @@ data-portal-id="342880637">
 <script>
 function scrollToSection(id){
 document.getElementById(id).scrollIntoView({behavior:'smooth'});
-}
-
-function setLang(lang){
-document.querySelectorAll('.en').forEach(el=>el.style.display = (lang==='en'?'block':'none'));
-document.querySelectorAll('.fr').forEach(el=>el.style.display = (lang==='fr'?'block':'none'));
-
-document.getElementById('btn-en').classList.remove('active');
-document.getElementById('btn-fr').classList.remove('active');
-
-document.getElementById('btn-'+lang).classList.add('active');
 }
 </script>
 
