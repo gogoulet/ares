@@ -123,7 +123,7 @@ font-weight:600;
 }
 .btn:hover{background:#f5d97a;}
 
-/* FORM BOX */
+/* FORM */
 .form-box{
 margin-top:40px;
 border:1px solid rgba(255,255,255,0.1);
@@ -131,7 +131,6 @@ padding:40px;
 background:#0b111f;
 }
 
-/* PRE-FILTER */
 select{
 width:100%;
 padding:12px;
@@ -141,49 +140,16 @@ color:white;
 border:1px solid rgba(255,255,255,0.2);
 }
 
-/* ===== HUBSPOT FIX ===== */
-
-.hs-form-frame {
-    background:#0b111f !important;
-    padding:30px !important;
-    border-radius:6px;
-}
-
-.hs-form-frame h1,
-.hs-form-frame h2,
-.hs-form-frame p,
-.hs-form-frame label {
-    color:#ddd !important;
-}
-
+/* HUBSPOT FIX */
 .hs-form-frame input,
-.hs-form-frame textarea,
-.hs-form-frame select {
-    background:#05070d !important;
-    color:#fff !important;
-    border:1px solid rgba(255,255,255,0.2) !important;
-    padding:12px !important;
+.hs-form-frame textarea{
+background:#05070d !important;
+color:white !important;
+border:1px solid rgba(255,255,255,0.2) !important;
 }
-
-.hs-form-frame input::placeholder {
-    color:#777 !important;
-}
-
-.hs-form-frame .hs-button {
-    background:#d4af37 !important;
-    color:black !important;
-    font-weight:600 !important;
-    border:none !important;
-    padding:14px 28px !important;
-}
-
-.hs-form-frame .hs-button:hover {
-    background:#f5d97a !important;
-}
-
-/* HIDE HUBSPOT BRANDING */
-.hs-form-frame iframe + div {
-    display:none !important;
+.hs-button{
+background:#d4af37 !important;
+color:black !important;
 }
 
 /* FOOTER */
@@ -197,6 +163,9 @@ grid-template-columns:repeat(4,1fr);
 }
 
 footer img{height:40px;margin-bottom:20px;}
+
+/* LANG */
+.fr{display:none;}
 
 @media(max-width:900px){
 .split{grid-template-columns:1fr;}
@@ -212,9 +181,19 @@ footer .grid{grid-template-columns:1fr 1fr;}
 <img src="logo.png">
 
 <div style="display:flex;align-items:center;gap:25px;">
-<a href="#services" class="nav-link">Services</a>
-<a href="#programs" class="nav-link">Programs</a>
-<a href="#contact" class="nav-link">Contact</a>
+<a href="#services" class="nav-link en">Services</a>
+<a href="#services" class="nav-link fr">Services</a>
+
+<a href="#programs" class="nav-link en">Programs</a>
+<a href="#programs" class="nav-link fr">Programmes</a>
+
+<a href="#contact" class="nav-link en">Contact</a>
+<a href="#contact" class="nav-link fr">Contact</a>
+
+<div class="lang-toggle">
+<button onclick="setLang('en')" id="btn-en" class="active">EN</button>
+<button onclick="setLang('fr')" id="btn-fr">FR</button>
+</div>
 </div>
 </nav>
 
@@ -223,93 +202,112 @@ footer .grid{grid-template-columns:1fr 1fr;}
 <div class="overlay"></div>
 
 <div class="hero-content">
-<h1>Control the Outcome</h1>
-<p>Protection, intelligence and global response for high-net-worth families.</p>
+
+<h1 class="en">Control the Outcome</h1>
+<h1 class="fr">Contrôler l’issue</h1>
+
+<p class="en">Protection, intelligence and global response for high-net-worth families.</p>
+<p class="fr">Protection, intelligence et réponse globale pour des familles à haut patrimoine.</p>
+
 <br>
-<button class="btn" onclick="scrollToSection('contact')">Private Access</button>
+
+<button class="btn en" onclick="scrollToSection('contact')">Private Access</button>
+<button class="btn fr" onclick="scrollToSection('contact')">Accès privé</button>
+
 </div>
 </section>
 
 <!-- SERVICES -->
 <section id="services" class="section">
-<h2>Integrated Risk Coverage</h2>
+
+<h2 class="en">Integrated Risk Coverage</h2>
+<h2 class="fr">Couverture des risques intégrée</h2>
 
 <div class="grid">
-<div class="card"><h3>Physical Security</h3><p>Close protection and estate security.</p></div>
-<div class="card"><h3>Cyber & Privacy</h3><p>Identity and digital monitoring.</p></div>
-<div class="card"><h3>Medical</h3><p>Global emergency response.</p></div>
-<div class="card"><h3>Intelligence</h3><p>Continuous threat analysis.</p></div>
-</div>
-</section>
 
-<!-- CONVOY -->
-<section class="section alt">
-<div class="split">
-<div>
-<h2>Secure Mobility</h2>
-<p>ARES ensures safe and controlled movement across all environments.</p>
+<div class="card">
+<h3>Physical Security</h3>
+<p class="en">Close protection and estate security.</p>
+<p class="fr">Protection rapprochée et sécurité des propriétés.</p>
 </div>
-<img src="assets/convoy.jpg">
-</div>
-</section>
 
-<!-- INTEL -->
-<section class="section">
-<div class="split">
-<img src="assets/intel.jpg">
-<div>
-<h2>Advanced Intelligence</h2>
-<p>We anticipate risks before they materialize.</p>
+<div class="card">
+<h3>Cyber & Privacy</h3>
+<p class="en">Identity and digital monitoring.</p>
+<p class="fr">Surveillance numérique et protection de l'identité.</p>
 </div>
-</div>
-</section>
 
-<!-- HOME -->
-<section class="section alt">
-<div class="split">
-<div>
-<h2>Family Protection</h2>
-<p>We secure families, residences and environments.</p>
+<div class="card">
+<h3>Medical</h3>
+<p class="en">Global emergency response.</p>
+<p class="fr">Réponse médicale internationale.</p>
 </div>
-<img src="assets/home.jpg">
+
+<div class="card">
+<h3>Intelligence</h3>
+<p class="en">Continuous threat analysis.</p>
+<p class="fr">Analyse continue des menaces.</p>
+</div>
+
 </div>
 </section>
 
 <!-- PROGRAMS -->
-<section id="programs" class="section">
-<h2>Programs</h2>
+<section id="programs" class="section alt">
+
+<h2 class="en">Programs</h2>
+<h2 class="fr">Programmes</h2>
 
 <div class="grid">
-<div class="card"><h3>Essential</h3><p>Monitoring and advisory.</p></div>
-<div class="card"><h3>Advanced</h3><p>Active protection.</p></div>
-<div class="card"><h3>Elite Command</h3><p>Full operational control.</p></div>
+
+<div class="card">
+<h3>Essential</h3>
+<p class="en">Monitoring and advisory.</p>
+<p class="fr">Surveillance et accompagnement.</p>
+</div>
+
+<div class="card">
+<h3>Advanced</h3>
+<p class="en">Active protection.</p>
+<p class="fr">Protection active.</p>
+</div>
+
+<div class="card">
+<h3>Elite Command</h3>
+<p class="en">Full operational control.</p>
+<p class="fr">Contrôle opérationnel complet.</p>
+</div>
+
 </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section alt">
+<section id="contact" class="section">
 
-<h2>Private Access</h2>
+<h2 class="en">Private Access</h2>
+<h2 class="fr">Accès privé</h2>
 
-<p>Access is restricted. Engagements are reviewed selectively.</p>
+<p class="en">Access is restricted. Engagements are reviewed selectively.</p>
+<p class="fr">L’accès est restreint. Les mandats sont sélectionnés avec soin.</p>
 
 <div class="form-box">
 
-<h3>Pre-Qualification</h3>
+<h3 class="en">Pre-Qualification</h3>
+<h3 class="fr">Préqualification</h3>
 
 <select>
-<option>Estimated Monthly Budget</option>
+<option>Budget</option>
 <option>$3,000 – $10,000</option>
 <option>$10,000 – $25,000</option>
 <option>$25,000+</option>
 </select>
 
 <select>
-<option>Type of Need</option>
+<option>Type</option>
 <option>Family Protection</option>
 <option>Travel Security</option>
-<option>Crisis Situation</option>
-<option>Discreet Advisory</option>
+<option>Crisis</option>
+<option>Advisory</option>
 </select>
 
 <br><br>
@@ -322,7 +320,6 @@ data-portal-id="342880637">
 </div>
 
 </div>
-
 </section>
 
 <!-- FOOTER -->
@@ -332,7 +329,8 @@ data-portal-id="342880637">
 
 <div>
 <img src="logo.png">
-<p style="color:#777;">Private security and intelligence operations.</p>
+<p class="en">Private security and intelligence operations.</p>
+<p class="fr">Sécurité privée et opérations de renseignement.</p>
 </div>
 
 <div>
@@ -364,9 +362,34 @@ data-portal-id="342880637">
 </footer>
 
 <script>
+
+/* SCROLL */
 function scrollToSection(id){
 document.getElementById(id).scrollIntoView({behavior:'smooth'});
 }
+
+/* LANG SWITCH */
+function setLang(lang){
+
+document.querySelectorAll('.en').forEach(el=>{
+el.style.display = (lang === 'en') ? '' : 'none';
+});
+
+document.querySelectorAll('.fr').forEach(el=>{
+el.style.display = (lang === 'fr') ? '' : 'none';
+});
+
+document.getElementById('btn-en').classList.toggle('active', lang==='en');
+document.getElementById('btn-fr').classList.toggle('active', lang==='fr');
+
+localStorage.setItem('lang', lang);
+}
+
+document.addEventListener('DOMContentLoaded', ()=>{
+const savedLang = localStorage.getItem('lang') || 'en';
+setLang(savedLang);
+});
+
 </script>
 
 </body>
