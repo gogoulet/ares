@@ -14,7 +14,6 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     background:#f7f7f5;
     color:#111;
-    scroll-behavior:smooth;
 }
 
 /* HEADER */
@@ -29,7 +28,7 @@ header {
 nav {
     display:flex;
     justify-content:space-between;
-    padding:20px 60px;
+    padding:20px 40px;
 }
 
 .logo img { height:40px; }
@@ -45,94 +44,81 @@ nav {
     height:100vh;
     display:flex;
     align-items:center;
-    padding:0 60px;
+    padding:0 40px;
     background:url('assets/hero.jpg') center/cover;
     color:#fff;
 }
 
 .hero-overlay {
     background:rgba(0,0,0,0.4);
-    padding:60px;
+    padding:50px;
 }
 
 .hero h1 {
-    font-size:4rem;
-    max-width:800px;
+    font-size:3.5rem;
 }
 
 .hero p {
-    font-size:1.3rem;
+    font-size:1.2rem;
+}
+
+/* STORY FIX */
+.story {
+    background:#fff;
+    padding:80px 20px;
+}
+
+.story p {
+    max-width:700px;
+    margin:auto;
+    text-align:center;
+    font-size:1.2rem;
 }
 
 /* SECTIONS */
 section {
-    padding:140px 40px;
+    padding:120px 20px;
 }
 
 .centered {
+    text-align:center;
     max-width:900px;
     margin:auto;
-    text-align:center;
 }
 
 h2 {
-    font-size:3rem;
-    margin-bottom:20px;
+    font-size:2.8rem;
 }
 
-.section-intro {
-    margin:0 auto 60px;
-    max-width:700px;
-    opacity:0.75;
-}
-
-/* GRID */
+/* GRID FIX */
 .grid {
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:50px;
-    max-width:1200px;
-    margin:auto;
+    grid-template-columns:repeat(2,1fr);
+    gap:40px;
+    max-width:900px;
+    margin:60px auto 0;
 }
 
-/* CARDS */
 .card {
-    padding:30px;
-    transition:all 0.35s ease;
-    border-radius:8px;
+    padding:20px;
+    transition:0.3s;
 }
 
 .card:hover {
-    transform:translateY(-10px);
-    background:#fff;
-    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+    transform:translateY(-6px);
 }
 
 .card h3 {
-    position:relative;
-}
-
-.card h3::after {
-    content:"";
-    display:block;
-    width:0;
-    height:2px;
-    background:#c9a96e;
-    transition:0.3s;
-    margin-top:6px;
-}
-
-.card:hover h3::after {
-    width:40px;
+    font-size:1.4rem;
 }
 
 /* CTA */
 .cta-section {
     background:linear-gradient(120deg,#111,#222);
     color:#fff;
+    text-align:center;
 }
 
-/* BUTTON */
 .btn {
     display:inline-block;
     margin-top:25px;
@@ -140,45 +126,41 @@ h2 {
     border:1px solid #fff;
     color:#fff;
     text-decoration:none;
-    transition:0.3s;
-}
-
-.btn:hover {
-    background:#fff;
-    color:#000;
-    transform:scale(1.05);
-}
-
-.light-btn {
-    border-color:#111;
-    color:#111;
 }
 
 /* FORM */
 form {
-    max-width:600px;
+    max-width:500px;
     margin:40px auto;
 }
 
 input, select, textarea {
     width:100%;
     padding:14px;
-    margin-bottom:14px;
-    border:1px solid #ddd;
+    margin-bottom:12px;
 }
 
 /* FOOTER */
 .footer {
     background:#111;
     color:#bbb;
-    padding:60px 40px;
     text-align:center;
+    padding:50px 20px;
 }
 
-.footer small {
-    display:block;
-    margin-top:10px;
-    opacity:0.6;
+/* MOBILE */
+@media(max-width:768px){
+
+.hero h1 {font-size:2.2rem;}
+
+.grid {
+    grid-template-columns:1fr;
+}
+
+.hero-overlay {
+    padding:30px;
+}
+
 }
 
 </style>
@@ -200,8 +182,8 @@ input, select, textarea {
 <h1 data-fr="Clarté stratégique pour des environnements complexes"
      data-en="Strategic clarity for complex environments"></h1>
 
-<p data-fr="Nous accompagnons les dirigeants, les familles et les organisations dans la gestion du risque, de la perception et de l’influence."
-   data-en="We advise leaders, families and organizations on risk, perception and influence."></p>
+<p data-fr="Nous accompagnons les dirigeants, les familles et les organisations dans la gestion du risque et de l’influence."
+   data-en="We advise leaders, families and organizations on risk and influence."></p>
 
 <a href="#contact" class="btn"
    data-fr="Demande confidentielle"
@@ -211,13 +193,11 @@ input, select, textarea {
 </section>
 
 <!-- STORY -->
-<section>
-<div class="centered">
-<p class="section-intro"
-data-fr="Certains environnements ne tolèrent pas l’improvisation. Lorsque les enjeux deviennent complexes, les décisions doivent être structurées, rapides et éclairées."
-data-en="Some environments do not tolerate improvisation. When stakes become complex, decisions must be structured and informed.">
-</p>
-</div>
+<section class="story">
+
+<p data-fr="Certains environnements ne tolèrent pas l’improvisation. Lorsque les enjeux deviennent complexes, les décisions doivent être structurées, rapides et éclairées."
+   data-en="Some environments do not tolerate improvisation. When stakes become complex, decisions must be structured and informed."></p>
+
 </section>
 
 <!-- SERVICES -->
@@ -232,26 +212,26 @@ data-en="Some environments do not tolerate improvisation. When stakes become com
 
 <div class="card">
 <h3>Risk & Intelligence</h3>
-<p data-fr="Identification des vulnérabilités et analyse stratégique."
-   data-en="Identifying vulnerabilities and strategic risks."></p>
+<p data-fr="Analyse des vulnérabilités"
+   data-en="Risk analysis"></p>
 </div>
 
 <div class="card">
 <h3>Protection Strategy</h3>
-<p data-fr="Cadres adaptés pour individus et organisations."
-   data-en="Tailored protection frameworks."></p>
+<p data-fr="Cadres adaptés"
+   data-en="Protection frameworks"></p>
 </div>
 
 <div class="card">
 <h3>Crisis Management</h3>
-<p data-fr="Maintien du contrôle sous pression."
-   data-en="Maintaining control under pressure."></p>
+<p data-fr="Gestion sous pression"
+   data-en="Crisis control"></p>
 </div>
 
 <div class="card">
 <h3>Influence</h3>
-<p data-fr="Gestion de la perception et des dynamiques publiques."
-   data-en="Managing perception and stakeholder dynamics."></p>
+<p data-fr="Perception publique"
+   data-en="Public perception"></p>
 </div>
 
 </div>
@@ -260,18 +240,14 @@ data-en="Some environments do not tolerate improvisation. When stakes become com
 
 <!-- CTA -->
 <section class="cta-section">
-<div class="centered">
 
 <h2 data-fr="Ce n’est pas une question de sécurité"
     data-en="This is not about security"></h2>
 
-<p class="section-intro"
-data-fr="C’est une question de contrôle dans un environnement instable."
-data-en="This is about control in unstable environments."></p>
+<a href="#contact" class="btn"
+   data-fr="Parler à un conseiller"
+   data-en="Speak with an advisor"></a>
 
-<a href="#contact" class="btn">Speak with an advisor</a>
-
-</div>
 </section>
 
 <!-- FORM -->
@@ -290,21 +266,21 @@ data-en="This is about control in unstable environments."></p>
 <input placeholder="Email">
 
 <select>
-<option>Type of engagement</option>
+<option data-fr="Type de mandat" data-en="Type of engagement"></option>
 <option>Strategic Advisory</option>
 <option>Protection</option>
 <option>Crisis</option>
 </select>
 
 <select>
-<option>Budget</option>
+<option data-fr="Budget estimé" data-en="Budget"></option>
 <option>$10k-$25k</option>
 <option>$25k-$50k</option>
 <option>$50k+</option>
 </select>
 
 <select>
-<option>Urgency</option>
+<option data-fr="Urgence" data-en="Urgency"></option>
 <option>Low</option>
 <option>Medium</option>
 <option>High</option>
@@ -312,31 +288,18 @@ data-en="This is about control in unstable environments."></p>
 
 <textarea placeholder="Message"></textarea>
 
-<button class="btn light-btn">Submit</button>
+<button class="btn"
+data-fr="Envoyer"
+data-en="Submit"></button>
 
 </form>
 
 </section>
 
-<!-- FINAL CTA -->
-<section class="cta-section">
-<div class="centered">
-
-<h2 data-fr="Les bons mandats commencent par une conversation"
-    data-en="The right engagements start with a conversation"></h2>
-
-<a href="#contact" class="btn">Request Access</a>
-
-</div>
-</section>
-
 <footer class="footer">
 
-<strong>ARES OPSEC</strong><br>
-Strategic Security, Risk & Influence Advisory
-
-<small>© 2026 ARES OPSEC. All rights reserved.</small>
-<small>ARES OPSEC™ — Proprietary frameworks & methodologies.</small>
+ARES OPSEC<br>
+© 2026 — All rights reserved
 
 </footer>
 
