@@ -3,413 +3,263 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ARES OPSEC</title>
+
+<title>ARES OPSEC — Strategic Security & Risk Intelligence</title>
 
 <style>
-
-/* RESET */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+body {
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background:#0a0f1a;
+    color:#fff;
 }
 
-/* BASE */
-body{
-font-family:Arial, sans-serif;
-background:#05070d;
-color:white;
-overflow-x:hidden;
+.container {
+    width:90%;
+    max-width:1200px;
+    margin:auto;
 }
 
-h1,h2,h3{
-color:#d4af37;
-margin-bottom:10px;
+header {
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(10,15,26,0.9);
+    backdrop-filter: blur(10px);
+    z-index:1000;
 }
 
-p{
-color:#bbb;
-line-height:1.6;
+nav {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
 }
 
-/* NAV */
-nav{
-position:fixed;
-top:0;
-width:100%;
-background:black;
-padding:15px 25px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-z-index:1000;
+.logo {
+    font-weight:bold;
+    letter-spacing:2px;
 }
 
-.logo{
-font-weight:bold;
-letter-spacing:2px;
+.toggle {
+    cursor:pointer;
+    border:1px solid #c9a96e;
+    padding:5px 10px;
+    font-size:12px;
 }
 
-.toggle{
-display:flex;
-gap:6px;
+.hero {
+    height:100vh;
+    display:flex;
+    align-items:center;
+    background:linear-gradient(rgba(10,15,26,0.7), rgba(10,15,26,1)), url('hero.jpg') center/cover;
 }
 
-.toggle button{
-background:#111;
-border:1px solid #444;
-color:#aaa;
-padding:6px 14px;
-cursor:pointer;
-transition:0.3s;
+.hero h1 {
+    font-size:3rem;
+    margin-bottom:20px;
 }
 
-.toggle button:hover{
-border-color:#d4af37;
+.hero p {
+    font-size:1.2rem;
+    max-width:600px;
 }
 
-.toggle .active{
-color:#d4af37;
-border-color:#d4af37;
+.btn {
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    border:1px solid #c9a96e;
+    color:#c9a96e;
+    text-decoration:none;
+    transition:0.3s;
 }
 
-/* HERO */
-.hero{
-height:100vh;
-background:url('assets/hero.jpg') center/cover no-repeat;
-display:flex;
-align-items:center;
-padding:0 8%;
-position:relative;
+.btn:hover {
+    background:#c9a96e;
+    color:#000;
 }
 
-.hero::after{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:linear-gradient(to right, rgba(0,0,0,0.75), rgba(0,0,0,0.2));
+section {
+    padding:100px 0;
 }
 
-.hero-content{
-position:relative;
-z-index:2;
-max-width:700px;
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
 }
 
-.hero h1{
-font-size:48px;
+.card {
+    border:1px solid rgba(255,255,255,0.1);
+    padding:30px;
+    transition:0.3s;
 }
 
-.hero p{
-font-size:18px;
+.card:hover {
+    border-color:#c9a96e;
+    transform:translateY(-5px);
 }
 
-/* BUTTON */
-.btn{
-background:#d4af37;
-color:black;
-padding:12px 22px;
-border:none;
-cursor:pointer;
-margin-top:20px;
-font-weight:bold;
-transition:0.3s;
+.fade {
+    opacity:0;
+    transform:translateY(30px);
+    transition:1s;
 }
 
-.btn:hover{
-background:#f1c84b;
-transform:translateY(-2px);
+.fade.visible {
+    opacity:1;
+    transform:translateY(0);
 }
 
-/* SECTIONS */
-.section{
-padding:100px 8%;
-opacity:0;
-transform:translateY(40px);
-transition:1s;
+footer {
+    padding:50px 0;
+    text-align:center;
+    font-size:0.8rem;
+    color:#aaa;
 }
-
-.section.visible{
-opacity:1;
-transform:translateY(0);
-}
-
-.alt{
-background:#0b111f;
-}
-
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:30px;
-}
-
-.card{
-padding:25px;
-border:1px solid rgba(255,255,255,0.1);
-background:#0b111f;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-border-color:#d4af37;
-}
-
-/* SPLIT */
-.split{
-display:flex;
-gap:40px;
-align-items:center;
-}
-
-.split img{
-width:50%;
-border-radius:6px;
-transition:0.4s;
-}
-
-.split img:hover{
-transform:scale(1.02);
-}
-
-/* FORM */
-.form{
-background:#0b111f;
-padding:30px;
-border:1px solid rgba(255,255,255,0.1);
-margin-top:20px;
-}
-
-input, select{
-width:100%;
-padding:12px;
-margin-top:10px;
-background:#05070d;
-border:1px solid #444;
-color:white;
-}
-
-/* LANG */
-.lang{
-display:none;
-}
-
-.show{
-display:block;
-}
-
-/* MOBILE */
-@media(max-width:900px){
-
-.hero h1{
-font-size:32px;
-}
-
-.split{
-flex-direction:column;
-}
-
-.split img{
-width:100%;
-}
-
-.section{
-padding:80px 20px;
-}
-
-nav{
-padding:10px 15px;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
+<header>
+<div class="container">
 <nav>
 <div class="logo">ARES OPSEC</div>
-
-<div class="toggle">
-<button id="btn-en">EN</button>
-<button id="btn-fr">FR</button>
-</div>
+<div class="toggle" onclick="toggleLang()">FR / EN</div>
 </nav>
+</div>
+</header>
 
-<!-- HERO -->
 <section class="hero">
-<div class="hero-content">
+<div class="container">
+<h1 data-fr="Nous protégeons ce qui ne peut pas être remplacé."
+     data-en="We protect what cannot be replaced.">
+Nous protégeons ce qui ne peut pas être remplacé.
+</h1>
 
-<h1 class="lang en">Control the Outcome</h1>
-<h1 class="lang fr">Contrôler l’issue</h1>
-
-<p class="lang en">
-ARES delivers elite protection, intelligence and crisis response for high-net-worth families.
+<p data-fr="ARES OPSEC est un partenaire stratégique en sécurité, gestion du risque et intelligence opérationnelle pour les familles, les organisations et les décideurs exposés."
+   data-en="ARES OPSEC is a strategic partner in security, risk management and operational intelligence for exposed families, organizations and decision-makers.">
+ARES OPSEC est un partenaire stratégique...
 </p>
 
-<p class="lang fr">
-ARES offre des services de protection, de renseignement et de gestion de crise pour des familles à haut patrimoine.
-</p>
-
-<button class="btn lang en">Request Access</button>
-<button class="btn lang fr">Demander un accès</button>
-
+<a href="#" class="btn"
+   data-fr="Demande de consultation privée"
+   data-en="Request Private Consultation">
+Demande de consultation privée
+</a>
 </div>
 </section>
 
-<!-- SERVICES -->
-<section class="section">
-<h2 class="lang en">Integrated Protection</h2>
-<h2 class="lang fr">Protection intégrée</h2>
+<section class="fade">
+<div class="container">
+<h2 data-fr="La réalité"
+    data-en="The Reality">La réalité</h2>
+
+<p data-fr="Le monde n'est plus prévisible. L'influence attire l'attention. L'attention crée du risque."
+   data-en="The world is no longer predictable. Influence attracts attention. Attention creates risk.">
+Le monde n'est plus prévisible...
+</p>
+</div>
+</section>
+
+<section class="fade">
+<div class="container">
+<h2 data-fr="Nos expertises"
+    data-en="Our Capabilities">Nos expertises</h2>
 
 <div class="grid">
 
 <div class="card">
-<h3>Physical Security</h3>
-<p class="lang en">Close protection and estate security.</p>
-<p class="lang fr">Protection rapprochée et sécurité résidentielle.</p>
+<h3>Intelligence & Risk</h3>
+<p>Threat analysis, profiling, geopolitical and social risk mapping.</p>
 </div>
 
 <div class="card">
-<h3>Cyber Intelligence</h3>
-<p class="lang en">Threat monitoring and digital privacy.</p>
-<p class="lang fr">Surveillance et protection numérique.</p>
+<h3>Protective Operations</h3>
+<p>Executive protection, family security and secure mobility.</p>
 </div>
 
 <div class="card">
-<h3>Medical Response</h3>
-<p class="lang en">Rapid intervention worldwide.</p>
-<p class="lang fr">Intervention rapide à l’international.</p>
+<h3>Crisis Response</h3>
+<p>Incident management, crisis containment and recovery.</p>
+</div>
+
+<div class="card">
+<h3>Global Support</h3>
+<p>Medical, logistical and security assistance worldwide.</p>
 </div>
 
 </div>
-</section>
-
-<!-- MOBILITY -->
-<section class="section alt">
-<div class="split">
-
-<div>
-<h2 class="lang en">Secure Mobility</h2>
-<h2 class="lang fr">Mobilité sécurisée</h2>
-
-<p class="lang en">Safe movement across all environments.</p>
-<p class="lang fr">Déplacements sécurisés dans tous les environnements.</p>
-
-<button class="btn lang en">Plan Movement</button>
-<button class="btn lang fr">Planifier</button>
-
-</div>
-
-<img src="assets/convoy.jpg">
-
 </div>
 </section>
 
-<!-- INTEL -->
-<section class="section">
-<div class="split">
+<section class="fade">
+<div class="container">
+<h2 data-fr="Qui nous protégeons"
+    data-en="Who We Protect">Qui nous protégeons</h2>
 
-<img src="assets/intel.jpg">
-
-<div>
-<h2 class="lang en">Advanced Intelligence</h2>
-<h2 class="lang fr">Renseignement avancé</h2>
-
-<p class="lang en">We detect threats before they happen.</p>
-<p class="lang fr">Nous détectons les menaces avant qu’elles arrivent.</p>
-
-<button class="btn lang en">Access Intel</button>
-<button class="btn lang fr">Accéder</button>
-
+<div class="grid">
+<div class="card">High-net-worth families</div>
+<div class="card">Executives & public figures</div>
+<div class="card">Sensitive projects</div>
+<div class="card">Institutional stakeholders</div>
 </div>
-
 </div>
 </section>
 
-<!-- HOME -->
-<section class="section alt">
-<div class="split">
+<section class="fade">
+<div class="container">
+<h2 data-fr="Crédibilité"
+    data-en="Credibility">Crédibilité</h2>
 
-<div>
-<h2 class="lang en">Family Protection</h2>
-<h2 class="lang fr">Protection familiale</h2>
-
-<p class="lang en">Your environment secured at all times.</p>
-<p class="lang fr">Votre environnement sécurisé en tout temps.</p>
-
-<button class="btn lang en">Secure Now</button>
-<button class="btn lang fr">Sécuriser</button>
-
-</div>
-
-<img src="assets/home.jpg">
-
+<p>
+Confidential mandates across Canada and internationally.<br>
+Advisors from security, intelligence and public affairs sectors.<br>
+Operational experience in high-risk environments.
+</p>
 </div>
 </section>
 
-<!-- CONTACT -->
-<section class="section">
-<h2 class="lang en">Private Access</h2>
-<h2 class="lang fr">Accès privé</h2>
+<section class="fade">
+<div class="container">
+<h2 data-fr="Consultation privée"
+    data-en="Private Consultation">Consultation privée</h2>
 
-<div class="form">
-
-<input placeholder="Name / Nom">
-
-<select>
-<option>Budget</option>
-<option>$3k–$10k</option>
-<option>$10k+</option>
-</select>
-
-<input placeholder="Email">
-
+<form>
+<input type="text" placeholder="Name" style="width:100%;padding:10px;margin-bottom:10px;">
+<input type="email" placeholder="Email" style="width:100%;padding:10px;margin-bottom:10px;">
+<textarea placeholder="Message" style="width:100%;padding:10px;"></textarea>
 <button class="btn">Submit</button>
-
+</form>
 </div>
-
 </section>
+
+<footer>
+ARES OPSEC — Strategic Security & Risk Intelligence
+</footer>
 
 <script>
-
-/* LANG */
-function setLang(lang){
-document.querySelectorAll('.lang').forEach(el=>el.classList.remove('show'));
-document.querySelectorAll('.'+lang).forEach(el=>el.classList.add('show'));
-
-document.getElementById('btn-en').classList.remove('active');
-document.getElementById('btn-fr').classList.remove('active');
-document.getElementById('btn-'+lang).classList.add('active');
-
-localStorage.setItem('lang', lang);
+function toggleLang(){
+    const elements = document.querySelectorAll("[data-fr]");
+    elements.forEach(el=>{
+        if(el.innerHTML === el.dataset.fr){
+            el.innerHTML = el.dataset.en;
+        } else {
+            el.innerHTML = el.dataset.fr;
+        }
+    });
 }
 
-document.getElementById('btn-en').onclick=()=>setLang('en');
-document.getElementById('btn-fr').onclick=()=>setLang('fr');
-
-setLang(localStorage.getItem('lang') || 'fr');
-
-/* FADE SECTIONS */
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add('visible');
-}
+const faders = document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
+    faders.forEach(el=>{
+        if(el.getBoundingClientRect().top < window.innerHeight - 50){
+            el.classList.add('visible');
+        }
+    });
 });
-});
-
-document.querySelectorAll('.section').forEach(sec=>{
-observer.observe(sec);
-});
-
 </script>
 
 </body>
