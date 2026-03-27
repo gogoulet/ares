@@ -8,13 +8,16 @@
 
 <style>
 
+/* GLOBAL */
 body {
     margin:0;
     font-family: 'Segoe UI', sans-serif;
     background:#0b0f19;
     color:#fff;
+    line-height:1.6;
 }
 
+/* HEADER */
 header {
     position:fixed;
     width:100%;
@@ -26,7 +29,7 @@ header {
 nav {
     display:flex;
     justify-content:space-between;
-    padding:20px 40px;
+    padding:20px 60px;
 }
 
 .logo img { height:40px; }
@@ -42,56 +45,121 @@ nav {
     height:100vh;
     display:flex;
     align-items:center;
-    padding:0 40px;
+    padding:0 60px;
     background:linear-gradient(rgba(0,0,0,0.6), #0b0f19),
                url('assets/hero.jpg') center/cover;
 }
 
 .hero h1 {
-    font-size:4rem;
-    line-height:1.1;
+    font-size:5rem;
+    max-width:900px;
+    line-height:1.05;
 }
 
 .hero p {
-    max-width:600px;
+    font-size:1.4rem;
+    max-width:700px;
+    margin-top:20px;
     opacity:0.85;
 }
 
 /* SECTIONS */
 section {
-    padding:120px 40px;
+    padding:160px 60px;
 }
 
 h2 {
-    font-size:2.8rem;
-    margin-bottom:20px;
+    font-size:3.8rem;
+    max-width:900px;
+    margin-bottom:40px;
 }
 
+.section-intro {
+    font-size:1.2rem;
+    max-width:700px;
+    margin-bottom:60px;
+    opacity:0.75;
+}
+
+/* GRID */
 .grid {
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:40px;
 }
 
+/* CARDS */
 .card {
-    padding:30px;
+    padding:50px;
     border:1px solid rgba(255,255,255,0.08);
+    background:rgba(255,255,255,0.02);
+    transition:0.4s;
+}
+
+.card:hover {
+    transform:translateY(-12px);
+    border-color:#c9a96e;
+}
+
+.card h3 {
+    font-size:1.6rem;
+    margin-bottom:15px;
+}
+
+.card p {
+    opacity:0.75;
+}
+
+/* PARALLAX */
+.parallax {
+    height:60vh;
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
 }
 
 /* BUTTON */
 .btn {
     display:inline-block;
-    margin-top:20px;
-    padding:12px 25px;
+    margin-top:30px;
+    padding:14px 30px;
     border:1px solid #c9a96e;
     color:#c9a96e;
     text-decoration:none;
 }
 
+.btn:hover {
+    background:#c9a96e;
+    color:#000;
+}
+
+/* FORM */
+input, textarea {
+    width:100%;
+    padding:14px;
+    margin-bottom:10px;
+    background:#0c111c;
+    border:1px solid rgba(255,255,255,0.1);
+    color:#fff;
+}
+
+/* FOOTER */
 footer {
     text-align:center;
     padding:60px;
     color:#666;
+}
+
+/* ANIMATION */
+.fade {
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.fade.visible {
+    opacity:1;
+    transform:translateY(0);
 }
 
 </style>
@@ -106,8 +174,9 @@ footer {
 </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-<div>
+<div class="fade">
 
 <h1 data-fr="Clarté stratégique dans des environnements complexes"
      data-en="Strategic clarity in complex environments"></h1>
@@ -122,47 +191,117 @@ footer {
 </div>
 </section>
 
+<div class="parallax" style="background-image:url('assets/convoy.jpg')"></div>
+
+<!-- ADVISORY -->
 <section>
-<h2>Advisory</h2>
+<div class="fade">
+
+<h2>Strategic Advisory</h2>
+
+<p class="section-intro">
+We provide structured clarity in environments where risk, influence and perception are interconnected.
+Our approach integrates intelligence, governance and protective strategy into a unified advisory model.
+</p>
 
 <div class="grid">
-<div class="card">Strategic Risk & Intelligence</div>
-<div class="card">Protective Strategy</div>
-<div class="card">Crisis Governance</div>
-<div class="card">Influence & Acceptability</div>
+
+<div class="card">
+<h3>Strategic Risk & Intelligence</h3>
+<p>Analysis of complex environments, exposure mapping and evolving risk identification.</p>
+</div>
+
+<div class="card">
+<h3>Protective Strategy</h3>
+<p>Tailored frameworks for executives, families and high-visibility environments.</p>
+</div>
+
+<div class="card">
+<h3>Crisis Governance</h3>
+<p>Structured decision-making under pressure to maintain clarity and continuity.</p>
+</div>
+
+<div class="card">
+<h3>Influence & Acceptability</h3>
+<p>Perception analysis, stakeholder dynamics and reputational risk alignment.</p>
+</div>
+
+</div>
 </div>
 </section>
 
-<section>
-<h2>How We Work</h2>
+<div class="parallax" style="background-image:url('assets/intel.jpg')"></div>
 
-<p>
-Assessment • Strategic Mapping • Controlled Deployment • Continuous Oversight
-</p>
-</section>
-
+<!-- WHO -->
 <section>
+<div class="fade">
+
 <h2>Who We Advise</h2>
 
-<p>
-Executives • Family Offices • Institutions • Sensitive Projects
+<p class="section-intro">
+We work with individuals and organizations operating where visibility, influence and decision-making carry elevated stakes.
 </p>
+
+<div class="grid">
+
+<div class="card">
+<h3>Executives</h3>
+<p>Leadership exposed to complex operational and reputational environments.</p>
+</div>
+
+<div class="card">
+<h3>Family Offices</h3>
+<p>Private clients requiring structured protection and long-term strategy.</p>
+</div>
+
+<div class="card">
+<h3>Sensitive Projects</h3>
+<p>Initiatives exposed to regulatory, social or political pressure.</p>
+</div>
+
+<div class="card">
+<h3>Institutions</h3>
+<p>Organizations operating under scrutiny and stakeholder complexity.</p>
+</div>
+
+</div>
+</div>
 </section>
 
+<div class="parallax" style="background-image:url('assets/home.jpg')"></div>
+
+<!-- GLOBAL -->
 <section>
+<div class="fade">
+
 <h2>Global Reach</h2>
 
-<p>
-Canada • United Kingdom • Commonwealth • International
+<p class="section-intro">
+Canada • United Kingdom • Commonwealth • International Strategic Environments
 </p>
+
+</div>
 </section>
 
+<!-- CONTACT -->
 <section>
-<h2>Access</h2>
+<div class="fade">
 
-<p>Access is selective. Engagements are evaluated based on strategic relevance.</p>
+<h2 data-fr="Accès confidentiel"
+    data-en="Confidential Access"></h2>
 
-<a class="btn">Request Access</a>
+<p class="section-intro"
+   data-fr="Les mandats sont sélectionnés selon leur complexité et leur portée stratégique."
+   data-en="Engagements are evaluated based on complexity and strategic relevance."></p>
+
+<form>
+<input placeholder="Name">
+<input placeholder="Email">
+<textarea placeholder="Message"></textarea>
+<button class="btn">Submit</button>
+</form>
+
+</div>
 </section>
 
 <footer>
@@ -170,12 +309,25 @@ ARES OPSEC — Strategic Security, Risk & Influence Advisory
 </footer>
 
 <script>
+
+/* LANGUAGE */
 function toggleLang(){
     document.querySelectorAll("[data-fr]").forEach(el=>{
         el.innerHTML = (el.innerHTML === el.dataset.fr) ? el.dataset.en : el.dataset.fr;
     });
 }
 toggleLang();
+
+/* SCROLL */
+const faders = document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
+    faders.forEach(el=>{
+        if(el.getBoundingClientRect().top < window.innerHeight - 80){
+            el.classList.add('visible');
+        }
+    });
+});
+
 </script>
 
 </body>
