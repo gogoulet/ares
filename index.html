@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ARES OPSEC — Strategic Security & Risk Intelligence</title>
+<title>ARES OPSEC — Strategic Security, Risk & Influence</title>
 
 <style>
 
@@ -12,36 +12,34 @@
 body {
     margin:0;
     font-family: 'Segoe UI', sans-serif;
-    background:#05070d;
+    background:#04060c;
     color:#fff;
     cursor:none;
 }
 
-/* CUSTOM CURSOR */
+/* CURSOR */
 .cursor {
-    width:12px;
-    height:12px;
+    width:10px;
+    height:10px;
     border:1px solid #c9a96e;
     border-radius:50%;
     position:fixed;
     pointer-events:none;
     z-index:9999;
-    transition:transform 0.1s ease;
 }
 
 /* HEADER */
 header {
     position:fixed;
     width:100%;
-    background:rgba(5,7,13,0.7);
-    backdrop-filter: blur(12px);
+    background:rgba(4,6,12,0.8);
+    backdrop-filter: blur(10px);
     z-index:1000;
 }
 
 nav {
     display:flex;
     justify-content:space-between;
-    align-items:center;
     padding:20px 40px;
 }
 
@@ -50,7 +48,6 @@ nav {
 .toggle {
     border:1px solid #c9a96e;
     padding:6px 14px;
-    font-size:12px;
     cursor:pointer;
 }
 
@@ -59,55 +56,41 @@ nav {
     height:100vh;
     display:flex;
     align-items:center;
-    background:linear-gradient(rgba(0,0,0,0.6), #05070d),
+    padding:0 40px;
+    background:linear-gradient(rgba(0,0,0,0.7), #04060c),
                url('assets/hero.jpg') center/cover fixed;
 }
 
 .hero h1 {
-    font-size:4rem;
-    font-weight:700;
-    letter-spacing:1px;
-    line-height:1.1;
-    text-shadow:0 0 20px rgba(0,0,0,0.7);
+    font-size:4.5rem;
+    line-height:1.05;
 }
 
 .hero p {
+    max-width:650px;
     font-size:1.3rem;
-    max-width:600px;
     opacity:0.85;
 }
 
-/* STRONG HEADERS */
+/* HEADERS */
 h2 {
-    font-size:3rem;
-    font-weight:700;
-    margin-bottom:30px;
-    position:relative;
+    font-size:3.2rem;
+    margin-bottom:25px;
 }
 
-h2::after {
-    content:"";
-    display:block;
-    width:60px;
-    height:2px;
-    background:#c9a96e;
-    margin-top:10px;
+h3 {
+    font-size:1.5rem;
+    margin-bottom:10px;
 }
 
 /* BUTTON */
 .btn {
+    margin-top:30px;
     display:inline-block;
-    margin-top:25px;
     padding:14px 30px;
     border:1px solid #c9a96e;
     color:#c9a96e;
     text-decoration:none;
-    transition:0.3s;
-}
-
-.btn:hover {
-    background:#c9a96e;
-    color:#000;
 }
 
 /* SECTIONS */
@@ -126,27 +109,26 @@ section {
 /* GRID */
 .grid {
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:30px;
 }
 
 .card {
-    padding:35px;
-    border:1px solid rgba(255,255,255,0.08);
+    padding:30px;
+    border:1px solid rgba(255,255,255,0.05);
     transition:0.4s;
-    background:rgba(255,255,255,0.02);
 }
 
 .card:hover {
-    transform:translateY(-10px) scale(1.02);
+    transform:translateY(-10px);
     border-color:#c9a96e;
 }
 
 /* FADE */
 .fade {
     opacity:0;
-    transform:translateY(80px);
-    transition:1.2s ease;
+    transform:translateY(60px);
+    transition:1.2s;
 }
 
 .fade.visible {
@@ -158,13 +140,12 @@ section {
 input, textarea {
     width:100%;
     padding:14px;
-    margin-bottom:12px;
-    background:#0d111a;
+    margin-bottom:10px;
+    background:#0c111c;
     border:1px solid rgba(255,255,255,0.1);
     color:#fff;
 }
 
-/* FOOTER */
 footer {
     text-align:center;
     padding:60px;
@@ -187,15 +168,17 @@ footer {
 
 <section class="hero">
 <div class="fade">
-<h1 data-fr="Nous protégeons ce qui ne peut pas être remplacé."
-     data-en="We protect what cannot be replaced."></h1>
 
-<p data-fr="ARES OPSEC agit là où le risque devient stratégique."
-   data-en="ARES OPSEC operates where risk becomes strategic."></p>
+<h1 data-fr="Nous opérons là où l’exposition devient un risque."
+     data-en="We operate where exposure becomes risk."></h1>
+
+<p data-fr="ARES OPSEC agit à l’intersection du pouvoir, de l’influence et de la vulnérabilité stratégique."
+   data-en="ARES OPSEC operates at the intersection of power, influence and strategic vulnerability."></p>
 
 <a class="btn"
    data-fr="Accès confidentiel"
    data-en="Confidential Access"></a>
+
 </div>
 </section>
 
@@ -203,11 +186,13 @@ footer {
 
 <section>
 <div class="fade">
-<h2 data-fr="La réalité"
-    data-en="The Reality"></h2>
 
-<p data-fr="Le monde est instable. L’influence attire l’attention. L’attention crée du risque."
-   data-en="The world is unstable. Influence attracts attention. Attention creates risk."></p>
+<h2 data-fr="La réalité opérationnelle"
+    data-en="Operational Reality"></h2>
+
+<p data-fr="Les environnements modernes sont imprévisibles. Les individus visibles deviennent des cibles. Les organisations influentes génèrent des frictions invisibles. Ce que vous contrôlez aujourd’hui peut devenir votre principale vulnérabilité demain."
+   data-en="Modern environments are unpredictable. Visible individuals become targets. Influential organizations generate invisible friction. What you control today can become your primary vulnerability tomorrow."></p>
+
 </div>
 </section>
 
@@ -215,17 +200,34 @@ footer {
 
 <section>
 <div class="fade">
-<h2 data-fr="Capacités stratégiques"
-    data-en="Strategic Capabilities"></h2>
+
+<h2 data-fr="Architecture de sécurité stratégique"
+    data-en="Strategic Security Architecture"></h2>
 
 <div class="grid">
 
-<div class="card">Intelligence & Risk</div>
-<div class="card">Protective Operations</div>
-<div class="card">Crisis Response</div>
-<div class="card">Global Support</div>
+<div class="card">
+<h3>Intelligence & Risk</h3>
+<p>Threat mapping, behavioral profiling, geopolitical risk.</p>
+</div>
+
+<div class="card">
+<h3>Protective Operations</h3>
+<p>Close protection, mobility security, layered defense.</p>
+</div>
+
+<div class="card">
+<h3>Crisis Response</h3>
+<p>Containment, extraction, continuity under pressure.</p>
+</div>
+
+<div class="card">
+<h3>Global Support</h3>
+<p>Medical, logistics and rapid deployment capabilities.</p>
+</div>
 
 </div>
+
 </div>
 </section>
 
@@ -233,17 +235,32 @@ footer {
 
 <section>
 <div class="fade">
-<h2 data-fr="Portée globale"
-    data-en="Global Reach"></h2>
 
-<p>
-Canada • United Kingdom • Commonwealth • International Operations
-</p>
+<h2 data-fr="Nous ne protégeons pas tout le monde"
+    data-en="We do not protect everyone"></h2>
+
+<p data-fr="ARES OPSEC sélectionne ses mandats. Nous intervenons lorsque les enjeux dépassent le cadre conventionnel. Familles exposées. Actifs sensibles. Décideurs. Influence réelle."
+   data-en="ARES OPSEC selects its mandates. We intervene when stakes exceed conventional frameworks. Exposed families. Sensitive assets. Decision-makers. Real influence."></p>
+
 </div>
 </section>
 
 <section>
 <div class="fade">
+
+<h2 data-fr="Portée globale"
+    data-en="Global Reach"></h2>
+
+<p>
+Canada • United Kingdom • Commonwealth • International Strategic Zones
+</p>
+
+</div>
+</section>
+
+<section>
+<div class="fade">
+
 <h2 data-fr="Accès confidentiel"
     data-en="Confidential Access"></h2>
 
@@ -263,7 +280,7 @@ ARES OPSEC — Strategic Security & Risk Intelligence
 
 <script>
 
-/* LANGUAGE */
+/* LANG */
 function toggleLang(){
     document.querySelectorAll("[data-fr]").forEach(el=>{
         el.innerHTML = (el.innerHTML === el.dataset.fr) ? el.dataset.en : el.dataset.fr;
