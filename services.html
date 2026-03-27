@@ -20,10 +20,7 @@ body {
     line-height:1.7;
 }
 
-a {
-    text-decoration:none;
-    color:inherit;
-}
+a {text-decoration:none;color:inherit;}
 
 /* HEADER */
 header {
@@ -46,26 +43,52 @@ nav {
 }
 
 /* HERO */
-.hero {
-    padding:160px 40px 80px;
-    max-width:900px;
-    margin:auto;
+.hero-banner {
+    height:70vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+    url('assets/convoy.jpg') center/cover;
 }
 
-.hero h1 {
-    font-size:3rem;
-    margin-bottom:20px;
+.hero-overlay {
+    max-width:800px;
 }
 
-.hero p {
-    font-size:1.2rem;
-    opacity:0.8;
+.hero-banner h1 {
+    font-size:3.2rem;
+}
+
+.hero-banner p {
+    margin-top:10px;
+    opacity:0.85;
+}
+
+/* BUTTON */
+.btn {
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 30px;
+    border:1px solid #fff;
+    color:#fff;
+    transition:0.3s;
+}
+
+.btn:hover {
+    background:#fff;
+    color:#000;
 }
 
 /* SECTION */
 .section {
     max-width:900px;
     margin:100px auto;
+    padding:0 20px;
 }
 
 .service {
@@ -88,16 +111,12 @@ nav {
     margin:120px auto;
 }
 
-.btn {
-    display:inline-block;
-    margin-top:25px;
-    padding:14px 30px;
-    border:1px solid #111;
+.cta .btn {
+    border-color:#111;
     color:#111;
-    transition:0.3s;
 }
 
-.btn:hover {
+.cta .btn:hover {
     background:#111;
     color:#fff;
 }
@@ -112,7 +131,7 @@ footer {
 
 /* MOBILE */
 @media(max-width:768px){
-.hero h1 {font-size:2rem;}
+.hero-banner h1 {font-size:2rem;}
 }
 
 </style>
@@ -138,117 +157,130 @@ FR / EN
 </header>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero-banner">
+
+<div class="hero-overlay">
 
 <h1 data-fr="Services stratégiques"
-     data-en="Strategic Services"></h1>
+    data-en="Strategic Services"></h1>
 
-<p data-fr="Nous intervenons dans des environnements où la complexité, la visibilité et les enjeux exigent une compréhension fine et une exécution structurée."
-   data-en="We operate in environments where complexity, visibility and stakes require deep understanding and structured execution."></p>
+<p data-fr="Comprendre. Structurer. Contrôler."
+   data-en="Understand. Structure. Control."></p>
+
+<a href="#services" class="btn"
+data-fr="Explorer les services"
+data-en="Explore Services"></a>
+
+</div>
 
 </section>
 
 <!-- INTRO -->
 <section class="section">
 
-<p data-fr="ARES OPSEC agit comme un partenaire stratégique auprès de clients exposés à des environnements exigeants. Notre rôle est d’apporter de la clarté là où l’incertitude domine et de structurer des décisions qui doivent être prises rapidement et correctement."
-   data-en="ARES OPSEC acts as a strategic partner for clients operating in demanding environments. Our role is to bring clarity where uncertainty dominates and structure decisions that must be made quickly and correctly."></p>
+<p data-fr="ARES OPSEC intervient dans des environnements où la complexité et la visibilité rendent les décisions critiques. Nous apportons structure et clarté là où les enjeux sont réels."
+   data-en="ARES OPSEC operates in environments where complexity and visibility make decisions critical. We bring structure and clarity where stakes are real."></p>
 
 </section>
 
+<!-- SERVICES -->
+<section class="section" id="services">
+
 <!-- SERVICE 1 -->
-<section class="section service">
+<div class="service">
 
 <h2>Strategic Risk & Intelligence</h2>
 
-<p data-fr="Comprendre un environnement est la première étape pour réduire le risque. Nous analysons les dynamiques en présence, les acteurs influents et les zones de vulnérabilité afin de produire une lecture claire et exploitable."
-   data-en="Understanding an environment is the first step in reducing risk. We analyze existing dynamics, influential actors and vulnerabilities to produce clear and actionable insights."></p>
+<p data-fr="Comprendre un environnement est la première étape pour réduire le risque. Nous analysons les dynamiques en présence et les vulnérabilités."
+   data-en="Understanding an environment is the first step to reducing risk. We analyze dynamics and vulnerabilities."></p>
 
-<p data-fr="Notre approche ne repose pas uniquement sur des données, mais sur l’interprétation stratégique de celles-ci. Cela permet d’anticiper les évolutions plutôt que de réagir aux événements."
-   data-en="Our approach goes beyond data by focusing on strategic interpretation. This enables anticipation rather than reaction."></p>
+<p data-fr="Nous identifions les acteurs clés, les tensions et les trajectoires possibles."
+   data-en="We identify key actors, tensions and potential trajectories."></p>
 
-<p data-fr="Nous identifions les points de friction, les risques émergents et les opportunités cachées. Cette lecture devient un levier décisionnel puissant."
-   data-en="We identify friction points, emerging risks and hidden opportunities. This analysis becomes a powerful decision-making tool."></p>
+<p data-fr="Cette lecture permet d’anticiper plutôt que de réagir."
+   data-en="This allows anticipation rather than reaction."></p>
 
-<p data-fr="Ce service est particulièrement pertinent dans des contextes politiques, médiatiques ou à forte exposition publique."
-   data-en="This service is particularly relevant in political, media or high-exposure contexts."></p>
+<p data-fr="Nous transformons l’incertitude en information exploitable."
+   data-en="We turn uncertainty into actionable insight."></p>
 
-<p data-fr="Il permet de transformer la complexité en avantage stratégique."
-   data-en="It transforms complexity into strategic advantage."></p>
+<p data-fr="Cela devient un levier stratégique pour la prise de décision."
+   data-en="This becomes a strategic decision-making tool."></p>
 
-</section>
+</div>
 
 <!-- SERVICE 2 -->
-<section class="section service">
+<div class="service">
 
 <h2>Protection Strategy</h2>
 
-<p data-fr="La protection efficace repose sur une compréhension globale de l’environnement et des habitudes. Nous concevons des stratégies adaptées à la réalité du client."
-   data-en="Effective protection relies on a comprehensive understanding of environment and habits. We design strategies tailored to each client."></p>
+<p data-fr="La protection efficace repose sur une structure cohérente adaptée à votre réalité."
+   data-en="Effective protection relies on a coherent structure tailored to your reality."></p>
 
-<p data-fr="Nous intégrons les dimensions physiques, opérationnelles et comportementales dans une seule structure cohérente."
-   data-en="We integrate physical, operational and behavioral dimensions into a single coherent structure."></p>
+<p data-fr="Nous intégrons les dimensions physiques, comportementales et opérationnelles."
+   data-en="We integrate physical, behavioral and operational dimensions."></p>
 
-<p data-fr="Chaque stratégie vise à réduire l’exposition sans nuire aux activités ou à la liberté de mouvement."
-   data-en="Each strategy aims to reduce exposure without limiting operations or mobility."></p>
+<p data-fr="Chaque stratégie vise à réduire l’exposition sans freiner les activités."
+   data-en="Each strategy reduces exposure without limiting operations."></p>
 
-<p data-fr="Nous travaillons dans la discrétion et l’efficacité, sans surcharger l’environnement."
-   data-en="We operate with discretion and efficiency, without overloading the environment."></p>
+<p data-fr="Nous privilégions la discrétion et l’efficacité."
+   data-en="We prioritize discretion and efficiency."></p>
 
-<p data-fr="L’objectif est de créer un cadre stable et maîtrisé."
-   data-en="The goal is to create a stable and controlled framework."></p>
+<p data-fr="L’objectif est un environnement maîtrisé et stable."
+   data-en="The goal is a controlled and stable environment."></p>
 
-</section>
+</div>
 
 <!-- SERVICE 3 -->
-<section class="section service">
+<div class="service">
 
 <h2>Crisis Governance</h2>
 
-<p data-fr="En situation de crise, la qualité des décisions diminue souvent sous la pression. Nous intervenons pour structurer la réponse."
-   data-en="In crisis situations, decision quality often declines under pressure. We intervene to structure response."></p>
+<p data-fr="Dans une crise, la clarté devient essentielle."
+   data-en="In a crisis, clarity becomes essential."></p>
 
-<p data-fr="Nous apportons un cadre clair pour prioriser les actions et réduire l’incertitude."
-   data-en="We provide a clear framework to prioritize actions and reduce uncertainty."></p>
+<p data-fr="Nous structurons la réponse pour maintenir le contrôle."
+   data-en="We structure response to maintain control."></p>
 
-<p data-fr="Notre rôle est de maintenir le contrôle et d’éviter les décisions impulsives."
-   data-en="Our role is to maintain control and prevent impulsive decisions."></p>
+<p data-fr="Nous priorisons les décisions critiques."
+   data-en="We prioritize critical decisions."></p>
 
-<p data-fr="Nous travaillons en collaboration avec les équipes internes pour assurer une cohérence."
-   data-en="We work alongside internal teams to ensure coherence."></p>
+<p data-fr="Nous réduisons l’incertitude et le chaos."
+   data-en="We reduce uncertainty and chaos."></p>
 
-<p data-fr="L’objectif est de stabiliser rapidement la situation et d’en limiter les impacts."
-   data-en="The objective is to stabilize the situation quickly and limit its impact."></p>
+<p data-fr="L’objectif est une stabilisation rapide."
+   data-en="The goal is rapid stabilization."></p>
 
-</section>
+</div>
 
 <!-- SERVICE 4 -->
-<section class="section service">
+<div class="service">
 
 <h2>Influence & Perception</h2>
 
-<p data-fr="La perception est un facteur clé dans les environnements complexes. Elle influence les décisions, les réactions et les résultats."
-   data-en="Perception is a key factor in complex environments. It influences decisions, reactions and outcomes."></p>
+<p data-fr="La perception influence les résultats."
+   data-en="Perception influences outcomes."></p>
 
-<p data-fr="Nous analysons les parties prenantes et leurs attentes afin d’anticiper les réactions."
-   data-en="We analyze stakeholders and expectations to anticipate reactions."></p>
+<p data-fr="Nous analysons les parties prenantes."
+   data-en="We analyze stakeholders."></p>
 
-<p data-fr="Nous identifions les risques réputationnels et les leviers d’acceptabilité."
-   data-en="We identify reputational risks and acceptability levers."></p>
+<p data-fr="Nous anticipons les réactions."
+   data-en="We anticipate reactions."></p>
 
-<p data-fr="Nous alignons les actions avec l’environnement pour éviter les frictions inutiles."
-   data-en="We align actions with the environment to avoid unnecessary friction."></p>
+<p data-fr="Nous alignons les actions avec l’environnement."
+   data-en="We align actions with the environment."></p>
 
-<p data-fr="Ce travail permet de renforcer la position stratégique du client."
-   data-en="This strengthens the client's strategic positioning."></p>
+<p data-fr="Cela renforce la position stratégique."
+   data-en="This strengthens strategic positioning."></p>
+
+</div>
 
 </section>
 
 <!-- CTA -->
 <section class="cta">
 
-<h2 data-fr="Chaque situation mérite une lecture stratégique"
-    data-en="Every situation requires strategic clarity"></h2>
+<h2 data-fr="Chaque situation mérite une approche structurée"
+    data-en="Every situation requires a structured approach"></h2>
 
 <a href="./index.html#contact" class="btn"
 data-fr="Faire une demande"
