@@ -66,12 +66,13 @@ nav {
 
 /* SECTIONS */
 section {
-    padding:140px 60px;
+    padding:140px 40px;
 }
 
-.alt {
-    background:#111;
-    color:#fff;
+.centered {
+    max-width:900px;
+    margin:auto;
+    text-align:center;
 }
 
 h2 {
@@ -81,8 +82,8 @@ h2 {
 
 .section-intro {
     max-width:700px;
-    margin-bottom:60px;
-    opacity:0.8;
+    margin:0 auto 60px;
+    opacity:0.75;
 }
 
 /* GRID */
@@ -90,42 +91,52 @@ h2 {
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
     gap:50px;
+    max-width:1200px;
+    margin:0 auto;
 }
 
 /* CARDS */
 .card {
-    padding:20px 0;
+    padding:30px 20px;
     transition:0.3s;
     border-bottom:1px solid transparent;
 }
 
 .card:hover {
-    transform:translateY(-6px);
+    transform:translateY(-8px);
     border-bottom:1px solid #c9a96e;
 }
 
 .card h3 {
-    font-size:1.6rem;
+    font-size:1.5rem;
+    margin-bottom:10px;
 }
 
 .card p {
     opacity:0.7;
 }
 
-/* CTA */
+/* CTA SECTION */
 .cta-section {
     background:linear-gradient(120deg,#111,#222);
     color:#fff;
     text-align:center;
 }
 
+/* BUTTON */
 .btn {
     display:inline-block;
-    margin-top:30px;
+    margin-top:25px;
     padding:14px 28px;
     border:1px solid #fff;
     color:#fff;
     text-decoration:none;
+    transition:0.3s;
+}
+
+.btn:hover {
+    background:#fff;
+    color:#000;
 }
 
 .light-btn {
@@ -136,21 +147,37 @@ h2 {
 /* FORM */
 form {
     max-width:600px;
+    margin:40px auto 0;
+    text-align:left;
 }
 
-input, textarea {
+label {
+    font-size:0.85rem;
+    margin-bottom:5px;
+    display:block;
+    opacity:0.7;
+}
+
+input, textarea, select {
     width:100%;
     padding:14px;
-    margin-bottom:12px;
+    margin-bottom:14px;
     border:1px solid #ddd;
     background:#fff;
 }
 
 /* FOOTER */
-footer {
-    padding:60px;
+.footer {
+    background:#111;
+    color:#bbb;
+    padding:60px 40px;
     text-align:center;
-    font-size:0.9rem;
+}
+
+.footer small {
+    display:block;
+    margin-top:10px;
+    opacity:0.6;
 }
 
 </style>
@@ -184,6 +211,9 @@ footer {
 
 <!-- ADVISORY -->
 <section>
+
+<div class="centered">
+
 <h2 data-fr="Conseil stratégique"
     data-en="Strategic Advisory"></h2>
 
@@ -191,85 +221,96 @@ footer {
    data-fr="Une approche structurée pour naviguer les environnements où le risque, l’influence et la perception se croisent."
    data-en="A structured approach to navigating environments where risk, influence and perception intersect."></p>
 
+</div>
+
 <div class="grid">
 
 <div class="card">
-<h3 data-fr="Risque & Intelligence"
-    data-en="Risk & Intelligence"></h3>
+<h3 data-fr="Risque & Intelligence" data-en="Risk & Intelligence"></h3>
 <p data-fr="Compréhension des environnements complexes et identification des vulnérabilités."
    data-en="Understanding complex environments and identifying exposure points."></p>
 </div>
 
 <div class="card">
-<h3 data-fr="Stratégie de protection"
-    data-en="Protection Strategy"></h3>
-<p data-fr="Création de cadres de protection adaptés aux individus et organisations."
-   data-en="Designing tailored frameworks for individuals and organizations."></p>
+<h3 data-fr="Stratégie de protection" data-en="Protection Strategy"></h3>
+<p data-fr="Création de cadres de protection adaptés."
+   data-en="Designing tailored frameworks."></p>
 </div>
 
 <div class="card">
-<h3 data-fr="Gestion de crise"
-    data-en="Crisis Management"></h3>
+<h3 data-fr="Gestion de crise" data-en="Crisis Management"></h3>
 <p data-fr="Maintenir clarté et contrôle sous pression."
-   data-en="Maintaining clarity and control under pressure."></p>
+   data-en="Maintaining clarity under pressure."></p>
 </div>
 
 <div class="card">
-<h3 data-fr="Influence & perception"
-    data-en="Influence & Perception"></h3>
-<p data-fr="Alignement stratégique avec les dynamiques publiques et politiques."
-   data-en="Aligning strategy with stakeholder and public dynamics."></p>
+<h3 data-fr="Influence & perception" data-en="Influence & Perception"></h3>
+<p data-fr="Alignement stratégique avec les dynamiques publiques."
+   data-en="Aligning with stakeholder dynamics."></p>
 </div>
 
 </div>
+
 </section>
 
-<!-- CTA CONTEXT -->
+<!-- CTA DYNAMIQUE -->
 <section class="cta-section">
+
+<div class="centered">
 
 <h2 data-fr="Les environnements changent rapidement"
     data-en="Environments evolve rapidly"></h2>
 
 <p class="section-intro"
-   data-fr="Les risques modernes sont interconnectés. La perception devient stratégique. La préparation fait la différence."
-   data-en="Modern risks are interconnected. Perception is strategic. Preparation makes the difference."></p>
+   data-fr="Les risques modernes sont interconnectés. La perception devient stratégique."
+   data-en="Modern risks are interconnected. Perception is strategic."></p>
 
 <a class="btn"
    data-fr="Parler à un conseiller"
    data-en="Speak with an advisor"></a>
 
+</div>
+
 </section>
 
 <!-- WHO -->
 <section>
+
+<div class="centered">
+
 <h2 data-fr="Nous accompagnons"
     data-en="Who We Work With"></h2>
+
+</div>
 
 <div class="grid">
 
 <div class="card">
 <h3>Executives</h3>
 <p data-fr="Dirigeants exposés à des environnements complexes."
-   data-en="Leaders operating in complex environments."></p>
+   data-en="Leaders in complex environments."></p>
 </div>
 
 <div class="card">
 <h3>Families</h3>
 <p data-fr="Familles recherchant stabilité et protection."
-   data-en="Families seeking stability and protection."></p>
+   data-en="Families seeking protection."></p>
 </div>
 
 <div class="card">
 <h3>Organizations</h3>
 <p data-fr="Projets exposés à des pressions externes."
-   data-en="Projects exposed to external pressure."></p>
+   data-en="Projects under pressure."></p>
 </div>
 
 </div>
+
 </section>
 
-<!-- CONTACT -->
+<!-- FORM -->
 <section>
+
+<div class="centered">
 
 <h2 data-fr="Accès confidentiel"
     data-en="Confidential Access"></h2>
@@ -278,17 +319,51 @@ footer {
    data-fr="Chaque mandat est évalué selon sa portée stratégique."
    data-en="Each engagement is evaluated based on strategic relevance."></p>
 
+</div>
+
 <form>
-<input placeholder="Name">
-<input placeholder="Email">
-<textarea placeholder="Message"></textarea>
+
+<label>Name</label>
+<input type="text">
+
+<label>Email</label>
+<input type="email">
+
+<label data-fr="Type de mandat" data-en="Type of engagement"></label>
+<select>
+<option>Strategic Advisory</option>
+<option>Executive Protection</option>
+<option>Family Protection</option>
+<option>Crisis Management</option>
+</select>
+
+<label data-fr="Budget estimé" data-en="Estimated budget"></label>
+<select>
+<option>$10,000 - $25,000</option>
+<option>$25,000 - $50,000</option>
+<option>$50,000+</option>
+</select>
+
+<label data-fr="Urgence" data-en="Urgency"></label>
+<select>
+<option>Low</option>
+<option>Moderate</option>
+<option>High</option>
+</select>
+
+<label>Message</label>
+<textarea></textarea>
+
 <button class="btn light-btn">Submit</button>
+
 </form>
 
 </section>
 
 <!-- FINAL CTA -->
 <section class="cta-section">
+
+<div class="centered">
 
 <h2 data-fr="Discrétion. Clarté. Contrôle."
     data-en="Discretion. Clarity. Control."></h2>
@@ -297,10 +372,21 @@ footer {
    data-fr="Faire une demande"
    data-en="Request Access"></a>
 
+</div>
+
 </section>
 
-<footer>
-ARES OPSEC
+<footer class="footer">
+
+<strong>ARES OPSEC</strong><br>
+Strategic Security, Risk & Influence Advisory
+
+<small>© 2026 ARES OPSEC. All rights reserved.</small>
+
+<small>ARES OPSEC™ is a registered concept. All methodologies and intellectual property are proprietary.</small>
+
+<small>Canada • United Kingdom • Commonwealth</small>
+
 </footer>
 
 <script>
