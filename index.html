@@ -11,9 +11,10 @@
 /* GLOBAL */
 body {
     margin:0;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family:-apple-system,BlinkMacSystemFont,sans-serif;
     background:#f7f7f5;
     color:#111;
+    scroll-behavior:smooth;
 }
 
 /* HEADER */
@@ -21,7 +22,7 @@ header {
     position:fixed;
     width:100%;
     background:rgba(255,255,255,0.9);
-    backdrop-filter: blur(10px);
+    backdrop-filter:blur(10px);
     z-index:1000;
 }
 
@@ -31,7 +32,7 @@ nav {
     padding:20px 40px;
 }
 
-.logo img { height:40px; }
+.logo img {height:40px;}
 
 .toggle {
     border:1px solid #111;
@@ -50,29 +51,33 @@ nav {
 }
 
 .hero-overlay {
-    background:rgba(0,0,0,0.4);
+    background:rgba(0,0,0,0.45);
     padding:50px;
 }
 
 .hero h1 {
-    font-size:3.5rem;
+    font-size:3.8rem;
+    line-height:1.1;
 }
 
 .hero p {
     font-size:1.2rem;
+    opacity:0.9;
 }
 
-/* STORY FIX */
-.story {
-    background:#fff;
-    padding:80px 20px;
-}
-
-.story p {
-    max-width:700px;
-    margin:auto;
+/* STORY */
+.story-hero {
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),
+               url('assets/intel.jpg') center/cover;
+    color:#fff;
+    padding:120px 20px;
     text-align:center;
-    font-size:1.2rem;
+}
+
+.story-hero p {
+    max-width:800px;
+    margin:auto;
+    font-size:1.4rem;
 }
 
 /* SECTIONS */
@@ -88,28 +93,48 @@ section {
 
 h2 {
     font-size:2.8rem;
+    margin-bottom:20px;
 }
 
-/* GRID FIX */
+.section-intro {
+    max-width:650px;
+    margin:0 auto 50px;
+    opacity:0.75;
+}
+
+/* GRID */
 .grid {
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:40px;
     max-width:900px;
-    margin:60px auto 0;
+    margin:auto;
 }
 
+/* CARDS */
 .card {
-    padding:20px;
+    padding:25px;
+    transition:all 0.35s ease;
+    position:relative;
+}
+
+.card::after {
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
+    height:2px;
+    width:0;
+    background:#c9a96e;
     transition:0.3s;
 }
 
-.card:hover {
-    transform:translateY(-6px);
-}
+.card:hover::after {width:100%;}
 
-.card h3 {
-    font-size:1.4rem;
+.card:hover {
+    transform:translateY(-8px);
+    background:#fff;
+    box-shadow:0 10px 30px rgba(0,0,0,0.06);
 }
 
 /* CTA */
@@ -119,6 +144,7 @@ h2 {
     text-align:center;
 }
 
+/* BUTTON */
 .btn {
     display:inline-block;
     margin-top:25px;
@@ -126,6 +152,13 @@ h2 {
     border:1px solid #fff;
     color:#fff;
     text-decoration:none;
+    transition:0.3s;
+}
+
+.btn:hover {
+    background:#fff;
+    color:#000;
+    transform:scale(1.05);
 }
 
 /* FORM */
@@ -145,7 +178,25 @@ input, select, textarea {
     background:#111;
     color:#bbb;
     text-align:center;
-    padding:50px 20px;
+    padding:60px 20px;
+}
+
+.footer small {
+    display:block;
+    margin-top:8px;
+    opacity:0.6;
+}
+
+/* SCROLL ANIMATION */
+.reveal {
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s ease;
+}
+
+.reveal.active {
+    opacity:1;
+    transform:translateY(0);
 }
 
 /* MOBILE */
@@ -153,13 +204,7 @@ input, select, textarea {
 
 .hero h1 {font-size:2.2rem;}
 
-.grid {
-    grid-template-columns:1fr;
-}
-
-.hero-overlay {
-    padding:30px;
-}
+.grid {grid-template-columns:1fr;}
 
 }
 
@@ -177,13 +222,13 @@ input, select, textarea {
 
 <!-- HERO -->
 <section class="hero">
-<div class="hero-overlay">
+<div class="hero-overlay reveal">
 
-<h1 data-fr="Clarté stratégique pour des environnements complexes"
-     data-en="Strategic clarity for complex environments"></h1>
+<h1 data-fr="Clarté stratégique dans des environnements complexes"
+     data-en="Strategic clarity in complex environments"></h1>
 
-<p data-fr="Nous accompagnons les dirigeants, les familles et les organisations dans la gestion du risque et de l’influence."
-   data-en="We advise leaders, families and organizations on risk and influence."></p>
+<p data-fr="Nous conseillons ceux qui opèrent là où le risque, la visibilité et l’influence se croisent."
+   data-en="We advise those operating where risk, visibility and influence intersect."></p>
 
 <a href="#contact" class="btn"
    data-fr="Demande confidentielle"
@@ -193,45 +238,49 @@ input, select, textarea {
 </section>
 
 <!-- STORY -->
-<section class="story">
+<section class="story-hero reveal">
 
-<p data-fr="Certains environnements ne tolèrent pas l’improvisation. Lorsque les enjeux deviennent complexes, les décisions doivent être structurées, rapides et éclairées."
-   data-en="Some environments do not tolerate improvisation. When stakes become complex, decisions must be structured and informed."></p>
+<p data-fr="Quand l’environnement devient complexe, la question n’est pas de réagir — mais de comprendre, structurer et contrôler."
+   data-en="When environments become complex, the question is not reaction — but understanding, structure and control."></p>
 
 </section>
 
 <!-- SERVICES -->
 <section>
 
-<div class="centered">
+<div class="centered reveal">
 <h2 data-fr="Conseil stratégique"
     data-en="Strategic Advisory"></h2>
+
+<p class="section-intro"
+data-fr="Une approche structurée pour naviguer des environnements à forte exposition."
+data-en="A structured approach to navigating high-exposure environments."></p>
 </div>
 
 <div class="grid">
 
-<div class="card">
+<div class="card reveal">
 <h3>Risk & Intelligence</h3>
-<p data-fr="Analyse des vulnérabilités"
-   data-en="Risk analysis"></p>
+<p data-fr="Lecture des environnements complexes."
+   data-en="Understanding complex environments."></p>
 </div>
 
-<div class="card">
+<div class="card reveal">
 <h3>Protection Strategy</h3>
-<p data-fr="Cadres adaptés"
-   data-en="Protection frameworks"></p>
+<p data-fr="Cadres adaptés aux enjeux réels."
+   data-en="Tailored protection frameworks."></p>
 </div>
 
-<div class="card">
-<h3>Crisis Management</h3>
-<p data-fr="Gestion sous pression"
-   data-en="Crisis control"></p>
+<div class="card reveal">
+<h3>Crisis Governance</h3>
+<p data-fr="Décision claire sous pression."
+   data-en="Structured decisions under pressure."></p>
 </div>
 
-<div class="card">
+<div class="card reveal">
 <h3>Influence</h3>
-<p data-fr="Perception publique"
-   data-en="Public perception"></p>
+<p data-fr="Gestion des dynamiques de perception."
+   data-en="Managing perception dynamics."></p>
 </div>
 
 </div>
@@ -239,10 +288,13 @@ input, select, textarea {
 </section>
 
 <!-- CTA -->
-<section class="cta-section">
+<section class="cta-section reveal">
 
 <h2 data-fr="Ce n’est pas une question de sécurité"
     data-en="This is not about security"></h2>
+
+<p data-fr="C’est une question de contrôle."
+   data-en="This is about control."></p>
 
 <a href="#contact" class="btn"
    data-fr="Parler à un conseiller"
@@ -253,34 +305,34 @@ input, select, textarea {
 <!-- FORM -->
 <section id="contact">
 
-<div class="centered">
+<div class="centered reveal">
 
 <h2 data-fr="Accès confidentiel"
     data-en="Confidential Access"></h2>
 
 </div>
 
-<form>
+<form class="reveal">
 
 <input placeholder="Name">
 <input placeholder="Email">
 
 <select>
-<option data-fr="Type de mandat" data-en="Type of engagement"></option>
+<option>Type of engagement</option>
 <option>Strategic Advisory</option>
 <option>Protection</option>
 <option>Crisis</option>
 </select>
 
 <select>
-<option data-fr="Budget estimé" data-en="Budget"></option>
+<option>Budget</option>
 <option>$10k-$25k</option>
 <option>$25k-$50k</option>
 <option>$50k+</option>
 </select>
 
 <select>
-<option data-fr="Urgence" data-en="Urgency"></option>
+<option>Urgency</option>
 <option>Low</option>
 <option>Medium</option>
 <option>High</option>
@@ -298,20 +350,35 @@ data-en="Submit"></button>
 
 <footer class="footer">
 
-ARES OPSEC<br>
-© 2026 — All rights reserved
+<strong>ARES OPSEC</strong><br>
+Strategic Security, Risk & Influence Advisory
+
+<small>© 2026 ARES OPSEC. All rights reserved.</small>
+<small>ARES OPSEC™ — Proprietary methodologies.</small>
 
 </footer>
 
 <script>
 
+/* LANG */
 function toggleLang(){
     document.querySelectorAll("[data-fr]").forEach(el=>{
         el.innerHTML = (el.innerHTML === el.dataset.fr) ? el.dataset.en : el.dataset.fr;
     });
 }
-
 toggleLang();
+
+/* SCROLL ANIMATION */
+function reveal(){
+    document.querySelectorAll('.reveal').forEach(el=>{
+        if(el.getBoundingClientRect().top < window.innerHeight - 80){
+            el.classList.add('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', reveal);
+reveal();
 
 </script>
 
