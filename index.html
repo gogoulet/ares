@@ -4,35 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ARES OPSEC — Strategic Security, Risk & Influence</title>
+<title>ARES OPSEC — Strategic Security, Risk & Influence Advisory</title>
 
 <style>
 
-/* GLOBAL */
 body {
     margin:0;
     font-family: 'Segoe UI', sans-serif;
-    background:#04060c;
+    background:#0b0f19;
     color:#fff;
-    cursor:none;
 }
 
-/* CURSOR */
-.cursor {
-    width:10px;
-    height:10px;
-    border:1px solid #c9a96e;
-    border-radius:50%;
-    position:fixed;
-    pointer-events:none;
-    z-index:9999;
-}
-
-/* HEADER */
 header {
     position:fixed;
     width:100%;
-    background:rgba(4,6,12,0.8);
+    background:rgba(11,15,25,0.85);
     backdrop-filter: blur(10px);
     z-index:1000;
 }
@@ -47,7 +33,7 @@ nav {
 
 .toggle {
     border:1px solid #c9a96e;
-    padding:6px 14px;
+    padding:6px 12px;
     cursor:pointer;
 }
 
@@ -57,93 +43,49 @@ nav {
     display:flex;
     align-items:center;
     padding:0 40px;
-    background:linear-gradient(rgba(0,0,0,0.7), #04060c),
-               url('assets/hero.jpg') center/cover fixed;
+    background:linear-gradient(rgba(0,0,0,0.6), #0b0f19),
+               url('assets/hero.jpg') center/cover;
 }
 
 .hero h1 {
-    font-size:4.5rem;
-    line-height:1.05;
+    font-size:4rem;
+    line-height:1.1;
 }
 
 .hero p {
-    max-width:650px;
-    font-size:1.3rem;
+    max-width:600px;
     opacity:0.85;
-}
-
-/* HEADERS */
-h2 {
-    font-size:3.2rem;
-    margin-bottom:25px;
-}
-
-h3 {
-    font-size:1.5rem;
-    margin-bottom:10px;
-}
-
-/* BUTTON */
-.btn {
-    margin-top:30px;
-    display:inline-block;
-    padding:14px 30px;
-    border:1px solid #c9a96e;
-    color:#c9a96e;
-    text-decoration:none;
 }
 
 /* SECTIONS */
 section {
-    padding:140px 40px;
+    padding:120px 40px;
 }
 
-/* PARALLAX */
-.parallax {
-    height:60vh;
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
+h2 {
+    font-size:2.8rem;
+    margin-bottom:20px;
 }
 
-/* GRID */
 .grid {
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:30px;
 }
 
 .card {
     padding:30px;
-    border:1px solid rgba(255,255,255,0.05);
-    transition:0.4s;
+    border:1px solid rgba(255,255,255,0.08);
 }
 
-.card:hover {
-    transform:translateY(-10px);
-    border-color:#c9a96e;
-}
-
-/* FADE */
-.fade {
-    opacity:0;
-    transform:translateY(60px);
-    transition:1.2s;
-}
-
-.fade.visible {
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* FORM */
-input, textarea {
-    width:100%;
-    padding:14px;
-    margin-bottom:10px;
-    background:#0c111c;
-    border:1px solid rgba(255,255,255,0.1);
-    color:#fff;
+/* BUTTON */
+.btn {
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    border:1px solid #c9a96e;
+    color:#c9a96e;
+    text-decoration:none;
 }
 
 footer {
@@ -157,8 +99,6 @@ footer {
 
 <body>
 
-<div class="cursor"></div>
-
 <header>
 <nav>
 <div class="logo"><img src="logo.png"></div>
@@ -167,144 +107,75 @@ footer {
 </header>
 
 <section class="hero">
-<div class="fade">
+<div>
 
-<h1 data-fr="Nous opérons là où l’exposition devient un risque."
-     data-en="We operate where exposure becomes risk."></h1>
+<h1 data-fr="Clarté stratégique dans des environnements complexes"
+     data-en="Strategic clarity in complex environments"></h1>
 
-<p data-fr="ARES OPSEC agit à l’intersection du pouvoir, de l’influence et de la vulnérabilité stratégique."
-   data-en="ARES OPSEC operates at the intersection of power, influence and strategic vulnerability."></p>
+<p data-fr="Nous conseillons les dirigeants, les familles et les organisations exposées là où le risque, la perception et l’influence se croisent."
+   data-en="We advise leaders, families and organizations operating where risk, perception and influence intersect."></p>
 
 <a class="btn"
-   data-fr="Accès confidentiel"
-   data-en="Confidential Access"></a>
+   data-fr="Demande confidentielle"
+   data-en="Request Private Consultation"></a>
 
 </div>
 </section>
 
-<div class="parallax" style="background-image:url('assets/convoy.jpg')"></div>
-
 <section>
-<div class="fade">
-
-<h2 data-fr="La réalité opérationnelle"
-    data-en="Operational Reality"></h2>
-
-<p data-fr="Les environnements modernes sont imprévisibles. Les individus visibles deviennent des cibles. Les organisations influentes génèrent des frictions invisibles. Ce que vous contrôlez aujourd’hui peut devenir votre principale vulnérabilité demain."
-   data-en="Modern environments are unpredictable. Visible individuals become targets. Influential organizations generate invisible friction. What you control today can become your primary vulnerability tomorrow."></p>
-
-</div>
-</section>
-
-<div class="parallax" style="background-image:url('assets/intel.jpg')"></div>
-
-<section>
-<div class="fade">
-
-<h2 data-fr="Architecture de sécurité stratégique"
-    data-en="Strategic Security Architecture"></h2>
+<h2>Advisory</h2>
 
 <div class="grid">
-
-<div class="card">
-<h3>Intelligence & Risk</h3>
-<p>Threat mapping, behavioral profiling, geopolitical risk.</p>
-</div>
-
-<div class="card">
-<h3>Protective Operations</h3>
-<p>Close protection, mobility security, layered defense.</p>
-</div>
-
-<div class="card">
-<h3>Crisis Response</h3>
-<p>Containment, extraction, continuity under pressure.</p>
-</div>
-
-<div class="card">
-<h3>Global Support</h3>
-<p>Medical, logistics and rapid deployment capabilities.</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<div class="parallax" style="background-image:url('assets/home.jpg')"></div>
-
-<section>
-<div class="fade">
-
-<h2 data-fr="Nous ne protégeons pas tout le monde"
-    data-en="We do not protect everyone"></h2>
-
-<p data-fr="ARES OPSEC sélectionne ses mandats. Nous intervenons lorsque les enjeux dépassent le cadre conventionnel. Familles exposées. Actifs sensibles. Décideurs. Influence réelle."
-   data-en="ARES OPSEC selects its mandates. We intervene when stakes exceed conventional frameworks. Exposed families. Sensitive assets. Decision-makers. Real influence."></p>
-
+<div class="card">Strategic Risk & Intelligence</div>
+<div class="card">Protective Strategy</div>
+<div class="card">Crisis Governance</div>
+<div class="card">Influence & Acceptability</div>
 </div>
 </section>
 
 <section>
-<div class="fade">
-
-<h2 data-fr="Portée globale"
-    data-en="Global Reach"></h2>
+<h2>How We Work</h2>
 
 <p>
-Canada • United Kingdom • Commonwealth • International Strategic Zones
+Assessment • Strategic Mapping • Controlled Deployment • Continuous Oversight
 </p>
-
-</div>
 </section>
 
 <section>
-<div class="fade">
+<h2>Who We Advise</h2>
 
-<h2 data-fr="Accès confidentiel"
-    data-en="Confidential Access"></h2>
+<p>
+Executives • Family Offices • Institutions • Sensitive Projects
+</p>
+</section>
 
-<form>
-<input placeholder="Name">
-<input placeholder="Email">
-<textarea placeholder="Message"></textarea>
-<button class="btn">Submit</button>
-</form>
+<section>
+<h2>Global Reach</h2>
 
-</div>
+<p>
+Canada • United Kingdom • Commonwealth • International
+</p>
+</section>
+
+<section>
+<h2>Access</h2>
+
+<p>Access is selective. Engagements are evaluated based on strategic relevance.</p>
+
+<a class="btn">Request Access</a>
 </section>
 
 <footer>
-ARES OPSEC — Strategic Security & Risk Intelligence
+ARES OPSEC — Strategic Security, Risk & Influence Advisory
 </footer>
 
 <script>
-
-/* LANG */
 function toggleLang(){
     document.querySelectorAll("[data-fr]").forEach(el=>{
         el.innerHTML = (el.innerHTML === el.dataset.fr) ? el.dataset.en : el.dataset.fr;
     });
 }
 toggleLang();
-
-/* SCROLL */
-const faders = document.querySelectorAll('.fade');
-window.addEventListener('scroll',()=>{
-    faders.forEach(el=>{
-        if(el.getBoundingClientRect().top < window.innerHeight - 80){
-            el.classList.add('visible');
-        }
-    });
-});
-
-/* CURSOR */
-const cursor = document.querySelector('.cursor');
-document.addEventListener('mousemove', e=>{
-    cursor.style.top = e.clientY + 'px';
-    cursor.style.left = e.clientX + 'px';
-});
-
 </script>
 
 </body>
