@@ -7,11 +7,13 @@
 <title>ARES OPSEC — Strategic Security & Risk Intelligence</title>
 
 <style>
+
 body {
     margin:0;
     font-family: 'Segoe UI', sans-serif;
     background:#0a0f1a;
     color:#fff;
+    overflow-x:hidden;
 }
 
 .container {
@@ -20,13 +22,15 @@ body {
     margin:auto;
 }
 
+/* HEADER */
 header {
     position:fixed;
     width:100%;
     top:0;
-    background:rgba(10,15,26,0.9);
-    backdrop-filter: blur(10px);
+    background:rgba(10,15,26,0.6);
+    backdrop-filter: blur(12px);
     z-index:1000;
+    transition:0.3s;
 }
 
 nav {
@@ -36,27 +40,28 @@ nav {
     padding:20px 0;
 }
 
-.logo {
-    font-weight:bold;
-    letter-spacing:2px;
+.logo img {
+    height:40px;
 }
 
 .toggle {
     cursor:pointer;
     border:1px solid #c9a96e;
-    padding:5px 10px;
+    padding:6px 12px;
     font-size:12px;
 }
 
+/* HERO */
 .hero {
     height:100vh;
     display:flex;
     align-items:center;
-    background:linear-gradient(rgba(10,15,26,0.7), rgba(10,15,26,1)), url('hero.jpg') center/cover;
+    background:linear-gradient(rgba(10,15,26,0.7), rgba(10,15,26,1)),
+               url('assets/hero.jpg') center/cover fixed;
 }
 
 .hero h1 {
-    font-size:3rem;
+    font-size:3.2rem;
     margin-bottom:20px;
 }
 
@@ -65,10 +70,11 @@ nav {
     max-width:600px;
 }
 
+/* BUTTON */
 .btn {
     display:inline-block;
     margin-top:20px;
-    padding:12px 25px;
+    padding:12px 28px;
     border:1px solid #c9a96e;
     color:#c9a96e;
     text-decoration:none;
@@ -80,10 +86,21 @@ nav {
     color:#000;
 }
 
+/* SECTIONS */
 section {
-    padding:100px 0;
+    padding:120px 0;
+    position:relative;
 }
 
+/* PARALLAX IMAGE BLOCK */
+.parallax {
+    height:60vh;
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+/* GRID */
 .grid {
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -93,18 +110,20 @@ section {
 .card {
     border:1px solid rgba(255,255,255,0.1);
     padding:30px;
-    transition:0.3s;
+    transition:0.4s;
+    background:rgba(255,255,255,0.02);
 }
 
 .card:hover {
     border-color:#c9a96e;
-    transform:translateY(-5px);
+    transform:translateY(-8px);
 }
 
+/* FADE CINEMATIC */
 .fade {
     opacity:0;
-    transform:translateY(30px);
-    transition:1s;
+    transform:translateY(60px);
+    transition:1.2s ease-out;
 }
 
 .fade.visible {
@@ -112,12 +131,13 @@ section {
     transform:translateY(0);
 }
 
+/* FOOTER */
 footer {
-    padding:50px 0;
+    padding:60px 0;
     text-align:center;
-    font-size:0.8rem;
-    color:#aaa;
+    color:#888;
 }
+
 </style>
 </head>
 
@@ -126,113 +146,126 @@ footer {
 <header>
 <div class="container">
 <nav>
-<div class="logo">ARES OPSEC</div>
+<div class="logo">
+<img src="logo.png">
+</div>
 <div class="toggle" onclick="toggleLang()">FR / EN</div>
 </nav>
 </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-<div class="container">
+<div class="container fade">
 <h1 data-fr="Nous protégeons ce qui ne peut pas être remplacé."
      data-en="We protect what cannot be replaced.">
 Nous protégeons ce qui ne peut pas être remplacé.
 </h1>
 
-<p data-fr="ARES OPSEC est un partenaire stratégique en sécurité, gestion du risque et intelligence opérationnelle pour les familles, les organisations et les décideurs exposés."
-   data-en="ARES OPSEC is a strategic partner in security, risk management and operational intelligence for exposed families, organizations and decision-makers.">
+<p data-fr="ARES OPSEC est un partenaire stratégique en sécurité, intelligence et gestion du risque pour les environnements sensibles."
+   data-en="ARES OPSEC is a strategic partner in security, intelligence and risk management for sensitive environments.">
 ARES OPSEC est un partenaire stratégique...
 </p>
 
-<a href="#" class="btn"
-   data-fr="Demande de consultation privée"
-   data-en="Request Private Consultation">
-Demande de consultation privée
+<a class="btn"
+   data-fr="Consultation privée"
+   data-en="Private Consultation">
+Consultation privée
 </a>
 </div>
 </section>
 
-<section class="fade">
-<div class="container">
+<!-- PARALLAX -->
+<div class="parallax" style="background-image:url('assets/convoy.jpg')"></div>
+
+<!-- REALITY -->
+<section>
+<div class="container fade">
 <h2 data-fr="La réalité"
     data-en="The Reality">La réalité</h2>
 
-<p data-fr="Le monde n'est plus prévisible. L'influence attire l'attention. L'attention crée du risque."
-   data-en="The world is no longer predictable. Influence attracts attention. Attention creates risk.">
-Le monde n'est plus prévisible...
+<p data-fr="Le monde est instable. L’influence attire l’attention. L’attention crée du risque."
+   data-en="The world is unstable. Influence attracts attention. Attention creates risk.">
+Le monde est instable...
 </p>
 </div>
 </section>
 
-<section class="fade">
-<div class="container">
-<h2 data-fr="Nos expertises"
-    data-en="Our Capabilities">Nos expertises</h2>
+<!-- PARALLAX -->
+<div class="parallax" style="background-image:url('assets/intel.jpg')"></div>
+
+<!-- SERVICES -->
+<section>
+<div class="container fade">
+
+<h2 data-fr="Expertise stratégique"
+    data-en="Strategic Capabilities">Expertise stratégique</h2>
 
 <div class="grid">
 
 <div class="card">
 <h3>Intelligence & Risk</h3>
-<p>Threat analysis, profiling, geopolitical and social risk mapping.</p>
+<p>Threat analysis, profiling and strategic risk mapping.</p>
 </div>
 
 <div class="card">
 <h3>Protective Operations</h3>
-<p>Executive protection, family security and secure mobility.</p>
+<p>Executive protection and secure mobility.</p>
 </div>
 
 <div class="card">
 <h3>Crisis Response</h3>
-<p>Incident management, crisis containment and recovery.</p>
+<p>Incident management and containment.</p>
 </div>
 
 <div class="card">
 <h3>Global Support</h3>
-<p>Medical, logistical and security assistance worldwide.</p>
+<p>Medical and security assistance worldwide.</p>
 </div>
 
 </div>
+
 </div>
 </section>
 
-<section class="fade">
-<div class="container">
+<!-- PARALLAX -->
+<div class="parallax" style="background-image:url('assets/home.jpg')"></div>
+
+<!-- WHO -->
+<section>
+<div class="container fade">
+
 <h2 data-fr="Qui nous protégeons"
     data-en="Who We Protect">Qui nous protégeons</h2>
 
 <div class="grid">
 <div class="card">High-net-worth families</div>
-<div class="card">Executives & public figures</div>
+<div class="card">Executives</div>
 <div class="card">Sensitive projects</div>
-<div class="card">Institutional stakeholders</div>
+<div class="card">Institutions</div>
 </div>
+
 </div>
 </section>
 
-<section class="fade">
-<div class="container">
-<h2 data-fr="Crédibilité"
-    data-en="Credibility">Crédibilité</h2>
+<!-- CTA -->
+<section>
+<div class="container fade">
 
-<p>
-Confidential mandates across Canada and internationally.<br>
-Advisors from security, intelligence and public affairs sectors.<br>
-Operational experience in high-risk environments.
+<h2 data-fr="Accès confidentiel"
+    data-en="Confidential Access">Accès confidentiel</h2>
+
+<p data-fr="Les mandats sont sélectionnés avec discrétion. Contactez-nous pour une évaluation."
+   data-en="Mandates are selected with discretion. Contact us for an assessment.">
+Les mandats sont sélectionnés...
 </p>
-</div>
-</section>
 
-<section class="fade">
-<div class="container">
-<h2 data-fr="Consultation privée"
-    data-en="Private Consultation">Consultation privée</h2>
+<a class="btn"
+   data-fr="Faire une demande"
+   data-en="Submit Request">
+Faire une demande
+</a>
 
-<form>
-<input type="text" placeholder="Name" style="width:100%;padding:10px;margin-bottom:10px;">
-<input type="email" placeholder="Email" style="width:100%;padding:10px;margin-bottom:10px;">
-<textarea placeholder="Message" style="width:100%;padding:10px;"></textarea>
-<button class="btn">Submit</button>
-</form>
 </div>
 </section>
 
@@ -241,25 +274,27 @@ ARES OPSEC — Strategic Security & Risk Intelligence
 </footer>
 
 <script>
+
+/* LANGUAGE TOGGLE */
 function toggleLang(){
     const elements = document.querySelectorAll("[data-fr]");
     elements.forEach(el=>{
-        if(el.innerHTML === el.dataset.fr){
-            el.innerHTML = el.dataset.en;
-        } else {
-            el.innerHTML = el.dataset.fr;
-        }
+        el.innerHTML = (el.innerHTML === el.dataset.fr) ? el.dataset.en : el.dataset.fr;
     });
 }
 
+/* SCROLL CINEMATIC */
 const faders = document.querySelectorAll('.fade');
+
 window.addEventListener('scroll',()=>{
     faders.forEach(el=>{
-        if(el.getBoundingClientRect().top < window.innerHeight - 50){
+        const rect = el.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 100){
             el.classList.add('visible');
         }
     });
 });
+
 </script>
 
 </body>
