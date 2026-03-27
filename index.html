@@ -4,24 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ARES OPSEC — Strategic Advisory</title>
+<title>ARES OPSEC</title>
 
 <base href="./">
 
 <style>
 
 /* RESET */
-* {
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
+* {margin:0;padding:0;box-sizing:border-box;}
 
 body {
     font-family:-apple-system,BlinkMacSystemFont,sans-serif;
     background:#f7f7f5;
     color:#111;
-    line-height:1.6;
 }
 
 a {
@@ -70,7 +65,6 @@ nav {
 
 .hero p {
     margin-top:15px;
-    opacity:0.9;
 }
 
 /* STORY */
@@ -79,13 +73,10 @@ nav {
     text-align:center;
     max-width:800px;
     margin:auto;
-    font-size:1.2rem;
 }
 
 /* SECTIONS */
-section {
-    padding:100px 20px;
-}
+section {padding:100px 20px;}
 
 .centered {
     text-align:center;
@@ -96,12 +87,6 @@ section {
 h2 {
     font-size:2.4rem;
     margin-bottom:20px;
-}
-
-.section-intro {
-    max-width:600px;
-    margin:0 auto 40px;
-    opacity:0.75;
 }
 
 /* GRID */
@@ -122,13 +107,6 @@ h2 {
 
 .card:hover {
     transform:translateY(-6px);
-}
-
-/* CTA */
-.cta-section {
-    background:linear-gradient(120deg,#111,#222);
-    color:#fff;
-    text-align:center;
 }
 
 /* BUTTON */
@@ -156,6 +134,13 @@ h2 {
     color:#fff;
 }
 
+/* CTA */
+.cta-section {
+    background:linear-gradient(120deg,#111,#222);
+    color:#fff;
+    text-align:center;
+}
+
 /* FORM */
 form {
     max-width:500px;
@@ -168,11 +153,6 @@ form {
 input, select, textarea {
     padding:14px;
     border:1px solid #ddd;
-    font-size:0.9rem;
-}
-
-textarea {
-    min-height:120px;
 }
 
 /* FOOTER */
@@ -183,16 +163,10 @@ footer {
     padding:60px 20px;
 }
 
-footer small {
-    display:block;
-    margin-top:10px;
-    opacity:0.6;
-}
-
 /* MOBILE */
 @media(max-width:768px){
-.hero h1 {font-size:2rem;}
 .grid {grid-template-columns:1fr;}
+.hero h1 {font-size:2rem;}
 }
 
 </style>
@@ -205,10 +179,15 @@ footer small {
 <div><strong>ARES OPSEC</strong></div>
 
 <div class="menu">
-<a href="./index.html">Home</a>
-<a href="./services.html">Services</a>
-<a href="#contact">Contact</a>
+<a href="./index.html" data-fr="Accueil" data-en="Home"></a>
+<a href="./services.html" data-fr="Services" data-en="Services"></a>
+<a href="#contact" data-fr="Contact" data-en="Contact"></a>
 </div>
+
+<div onclick="toggleLang()" style="cursor:pointer;border:1px solid #111;padding:6px 12px;">
+FR / EN
+</div>
+
 </nav>
 </header>
 
@@ -216,13 +195,15 @@ footer small {
 <section class="hero">
 <div class="hero-overlay">
 
-<h1>Strategic clarity in complex environments</h1>
+<h1 data-fr="Clarté stratégique dans des environnements complexes"
+     data-en="Strategic clarity in complex environments"></h1>
 
-<p>
-We advise leaders operating where risk, visibility and influence intersect.
-</p>
+<p data-fr="Nous conseillons ceux qui opèrent là où le risque, la visibilité et l’influence se croisent."
+   data-en="We advise those operating where risk, visibility and influence intersect."></p>
 
-<a href="#contact" class="btn">Request Consultation</a>
+<a href="#contact" class="btn"
+   data-fr="Demande confidentielle"
+   data-en="Request Consultation"></a>
 
 </div>
 </section>
@@ -230,10 +211,8 @@ We advise leaders operating where risk, visibility and influence intersect.
 <!-- STORY -->
 <section class="story">
 
-<p>
-When environments become complex, the difference is not reaction,  
-but the ability to understand, structure and decide.
-</p>
+<p data-fr="Lorsque les environnements deviennent complexes, la différence ne repose pas sur la réaction, mais sur la capacité à comprendre, structurer et décider."
+   data-en="When environments become complex, the difference is not reaction, but the ability to understand, structure and decide."></p>
 
 </section>
 
@@ -241,39 +220,41 @@ but the ability to understand, structure and decide.
 <section>
 
 <div class="centered">
-<h2>Strategic Advisory</h2>
-
-<p class="section-intro">
-A structured approach to navigating high-exposure environments.
-</p>
+<h2 data-fr="Conseil stratégique" data-en="Strategic Advisory"></h2>
 </div>
 
 <div class="grid">
 
 <a href="./services.html" class="card">
 <h3>Risk & Intelligence</h3>
-<p>Understanding complex environments.</p>
+<p data-fr="Analyse des environnements complexes"
+   data-en="Understanding complex environments"></p>
 </a>
 
 <a href="./services.html" class="card">
 <h3>Protection Strategy</h3>
-<p>Tailored protection frameworks.</p>
+<p data-fr="Cadres adaptés"
+   data-en="Tailored protection frameworks"></p>
 </a>
 
 <a href="./services.html" class="card">
 <h3>Crisis Governance</h3>
-<p>Structured decisions under pressure.</p>
+<p data-fr="Décision sous pression"
+   data-en="Structured decisions under pressure"></p>
 </a>
 
 <a href="./services.html" class="card">
 <h3>Influence</h3>
-<p>Managing perception dynamics.</p>
+<p data-fr="Gestion de perception"
+   data-en="Managing perception dynamics"></p>
 </a>
 
 </div>
 
 <div class="centered">
-<a href="./services.html" class="btn light-btn">View Services</a>
+<a href="./services.html" class="btn light-btn"
+   data-fr="Voir les services"
+   data-en="View Services"></a>
 </div>
 
 </section>
@@ -281,11 +262,15 @@ A structured approach to navigating high-exposure environments.
 <!-- CTA -->
 <section class="cta-section">
 
-<h2>This is not about security</h2>
+<h2 data-fr="Ce n’est pas une question de sécurité"
+    data-en="This is not about security"></h2>
 
-<p>This is about control.</p>
+<p data-fr="C’est une question de contrôle."
+   data-en="This is about control."></p>
 
-<a href="#contact" class="btn">Speak with an advisor</a>
+<a href="#contact" class="btn"
+   data-fr="Parler à un conseiller"
+   data-en="Speak with an advisor"></a>
 
 </section>
 
@@ -293,10 +278,7 @@ A structured approach to navigating high-exposure environments.
 <section id="contact">
 
 <div class="centered">
-<h2>Confidential Access</h2>
-<p class="section-intro">
-Each situation is evaluated with discretion and rigor.
-</p>
+<h2 data-fr="Accès confidentiel" data-en="Confidential Access"></h2>
 </div>
 
 <form>
@@ -305,21 +287,21 @@ Each situation is evaluated with discretion and rigor.
 <input type="email" placeholder="Email">
 
 <select>
-<option>Type of engagement</option>
+<option data-fr="Type de mandat" data-en="Type of engagement"></option>
 <option>Strategic Advisory</option>
 <option>Protection</option>
 <option>Crisis</option>
 </select>
 
 <select>
-<option>Budget</option>
+<option data-fr="Budget" data-en="Budget"></option>
 <option>$10k-$25k</option>
 <option>$25k-$50k</option>
 <option>$50k+</option>
 </select>
 
 <select>
-<option>Urgency</option>
+<option data-fr="Urgence" data-en="Urgency"></option>
 <option>Low</option>
 <option>Medium</option>
 <option>High</option>
@@ -327,7 +309,9 @@ Each situation is evaluated with discretion and rigor.
 
 <textarea placeholder="Message"></textarea>
 
-<button class="btn light-btn">Submit</button>
+<button class="btn light-btn"
+data-fr="Envoyer"
+data-en="Submit"></button>
 
 </form>
 
@@ -338,10 +322,26 @@ Each situation is evaluated with discretion and rigor.
 <strong>ARES OPSEC</strong><br>
 Strategic Security, Risk & Influence Advisory
 
-<small>© 2026 ARES OPSEC. All rights reserved.</small>
-<small>ARES OPSEC™ — Proprietary frameworks.</small>
+<p>© 2026 — All rights reserved</p>
 
 </footer>
+
+<script>
+
+let currentLang = "fr";
+
+function toggleLang() {
+    currentLang = currentLang === "fr" ? "en" : "fr";
+
+    document.querySelectorAll("[data-fr]").forEach(el => {
+        el.innerHTML = el.dataset[currentLang];
+    });
+}
+
+// init
+toggleLang();
+
+</script>
 
 </body>
 </html>
