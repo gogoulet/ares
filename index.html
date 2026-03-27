@@ -34,6 +34,15 @@ nav {
 
 .logo img {height:40px;}
 
+.menu a {
+    margin-left:20px;
+    text-decoration:none;
+    color:#111;
+    font-size:0.95rem;
+}
+
+.menu a:hover {opacity:0.6;}
+
 .toggle {
     border:1px solid #111;
     padding:6px 12px;
@@ -56,7 +65,7 @@ nav {
 }
 
 .hero h1 {
-    font-size:3.8rem;
+    font-size:3.5rem;
     line-height:1.1;
 }
 
@@ -66,18 +75,12 @@ nav {
 }
 
 /* STORY */
-.story-hero {
-    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),
-               url('assets/intel.jpg') center/cover;
-    color:#fff;
-    padding:120px 20px;
+.story {
+    padding:100px 20px;
     text-align:center;
-}
-
-.story-hero p {
     max-width:800px;
     margin:auto;
-    font-size:1.4rem;
+    font-size:1.3rem;
 }
 
 /* SECTIONS */
@@ -92,7 +95,7 @@ section {
 }
 
 h2 {
-    font-size:2.8rem;
+    font-size:2.6rem;
     margin-bottom:20px;
 }
 
@@ -114,7 +117,7 @@ h2 {
 /* CARDS */
 .card {
     padding:25px;
-    transition:all 0.35s ease;
+    transition:0.3s;
     position:relative;
 }
 
@@ -132,9 +135,11 @@ h2 {
 .card:hover::after {width:100%;}
 
 .card:hover {
-    transform:translateY(-8px);
-    background:#fff;
-    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+    transform:translateY(-6px);
+}
+
+.card h3 {
+    font-size:1.4rem;
 }
 
 /* CTA */
@@ -144,7 +149,6 @@ h2 {
     text-align:center;
 }
 
-/* BUTTON */
 .btn {
     display:inline-block;
     margin-top:25px;
@@ -158,45 +162,20 @@ h2 {
 .btn:hover {
     background:#fff;
     color:#000;
-    transform:scale(1.05);
-}
-
-/* FORM */
-form {
-    max-width:500px;
-    margin:40px auto;
-}
-
-input, select, textarea {
-    width:100%;
-    padding:14px;
-    margin-bottom:12px;
 }
 
 /* FOOTER */
-.footer {
+footer {
     background:#111;
     color:#bbb;
     text-align:center;
     padding:60px 20px;
 }
 
-.footer small {
+footer small {
     display:block;
     margin-top:8px;
     opacity:0.6;
-}
-
-/* SCROLL ANIMATION */
-.reveal {
-    opacity:0;
-    transform:translateY(40px);
-    transition:1s ease;
-}
-
-.reveal.active {
-    opacity:1;
-    transform:translateY(0);
 }
 
 /* MOBILE */
@@ -216,13 +195,20 @@ input, select, textarea {
 <header>
 <nav>
 <div class="logo"><img src="logo.png"></div>
+
+<div class="menu">
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="#contact">Contact</a>
+</div>
+
 <div class="toggle" onclick="toggleLang()">FR / EN</div>
 </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-<div class="hero-overlay reveal">
+<div class="hero-overlay">
 
 <h1 data-fr="Clarté stratégique dans des environnements complexes"
      data-en="Strategic clarity in complex environments"></h1>
@@ -238,17 +224,18 @@ input, select, textarea {
 </section>
 
 <!-- STORY -->
-<section class="story-hero reveal">
+<section class="story">
 
-<p data-fr="Quand l’environnement devient complexe, la question n’est pas de réagir — mais de comprendre, structurer et contrôler."
-   data-en="When environments become complex, the question is not reaction — but understanding, structure and control."></p>
+<p data-fr="Lorsque les environnements deviennent complexes, la différence ne repose pas sur la réaction, mais sur la capacité à comprendre, structurer et décider."
+   data-en="When environments become complex, the difference is not reaction, but the ability to understand, structure and decide.">
+</p>
 
 </section>
 
 <!-- SERVICES -->
 <section>
 
-<div class="centered reveal">
+<div class="centered">
 <h2 data-fr="Conseil stratégique"
     data-en="Strategic Advisory"></h2>
 
@@ -259,60 +246,70 @@ data-en="A structured approach to navigating high-exposure environments."></p>
 
 <div class="grid">
 
-<div class="card reveal">
+<a href="services.html" class="card">
 <h3>Risk & Intelligence</h3>
-<p data-fr="Lecture des environnements complexes."
+<p data-fr="Analyse des environnements complexes."
    data-en="Understanding complex environments."></p>
-</div>
+</a>
 
-<div class="card reveal">
+<a href="services.html" class="card">
 <h3>Protection Strategy</h3>
 <p data-fr="Cadres adaptés aux enjeux réels."
    data-en="Tailored protection frameworks."></p>
-</div>
+</a>
 
-<div class="card reveal">
+<a href="services.html" class="card">
 <h3>Crisis Governance</h3>
 <p data-fr="Décision claire sous pression."
    data-en="Structured decisions under pressure."></p>
-</div>
+</a>
 
-<div class="card reveal">
+<a href="services.html" class="card">
 <h3>Influence</h3>
 <p data-fr="Gestion des dynamiques de perception."
    data-en="Managing perception dynamics."></p>
+</a>
+
 </div>
 
+<div class="centered">
+<a href="services.html" class="btn"
+data-fr="Voir les services détaillés"
+data-en="View detailed services"></a>
 </div>
 
 </section>
 
 <!-- CTA -->
-<section class="cta-section reveal">
+<section class="cta-section">
 
 <h2 data-fr="Ce n’est pas une question de sécurité"
     data-en="This is not about security"></h2>
 
-<p data-fr="C’est une question de contrôle."
-   data-en="This is about control."></p>
+<p data-fr="C’est une question de compréhension et de contrôle."
+   data-en="This is about understanding and control."></p>
 
 <a href="#contact" class="btn"
-   data-fr="Parler à un conseiller"
-   data-en="Speak with an advisor"></a>
+data-fr="Parler à un conseiller"
+data-en="Speak with an advisor"></a>
 
 </section>
 
-<!-- FORM -->
+<!-- CONTACT -->
 <section id="contact">
 
-<div class="centered reveal">
+<div class="centered">
 
 <h2 data-fr="Accès confidentiel"
     data-en="Confidential Access"></h2>
 
+<p class="section-intro"
+data-fr="Chaque situation est évaluée avec discrétion et rigueur."
+data-en="Each situation is evaluated with discretion and rigor."></p>
+
 </div>
 
-<form class="reveal">
+<form>
 
 <input placeholder="Name">
 <input placeholder="Email">
@@ -348,7 +345,7 @@ data-en="Submit"></button>
 
 </section>
 
-<footer class="footer">
+<footer>
 
 <strong>ARES OPSEC</strong><br>
 Strategic Security, Risk & Influence Advisory
@@ -360,25 +357,13 @@ Strategic Security, Risk & Influence Advisory
 
 <script>
 
-/* LANG */
 function toggleLang(){
     document.querySelectorAll("[data-fr]").forEach(el=>{
         el.innerHTML = (el.innerHTML === el.dataset.fr) ? el.dataset.en : el.dataset.fr;
     });
 }
+
 toggleLang();
-
-/* SCROLL ANIMATION */
-function reveal(){
-    document.querySelectorAll('.reveal').forEach(el=>{
-        if(el.getBoundingClientRect().top < window.innerHeight - 80){
-            el.classList.add('active');
-        }
-    });
-}
-
-window.addEventListener('scroll', reveal);
-reveal();
 
 </script>
 
