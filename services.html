@@ -4,19 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ARES OPSEC — Strategic Services</title>
+<title>ARES OPSEC — Services</title>
 
 <base href="./">
 
 <style>
 
-/* GLOBAL */
+/* RESET */
+* {margin:0;padding:0;box-sizing:border-box;}
+
 body {
-    margin:0;
     font-family:-apple-system,BlinkMacSystemFont,sans-serif;
     background:#f7f7f5;
     color:#111;
     line-height:1.7;
+}
+
+a {
+    text-decoration:none;
+    color:inherit;
 }
 
 /* HEADER */
@@ -25,6 +31,7 @@ header {
     width:100%;
     background:rgba(255,255,255,0.9);
     backdrop-filter:blur(10px);
+    z-index:1000;
 }
 
 nav {
@@ -35,51 +42,44 @@ nav {
 
 .menu a {
     margin-left:20px;
-    text-decoration:none;
-    color:#111;
+    font-size:0.95rem;
 }
 
 /* HERO */
 .hero {
-    padding:160px 40px 60px;
+    padding:160px 40px 80px;
     max-width:900px;
     margin:auto;
 }
 
 .hero h1 {
     font-size:3rem;
+    margin-bottom:20px;
 }
 
 .hero p {
-    font-size:1.3rem;
+    font-size:1.2rem;
     opacity:0.8;
 }
 
 /* SECTION */
 .section {
     max-width:900px;
-    margin:80px auto;
+    margin:100px auto;
 }
 
-/* BLOCK */
-.block {
+.service {
     margin-bottom:100px;
 }
 
-.block h2 {
+.service h2 {
     font-size:2.2rem;
     margin-bottom:20px;
 }
 
-.block p {
-    margin-bottom:20px;
+.service p {
+    margin-bottom:18px;
     opacity:0.8;
-}
-
-/* ALT BG */
-.alt {
-    background:#fff;
-    padding:80px 40px;
 }
 
 /* CTA */
@@ -89,9 +89,10 @@ nav {
 }
 
 .btn {
+    display:inline-block;
+    margin-top:25px;
     padding:14px 30px;
     border:1px solid #111;
-    text-decoration:none;
     color:#111;
     transition:0.3s;
 }
@@ -109,10 +110,9 @@ footer {
     padding:60px 20px;
 }
 
-footer small {
-    display:block;
-    margin-top:8px;
-    opacity:0.6;
+/* MOBILE */
+@media(max-width:768px){
+.hero h1 {font-size:2rem;}
 }
 
 </style>
@@ -125,9 +125,13 @@ footer small {
 <div><strong>ARES OPSEC</strong></div>
 
 <div class="menu">
-<a href="./index.html">Home</a>
-<a href="./services.html">Services</a>
-<a href="./index.html#contact">Contact</a>
+<a href="./index.html" data-fr="Accueil" data-en="Home"></a>
+<a href="./services.html" data-fr="Services" data-en="Services"></a>
+<a href="./index.html#contact" data-fr="Contact" data-en="Contact"></a>
+</div>
+
+<div onclick="toggleLang()" style="cursor:pointer;border:1px solid #111;padding:6px 12px;">
+FR / EN
 </div>
 
 </nav>
@@ -136,137 +140,119 @@ footer small {
 <!-- HERO -->
 <section class="hero">
 
-<h1>Strategic Services</h1>
+<h1 data-fr="Services stratégiques"
+     data-en="Strategic Services"></h1>
 
-<p>
-Nous intervenons là où les environnements deviennent complexes, visibles et sensibles.  
-Là où les décisions ne peuvent plus être improvisées.
-</p>
+<p data-fr="Nous intervenons dans des environnements où la complexité, la visibilité et les enjeux exigent une compréhension fine et une exécution structurée."
+   data-en="We operate in environments where complexity, visibility and stakes require deep understanding and structured execution."></p>
 
 </section>
 
-<!-- HOOK -->
+<!-- INTRO -->
 <section class="section">
 
-<div class="block">
-
-<p>
-Dans certains contextes, les variables sont nombreuses, les dynamiques instables et les conséquences réelles.  
-Les décisions prises dans ces environnements ne peuvent pas reposer uniquement sur l’intuition.
-</p>
-
-<p>
-Elles doivent être structurées, informées et alignées avec une compréhension fine des enjeux.
-</p>
-
-</div>
+<p data-fr="ARES OPSEC agit comme un partenaire stratégique auprès de clients exposés à des environnements exigeants. Notre rôle est d’apporter de la clarté là où l’incertitude domine et de structurer des décisions qui doivent être prises rapidement et correctement."
+   data-en="ARES OPSEC acts as a strategic partner for clients operating in demanding environments. Our role is to bring clarity where uncertainty dominates and structure decisions that must be made quickly and correctly."></p>
 
 </section>
 
-<!-- SERVICES -->
-<section class="alt">
-
-<div class="section">
-
-<div class="block">
+<!-- SERVICE 1 -->
+<section class="section service">
 
 <h2>Strategic Risk & Intelligence</h2>
 
-<p>
-Avant toute décision, il est essentiel de comprendre l’environnement.  
-Nous analysons les dynamiques en présence, les rapports de force, les vulnérabilités et les trajectoires possibles.
-</p>
+<p data-fr="Comprendre un environnement est la première étape pour réduire le risque. Nous analysons les dynamiques en présence, les acteurs influents et les zones de vulnérabilité afin de produire une lecture claire et exploitable."
+   data-en="Understanding an environment is the first step in reducing risk. We analyze existing dynamics, influential actors and vulnerabilities to produce clear and actionable insights."></p>
 
-<p>
-Cette lecture permet d’anticiper les points de friction, de réduire l’incertitude et de transformer un contexte complexe en information exploitable.
-</p>
+<p data-fr="Notre approche ne repose pas uniquement sur des données, mais sur l’interprétation stratégique de celles-ci. Cela permet d’anticiper les évolutions plutôt que de réagir aux événements."
+   data-en="Our approach goes beyond data by focusing on strategic interpretation. This enables anticipation rather than reaction."></p>
 
-</div>
+<p data-fr="Nous identifions les points de friction, les risques émergents et les opportunités cachées. Cette lecture devient un levier décisionnel puissant."
+   data-en="We identify friction points, emerging risks and hidden opportunities. This analysis becomes a powerful decision-making tool."></p>
 
-<div class="block">
+<p data-fr="Ce service est particulièrement pertinent dans des contextes politiques, médiatiques ou à forte exposition publique."
+   data-en="This service is particularly relevant in political, media or high-exposure contexts."></p>
 
-<h2>Protection Strategy</h2>
-
-<p>
-La protection ne se limite pas à des mesures visibles.  
-Elle repose sur une structure cohérente, adaptée à la réalité de l’individu ou de l’organisation.
-</p>
-
-<p>
-Nous concevons des stratégies intégrées qui tiennent compte des déplacements, de l’exposition, des interactions et des contraintes opérationnelles.
-</p>
-
-</div>
-
-<div class="block">
-
-<h2>Crisis Governance</h2>
-
-<p>
-Dans une situation critique, la pression réduit la capacité de jugement.  
-Les décisions deviennent plus rapides, mais souvent moins structurées.
-</p>
-
-<p>
-Notre rôle est d’introduire de la clarté, d’organiser la réponse et de maintenir le contrôle dans des environnements instables.
-</p>
-
-</div>
-
-<div class="block">
-
-<h2>Influence & Perception</h2>
-
-<p>
-La perception influence directement les risques et les résultats.  
-Une situation mal comprise peut rapidement évoluer de manière imprévisible.
-</p>
-
-<p>
-Nous analysons les parties prenantes, les réactions potentielles et les enjeux d’acceptabilité afin d’aligner les actions avec leur environnement.
-</p>
-
-</div>
-
-</div>
+<p data-fr="Il permet de transformer la complexité en avantage stratégique."
+   data-en="It transforms complexity into strategic advantage."></p>
 
 </section>
 
-<!-- APPROACH -->
-<section class="section">
+<!-- SERVICE 2 -->
+<section class="section service">
 
-<div class="block">
+<h2>Protection Strategy</h2>
 
-<h2>Approach</h2>
+<p data-fr="La protection efficace repose sur une compréhension globale de l’environnement et des habitudes. Nous concevons des stratégies adaptées à la réalité du client."
+   data-en="Effective protection relies on a comprehensive understanding of environment and habits. We design strategies tailored to each client."></p>
 
-<p>
-Chaque mandat débute par une phase de compréhension.  
-Nous analysons, structurons et clarifions avant d’agir.
-</p>
+<p data-fr="Nous intégrons les dimensions physiques, opérationnelles et comportementales dans une seule structure cohérente."
+   data-en="We integrate physical, operational and behavioral dimensions into a single coherent structure."></p>
 
-<p>
-L’objectif n’est pas d’ajouter de la complexité, mais d’en retirer.  
-Créer un cadre dans lequel les décisions deviennent plus simples, plus rapides et plus solides.
-</p>
+<p data-fr="Chaque stratégie vise à réduire l’exposition sans nuire aux activités ou à la liberté de mouvement."
+   data-en="Each strategy aims to reduce exposure without limiting operations or mobility."></p>
 
-</div>
+<p data-fr="Nous travaillons dans la discrétion et l’efficacité, sans surcharger l’environnement."
+   data-en="We operate with discretion and efficiency, without overloading the environment."></p>
+
+<p data-fr="L’objectif est de créer un cadre stable et maîtrisé."
+   data-en="The goal is to create a stable and controlled framework."></p>
+
+</section>
+
+<!-- SERVICE 3 -->
+<section class="section service">
+
+<h2>Crisis Governance</h2>
+
+<p data-fr="En situation de crise, la qualité des décisions diminue souvent sous la pression. Nous intervenons pour structurer la réponse."
+   data-en="In crisis situations, decision quality often declines under pressure. We intervene to structure response."></p>
+
+<p data-fr="Nous apportons un cadre clair pour prioriser les actions et réduire l’incertitude."
+   data-en="We provide a clear framework to prioritize actions and reduce uncertainty."></p>
+
+<p data-fr="Notre rôle est de maintenir le contrôle et d’éviter les décisions impulsives."
+   data-en="Our role is to maintain control and prevent impulsive decisions."></p>
+
+<p data-fr="Nous travaillons en collaboration avec les équipes internes pour assurer une cohérence."
+   data-en="We work alongside internal teams to ensure coherence."></p>
+
+<p data-fr="L’objectif est de stabiliser rapidement la situation et d’en limiter les impacts."
+   data-en="The objective is to stabilize the situation quickly and limit its impact."></p>
+
+</section>
+
+<!-- SERVICE 4 -->
+<section class="section service">
+
+<h2>Influence & Perception</h2>
+
+<p data-fr="La perception est un facteur clé dans les environnements complexes. Elle influence les décisions, les réactions et les résultats."
+   data-en="Perception is a key factor in complex environments. It influences decisions, reactions and outcomes."></p>
+
+<p data-fr="Nous analysons les parties prenantes et leurs attentes afin d’anticiper les réactions."
+   data-en="We analyze stakeholders and expectations to anticipate reactions."></p>
+
+<p data-fr="Nous identifions les risques réputationnels et les leviers d’acceptabilité."
+   data-en="We identify reputational risks and acceptability levers."></p>
+
+<p data-fr="Nous alignons les actions avec l’environnement pour éviter les frictions inutiles."
+   data-en="We align actions with the environment to avoid unnecessary friction."></p>
+
+<p data-fr="Ce travail permet de renforcer la position stratégique du client."
+   data-en="This strengthens the client's strategic positioning."></p>
 
 </section>
 
 <!-- CTA -->
 <section class="cta">
 
-<h2>
-Chaque situation mérite une lecture stratégique.
-</h2>
+<h2 data-fr="Chaque situation mérite une lecture stratégique"
+    data-en="Every situation requires strategic clarity"></h2>
 
-<p>
-Une première conversation permet de comprendre les enjeux et d’évaluer les options.
-</p>
-
-<a href="./index.html#contact" class="btn">
-Request Access
-</a>
+<a href="./index.html#contact" class="btn"
+data-fr="Faire une demande"
+data-en="Request Access"></a>
 
 </section>
 
@@ -275,10 +261,25 @@ Request Access
 <strong>ARES OPSEC</strong><br>
 Strategic Security, Risk & Influence Advisory
 
-<small>© 2026 ARES OPSEC. All rights reserved.</small>
-<small>ARES OPSEC™ — Proprietary frameworks and methodologies.</small>
+<p>© 2026 — All rights reserved</p>
 
 </footer>
+
+<script>
+
+let lang = "fr";
+
+function toggleLang(){
+    lang = lang === "fr" ? "en" : "fr";
+
+    document.querySelectorAll("[data-fr]").forEach(el=>{
+        el.innerHTML = el.dataset[lang];
+    });
+}
+
+toggleLang();
+
+</script>
 
 </body>
 </html>
