@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<base href="./">
 
-<title>ARES OPSEC — Strategic Advisory</title>
+<title>ARES OPSEC — Strategic Services</title>
+
+<base href="./">
 
 <style>
 
@@ -15,7 +16,7 @@ body {
     font-family:-apple-system,BlinkMacSystemFont,sans-serif;
     background:#f7f7f5;
     color:#111;
-    scroll-behavior:smooth;
+    line-height:1.7;
 }
 
 /* HEADER */
@@ -24,7 +25,6 @@ header {
     width:100%;
     background:rgba(255,255,255,0.9);
     backdrop-filter:blur(10px);
-    z-index:1000;
 }
 
 nav {
@@ -33,180 +33,74 @@ nav {
     padding:20px 40px;
 }
 
-.logo img {height:40px;}
-
-.toggle {
-    border:1px solid #111;
-    padding:6px 12px;
-    cursor:pointer;
+.menu a {
+    margin-left:20px;
+    text-decoration:none;
+    color:#111;
 }
 
 /* HERO */
 .hero {
-    height:100vh;
-    display:flex;
-    align-items:center;
-    padding:0 40px;
-    background:url('assets/hero.jpg') center/cover;
-    color:#fff;
-}
-
-.hero-overlay {
-    background:rgba(0,0,0,0.45);
-    padding:50px;
+    padding:160px 40px 80px;
+    max-width:900px;
+    margin:auto;
 }
 
 .hero h1 {
-    font-size:3.8rem;
-    line-height:1.1;
+    font-size:3rem;
 }
 
 .hero p {
     font-size:1.2rem;
-    opacity:0.9;
+    opacity:0.8;
 }
 
-/* STORY */
-.story-hero {
-    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),
-               url('assets/intel.jpg') center/cover;
-    color:#fff;
-    padding:120px 20px;
-    text-align:center;
-}
-
-.story-hero p {
-    max-width:800px;
-    margin:auto;
-    font-size:1.4rem;
-}
-
-/* SECTIONS */
-section {
-    padding:120px 20px;
-}
-
-.centered {
-    text-align:center;
+/* SECTION */
+.section {
     max-width:900px;
-    margin:auto;
+    margin:100px auto;
 }
 
-h2 {
-    font-size:2.8rem;
+.section h2 {
+    font-size:2rem;
     margin-bottom:20px;
 }
 
-.section-intro {
-    max-width:650px;
-    margin:0 auto 50px;
-    opacity:0.75;
+.section p {
+    margin-bottom:20px;
+    opacity:0.8;
 }
 
-/* GRID */
-.grid {
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:40px;
-    max-width:900px;
-    margin:auto;
-}
-
-/* CARDS */
-.card {
-    padding:25px;
-    transition:all 0.35s ease;
-    position:relative;
-}
-
-.card::after {
-    content:"";
-    position:absolute;
-    bottom:0;
-    left:0;
-    height:2px;
-    width:0;
-    background:#c9a96e;
-    transition:0.3s;
-}
-
-.card:hover::after {width:100%;}
-
-.card:hover {
-    transform:translateY(-8px);
-    background:#fff;
-    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+/* BLOCK */
+.block {
+    margin-bottom:80px;
 }
 
 /* CTA */
-.cta-section {
-    background:linear-gradient(120deg,#111,#222);
-    color:#fff;
+.cta {
     text-align:center;
+    margin:120px auto;
 }
 
-/* BUTTON */
 .btn {
-    display:inline-block;
-    margin-top:25px;
-    padding:14px 28px;
-    border:1px solid #fff;
-    color:#fff;
+    padding:14px 30px;
+    border:1px solid #111;
     text-decoration:none;
-    transition:0.3s;
-}
-
-.btn:hover {
-    background:#fff;
-    color:#000;
-    transform:scale(1.05);
-}
-
-/* FORM */
-form {
-    max-width:500px;
-    margin:40px auto;
-}
-
-input, select, textarea {
-    width:100%;
-    padding:14px;
-    margin-bottom:12px;
+    color:#111;
 }
 
 /* FOOTER */
-.footer {
+footer {
     background:#111;
     color:#bbb;
     text-align:center;
     padding:60px 20px;
 }
 
-.footer small {
+footer small {
     display:block;
     margin-top:8px;
     opacity:0.6;
-}
-
-/* SCROLL ANIMATION */
-.reveal {
-    opacity:0;
-    transform:translateY(40px);
-    transition:1s ease;
-}
-
-.reveal.active {
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* MOBILE */
-@media(max-width:768px){
-
-.hero h1 {font-size:2.2rem;}
-
-.grid {grid-template-columns:1fr;}
-
 }
 
 </style>
@@ -216,171 +110,128 @@ input, select, textarea {
 
 <header>
 <nav>
-<div class="logo"><img src="logo.png"></div>
-<div class="toggle" onclick="toggleLang()">FR / EN</div>
+<div><strong>ARES OPSEC</strong></div>
+
+<div class="menu">
+<a href="./index.html">Home</a>
+<a href="./services.html">Services</a>
+<a href="./index.html#contact">Contact</a>
+</div>
+
 </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-<div class="hero-overlay reveal">
 
-<h1 data-fr="Clarté stratégique dans des environnements complexes"
-     data-en="Strategic clarity in complex environments"></h1>
+<h1 data-fr="Services stratégiques"
+     data-en="Strategic Services"></h1>
 
-<p data-fr="Nous conseillons ceux qui opèrent là où le risque, la visibilité et l’influence se croisent."
-   data-en="We advise those operating where risk, visibility and influence intersect."></p>
-
-<a href="#contact" class="btn"
-   data-fr="Demande confidentielle"
-   data-en="Request Consultation"></a>
-
-</div>
-</section>
-
-<!-- STORY -->
-<section class="story-hero reveal">
-
-<p data-fr="Quand l’environnement devient complexe, la question n’est pas de réagir — mais de comprendre, structurer et contrôler."
-   data-en="When environments become complex, the question is not reaction — but understanding, structure and control."></p>
+<p data-fr="Nous intervenons dans des environnements où la complexité, la visibilité et les enjeux exigent une approche structurée et maîtrisée."
+   data-en="We operate in environments where complexity, visibility and stakes require a structured and controlled approach."></p>
 
 </section>
 
-<!-- SERVICES -->
-<section>
+<!-- INTRO -->
+<section class="section">
 
-<div class="centered reveal">
-<h2 data-fr="Conseil stratégique"
-    data-en="Strategic Advisory"></h2>
+<p data-fr="ARES OPSEC agit comme un partenaire stratégique. Notre rôle n’est pas d’ajouter du bruit, mais de créer de la clarté dans des situations où les variables sont nombreuses et les conséquences réelles."
+   data-en="ARES OPSEC operates as a strategic partner. Our role is not to add noise, but to create clarity in situations where variables are numerous and consequences are real."></p>
 
-<p class="section-intro"
-data-fr="Une approche structurée pour naviguer des environnements à forte exposition."
-data-en="A structured approach to navigating high-exposure environments."></p>
-</div>
+</section>
 
-<div class="grid">
+<!-- SERVICE 1 -->
+<section class="section block">
 
-<div class="card reveal">
-<h3>Risk & Intelligence</h3>
-<p data-fr="Lecture des environnements complexes."
-   data-en="Understanding complex environments."></p>
-</div>
+<h2>Strategic Risk & Intelligence</h2>
 
-<div class="card reveal">
-<h3>Protection Strategy</h3>
-<p data-fr="Cadres adaptés aux enjeux réels."
-   data-en="Tailored protection frameworks."></p>
-</div>
+<p data-fr="Nous analysons les environnements dans lesquels vous évoluez afin d’identifier les facteurs de risque, les zones de vulnérabilité et les dynamiques d’influence."
+   data-en="We analyze your operating environments to identify risk factors, vulnerabilities and influence dynamics."></p>
 
-<div class="card reveal">
-<h3>Crisis Governance</h3>
-<p data-fr="Décision claire sous pression."
-   data-en="Structured decisions under pressure."></p>
-</div>
+<p data-fr="Cette lecture permet d’anticiper les enjeux plutôt que de les subir."
+   data-en="This analysis allows anticipation instead of reaction."></p>
 
-<div class="card reveal">
-<h3>Influence</h3>
-<p data-fr="Gestion des dynamiques de perception."
-   data-en="Managing perception dynamics."></p>
-</div>
+</section>
 
-</div>
+<!-- SERVICE 2 -->
+<section class="section block">
+
+<h2>Protection Strategy</h2>
+
+<p data-fr="Nous développons des stratégies de protection adaptées à votre réalité : personnelle, familiale ou organisationnelle."
+   data-en="We develop protection strategies tailored to your personal, family or organizational reality."></p>
+
+<p data-fr="L’objectif est de créer un cadre cohérent, discret et efficace."
+   data-en="The objective is to create a coherent, discreet and effective framework."></p>
+
+</section>
+
+<!-- SERVICE 3 -->
+<section class="section block">
+
+<h2>Crisis Governance</h2>
+
+<p data-fr="Dans les situations critiques, la vitesse de décision et la clarté deviennent essentielles."
+   data-en="In critical situations, speed and clarity become essential."></p>
+
+<p data-fr="Nous structurons la réponse afin de maintenir le contrôle et éviter les dérives décisionnelles."
+   data-en="We structure response to maintain control and avoid decision drift."></p>
+
+</section>
+
+<!-- SERVICE 4 -->
+<section class="section block">
+
+<h2>Influence & Perception</h2>
+
+<p data-fr="Les dynamiques de perception influencent directement les résultats."
+   data-en="Perception dynamics directly influence outcomes."></p>
+
+<p data-fr="Nous analysons les parties prenantes et les réactions potentielles afin d’aligner votre positionnement."
+   data-en="We analyze stakeholders and potential reactions to align your positioning."></p>
+
+</section>
+
+<!-- APPROACH -->
+<section class="section">
+
+<h2 data-fr="Approche"
+    data-en="Approach"></h2>
+
+<p data-fr="Chaque mandat débute par une analyse, suivie d’une structuration et d’une mise en œuvre adaptée."
+   data-en="Each engagement begins with analysis, followed by structuring and tailored implementation."></p>
 
 </section>
 
 <!-- CTA -->
-<section class="cta-section reveal">
+<section class="cta">
 
-<h2 data-fr="Ce n’est pas une question de sécurité"
-    data-en="This is not about security"></h2>
+<h2 data-fr="Chaque situation mérite une approche structurée"
+    data-en="Every situation requires a structured approach"></h2>
 
-<p data-fr="C’est une question de contrôle."
-   data-en="This is about control."></p>
-
-<a href="#contact" class="btn"
-   data-fr="Parler à un conseiller"
-   data-en="Speak with an advisor"></a>
+<a href="./index.html#contact" class="btn"
+data-fr="Faire une demande"
+data-en="Request Access"></a>
 
 </section>
 
-<!-- FORM -->
-<section id="contact">
-
-<div class="centered reveal">
-
-<h2 data-fr="Accès confidentiel"
-    data-en="Confidential Access"></h2>
-
-</div>
-
-<form class="reveal">
-
-<input placeholder="Name">
-<input placeholder="Email">
-
-<select>
-<option>Type of engagement</option>
-<option>Strategic Advisory</option>
-<option>Protection</option>
-<option>Crisis</option>
-</select>
-
-<select>
-<option>Budget</option>
-<option>$10k-$25k</option>
-<option>$25k-$50k</option>
-<option>$50k+</option>
-</select>
-
-<select>
-<option>Urgency</option>
-<option>Low</option>
-<option>Medium</option>
-<option>High</option>
-</select>
-
-<textarea placeholder="Message"></textarea>
-
-<button class="btn"
-data-fr="Envoyer"
-data-en="Submit"></button>
-
-</form>
-
-</section>
-
-<footer class="footer">
+<footer>
 
 <strong>ARES OPSEC</strong><br>
 Strategic Security, Risk & Influence Advisory
 
 <small>© 2026 ARES OPSEC. All rights reserved.</small>
-<small>ARES OPSEC™ — Proprietary methodologies.</small>
+<small>ARES OPSEC™ — Proprietary frameworks.</small>
 
 </footer>
 
 <script>
-
-/* LANG */
 function toggleLang(){
-    document.querySelectorAll("[data-fr]").forEach(el=>{
-        el.innerHTML = (el.innerHTML === el.dataset.fr) ? el.dataset.en : el.dataset.fr;
-    });
+document.querySelectorAll("[data-fr]").forEach(el=>{
+el.innerHTML = (el.innerHTML === el.dataset.fr) ? el.dataset.en : el.dataset.fr;
+});
 }
 toggleLang();
-
-/* SCROLL ANIMATION */
-function reveal(){
-    document.querySelectorAll('.reveal').forEach(el=>{
-        if(el.getBoundingClientRect().top < window.innerHeight - 80){
-            el.classList.add('active');
-        }
-    });
-}
-
-window.addEventListener('scroll', reveal);
-reveal();
-
 </script>
 
 </body>
