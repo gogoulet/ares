@@ -14,7 +14,6 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     background:#f7f7f5;
     color:#111;
-    line-height:1.6;
 }
 
 /* HEADER */
@@ -83,6 +82,7 @@ h2 {
 .section-intro {
     max-width:700px;
     margin-bottom:60px;
+    opacity:0.8;
 }
 
 /* GRID */
@@ -95,22 +95,34 @@ h2 {
 /* CARDS */
 .card {
     padding:20px 0;
+    transition:0.3s;
+    border-bottom:1px solid transparent;
+}
+
+.card:hover {
+    transform:translateY(-6px);
+    border-bottom:1px solid #c9a96e;
 }
 
 .card h3 {
     font-size:1.6rem;
-    margin-bottom:10px;
 }
 
 .card p {
     opacity:0.7;
 }
 
-/* BUTTON */
+/* CTA */
+.cta-section {
+    background:linear-gradient(120deg,#111,#222);
+    color:#fff;
+    text-align:center;
+}
+
 .btn {
-    margin-top:30px;
     display:inline-block;
-    padding:12px 25px;
+    margin-top:30px;
+    padding:14px 28px;
     border:1px solid #fff;
     color:#fff;
     text-decoration:none;
@@ -119,6 +131,19 @@ h2 {
 .light-btn {
     border-color:#111;
     color:#111;
+}
+
+/* FORM */
+form {
+    max-width:600px;
+}
+
+input, textarea {
+    width:100%;
+    padding:14px;
+    margin-bottom:12px;
+    border:1px solid #ddd;
+    background:#fff;
 }
 
 /* FOOTER */
@@ -159,83 +184,118 @@ footer {
 
 <!-- ADVISORY -->
 <section>
-<h2>Advisory</h2>
+<h2 data-fr="Conseil stratégique"
+    data-en="Strategic Advisory"></h2>
 
-<p class="section-intro">
-A structured approach to navigating environments where risk, influence and perception intersect.
-</p>
+<p class="section-intro"
+   data-fr="Une approche structurée pour naviguer les environnements où le risque, l’influence et la perception se croisent."
+   data-en="A structured approach to navigating environments where risk, influence and perception intersect."></p>
 
 <div class="grid">
 
 <div class="card">
-<h3>Risk & Intelligence</h3>
-<p>Understanding complex environments and identifying exposure points.</p>
+<h3 data-fr="Risque & Intelligence"
+    data-en="Risk & Intelligence"></h3>
+<p data-fr="Compréhension des environnements complexes et identification des vulnérabilités."
+   data-en="Understanding complex environments and identifying exposure points."></p>
 </div>
 
 <div class="card">
-<h3>Protection Strategy</h3>
-<p>Designing tailored frameworks for individuals and organizations.</p>
+<h3 data-fr="Stratégie de protection"
+    data-en="Protection Strategy"></h3>
+<p data-fr="Création de cadres de protection adaptés aux individus et organisations."
+   data-en="Designing tailored frameworks for individuals and organizations."></p>
 </div>
 
 <div class="card">
-<h3>Crisis Management</h3>
-<p>Maintaining clarity and control under pressure.</p>
+<h3 data-fr="Gestion de crise"
+    data-en="Crisis Management"></h3>
+<p data-fr="Maintenir clarté et contrôle sous pression."
+   data-en="Maintaining clarity and control under pressure."></p>
 </div>
 
 <div class="card">
-<h3>Influence & Perception</h3>
-<p>Aligning strategy with stakeholder and public dynamics.</p>
+<h3 data-fr="Influence & perception"
+    data-en="Influence & Perception"></h3>
+<p data-fr="Alignement stratégique avec les dynamiques publiques et politiques."
+   data-en="Aligning strategy with stakeholder and public dynamics."></p>
 </div>
 
 </div>
 </section>
 
-<!-- IMAGE BREAK -->
-<section class="alt">
-<h2>Context</h2>
+<!-- CTA CONTEXT -->
+<section class="cta-section">
 
-<p class="section-intro">
-Modern environments are interconnected, unpredictable and increasingly exposed.
-</p>
+<h2 data-fr="Les environnements changent rapidement"
+    data-en="Environments evolve rapidly"></h2>
+
+<p class="section-intro"
+   data-fr="Les risques modernes sont interconnectés. La perception devient stratégique. La préparation fait la différence."
+   data-en="Modern risks are interconnected. Perception is strategic. Preparation makes the difference."></p>
+
+<a class="btn"
+   data-fr="Parler à un conseiller"
+   data-en="Speak with an advisor"></a>
+
 </section>
 
 <!-- WHO -->
 <section>
-<h2>Who We Work With</h2>
+<h2 data-fr="Nous accompagnons"
+    data-en="Who We Work With"></h2>
 
 <div class="grid">
 
 <div class="card">
 <h3>Executives</h3>
-<p>Leaders operating in complex and visible environments.</p>
+<p data-fr="Dirigeants exposés à des environnements complexes."
+   data-en="Leaders operating in complex environments."></p>
 </div>
 
 <div class="card">
 <h3>Families</h3>
-<p>Private clients seeking long-term protection and clarity.</p>
+<p data-fr="Familles recherchant stabilité et protection."
+   data-en="Families seeking stability and protection."></p>
 </div>
 
 <div class="card">
 <h3>Organizations</h3>
-<p>Projects exposed to regulatory or public pressure.</p>
+<p data-fr="Projets exposés à des pressions externes."
+   data-en="Projects exposed to external pressure."></p>
 </div>
 
 </div>
 </section>
 
 <!-- CONTACT -->
-<section class="alt">
+<section>
 
 <h2 data-fr="Accès confidentiel"
     data-en="Confidential Access"></h2>
 
-<p class="section-intro">
-Engagements are selective and based on strategic alignment.
-</p>
+<p class="section-intro"
+   data-fr="Chaque mandat est évalué selon sa portée stratégique."
+   data-en="Each engagement is evaluated based on strategic relevance."></p>
+
+<form>
+<input placeholder="Name">
+<input placeholder="Email">
+<textarea placeholder="Message"></textarea>
+<button class="btn light-btn">Submit</button>
+</form>
+
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+
+<h2 data-fr="Discrétion. Clarté. Contrôle."
+    data-en="Discretion. Clarity. Control."></h2>
 
 <a class="btn"
    data-fr="Faire une demande"
-   data-en="Submit Request"></a>
+   data-en="Request Access"></a>
 
 </section>
 
@@ -244,12 +304,15 @@ ARES OPSEC
 </footer>
 
 <script>
+
 function toggleLang(){
     document.querySelectorAll("[data-fr]").forEach(el=>{
         el.innerHTML = (el.innerHTML === el.dataset.fr) ? el.dataset.en : el.dataset.fr;
     });
 }
+
 toggleLang();
+
 </script>
 
 </body>
