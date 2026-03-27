@@ -8,47 +8,50 @@
 
 <style>
 
+/* GLOBAL */
 body {
     margin:0;
     font-family: 'Segoe UI', sans-serif;
-    background:#0a0f1a;
+    background:#05070d;
     color:#fff;
-    overflow-x:hidden;
+    cursor:none;
 }
 
-.container {
-    width:90%;
-    max-width:1200px;
-    margin:auto;
+/* CUSTOM CURSOR */
+.cursor {
+    width:12px;
+    height:12px;
+    border:1px solid #c9a96e;
+    border-radius:50%;
+    position:fixed;
+    pointer-events:none;
+    z-index:9999;
+    transition:transform 0.1s ease;
 }
 
 /* HEADER */
 header {
     position:fixed;
     width:100%;
-    top:0;
-    background:rgba(10,15,26,0.6);
+    background:rgba(5,7,13,0.7);
     backdrop-filter: blur(12px);
     z-index:1000;
-    transition:0.3s;
 }
 
 nav {
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 0;
+    padding:20px 40px;
 }
 
-.logo img {
-    height:40px;
-}
+.logo img { height:40px; }
 
 .toggle {
-    cursor:pointer;
     border:1px solid #c9a96e;
-    padding:6px 12px;
+    padding:6px 14px;
     font-size:12px;
+    cursor:pointer;
 }
 
 /* HERO */
@@ -56,25 +59,46 @@ nav {
     height:100vh;
     display:flex;
     align-items:center;
-    background:linear-gradient(rgba(10,15,26,0.7), rgba(10,15,26,1)),
+    background:linear-gradient(rgba(0,0,0,0.6), #05070d),
                url('assets/hero.jpg') center/cover fixed;
 }
 
 .hero h1 {
-    font-size:3.2rem;
-    margin-bottom:20px;
+    font-size:4rem;
+    font-weight:700;
+    letter-spacing:1px;
+    line-height:1.1;
+    text-shadow:0 0 20px rgba(0,0,0,0.7);
 }
 
 .hero p {
-    font-size:1.2rem;
+    font-size:1.3rem;
     max-width:600px;
+    opacity:0.85;
+}
+
+/* STRONG HEADERS */
+h2 {
+    font-size:3rem;
+    font-weight:700;
+    margin-bottom:30px;
+    position:relative;
+}
+
+h2::after {
+    content:"";
+    display:block;
+    width:60px;
+    height:2px;
+    background:#c9a96e;
+    margin-top:10px;
 }
 
 /* BUTTON */
 .btn {
     display:inline-block;
-    margin-top:20px;
-    padding:12px 28px;
+    margin-top:25px;
+    padding:14px 30px;
     border:1px solid #c9a96e;
     color:#c9a96e;
     text-decoration:none;
@@ -88,11 +112,10 @@ nav {
 
 /* SECTIONS */
 section {
-    padding:120px 0;
-    position:relative;
+    padding:140px 40px;
 }
 
-/* PARALLAX IMAGE BLOCK */
+/* PARALLAX */
 .parallax {
     height:60vh;
     background-size:cover;
@@ -103,27 +126,27 @@ section {
 /* GRID */
 .grid {
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:30px;
 }
 
 .card {
-    border:1px solid rgba(255,255,255,0.1);
-    padding:30px;
+    padding:35px;
+    border:1px solid rgba(255,255,255,0.08);
     transition:0.4s;
     background:rgba(255,255,255,0.02);
 }
 
 .card:hover {
+    transform:translateY(-10px) scale(1.02);
     border-color:#c9a96e;
-    transform:translateY(-8px);
 }
 
-/* FADE CINEMATIC */
+/* FADE */
 .fade {
     opacity:0;
-    transform:translateY(60px);
-    transition:1.2s ease-out;
+    transform:translateY(80px);
+    transition:1.2s ease;
 }
 
 .fade.visible {
@@ -131,11 +154,21 @@ section {
     transform:translateY(0);
 }
 
+/* FORM */
+input, textarea {
+    width:100%;
+    padding:14px;
+    margin-bottom:12px;
+    background:#0d111a;
+    border:1px solid rgba(255,255,255,0.1);
+    color:#fff;
+}
+
 /* FOOTER */
 footer {
-    padding:60px 0;
     text-align:center;
-    color:#888;
+    padding:60px;
+    color:#666;
 }
 
 </style>
@@ -143,128 +176,83 @@ footer {
 
 <body>
 
+<div class="cursor"></div>
+
 <header>
-<div class="container">
 <nav>
-<div class="logo">
-<img src="logo.png">
-</div>
+<div class="logo"><img src="logo.png"></div>
 <div class="toggle" onclick="toggleLang()">FR / EN</div>
 </nav>
-</div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-<div class="container fade">
+<div class="fade">
 <h1 data-fr="Nous protégeons ce qui ne peut pas être remplacé."
-     data-en="We protect what cannot be replaced.">
-Nous protégeons ce qui ne peut pas être remplacé.
-</h1>
+     data-en="We protect what cannot be replaced."></h1>
 
-<p data-fr="ARES OPSEC est un partenaire stratégique en sécurité, intelligence et gestion du risque pour les environnements sensibles."
-   data-en="ARES OPSEC is a strategic partner in security, intelligence and risk management for sensitive environments.">
-ARES OPSEC est un partenaire stratégique...
-</p>
+<p data-fr="ARES OPSEC agit là où le risque devient stratégique."
+   data-en="ARES OPSEC operates where risk becomes strategic."></p>
 
 <a class="btn"
-   data-fr="Consultation privée"
-   data-en="Private Consultation">
-Consultation privée
-</a>
+   data-fr="Accès confidentiel"
+   data-en="Confidential Access"></a>
 </div>
 </section>
 
-<!-- PARALLAX -->
 <div class="parallax" style="background-image:url('assets/convoy.jpg')"></div>
 
-<!-- REALITY -->
 <section>
-<div class="container fade">
+<div class="fade">
 <h2 data-fr="La réalité"
-    data-en="The Reality">La réalité</h2>
+    data-en="The Reality"></h2>
 
 <p data-fr="Le monde est instable. L’influence attire l’attention. L’attention crée du risque."
-   data-en="The world is unstable. Influence attracts attention. Attention creates risk.">
-Le monde est instable...
-</p>
+   data-en="The world is unstable. Influence attracts attention. Attention creates risk."></p>
 </div>
 </section>
 
-<!-- PARALLAX -->
 <div class="parallax" style="background-image:url('assets/intel.jpg')"></div>
 
-<!-- SERVICES -->
 <section>
-<div class="container fade">
-
-<h2 data-fr="Expertise stratégique"
-    data-en="Strategic Capabilities">Expertise stratégique</h2>
+<div class="fade">
+<h2 data-fr="Capacités stratégiques"
+    data-en="Strategic Capabilities"></h2>
 
 <div class="grid">
 
-<div class="card">
-<h3>Intelligence & Risk</h3>
-<p>Threat analysis, profiling and strategic risk mapping.</p>
-</div>
-
-<div class="card">
-<h3>Protective Operations</h3>
-<p>Executive protection and secure mobility.</p>
-</div>
-
-<div class="card">
-<h3>Crisis Response</h3>
-<p>Incident management and containment.</p>
-</div>
-
-<div class="card">
-<h3>Global Support</h3>
-<p>Medical and security assistance worldwide.</p>
-</div>
+<div class="card">Intelligence & Risk</div>
+<div class="card">Protective Operations</div>
+<div class="card">Crisis Response</div>
+<div class="card">Global Support</div>
 
 </div>
-
 </div>
 </section>
 
-<!-- PARALLAX -->
 <div class="parallax" style="background-image:url('assets/home.jpg')"></div>
 
-<!-- WHO -->
 <section>
-<div class="container fade">
+<div class="fade">
+<h2 data-fr="Portée globale"
+    data-en="Global Reach"></h2>
 
-<h2 data-fr="Qui nous protégeons"
-    data-en="Who We Protect">Qui nous protégeons</h2>
-
-<div class="grid">
-<div class="card">High-net-worth families</div>
-<div class="card">Executives</div>
-<div class="card">Sensitive projects</div>
-<div class="card">Institutions</div>
-</div>
-
+<p>
+Canada • United Kingdom • Commonwealth • International Operations
+</p>
 </div>
 </section>
 
-<!-- CTA -->
 <section>
-<div class="container fade">
-
+<div class="fade">
 <h2 data-fr="Accès confidentiel"
-    data-en="Confidential Access">Accès confidentiel</h2>
+    data-en="Confidential Access"></h2>
 
-<p data-fr="Les mandats sont sélectionnés avec discrétion. Contactez-nous pour une évaluation."
-   data-en="Mandates are selected with discretion. Contact us for an assessment.">
-Les mandats sont sélectionnés...
-</p>
-
-<a class="btn"
-   data-fr="Faire une demande"
-   data-en="Submit Request">
-Faire une demande
-</a>
+<form>
+<input placeholder="Name">
+<input placeholder="Email">
+<textarea placeholder="Message"></textarea>
+<button class="btn">Submit</button>
+</form>
 
 </div>
 </section>
@@ -275,24 +263,29 @@ ARES OPSEC — Strategic Security & Risk Intelligence
 
 <script>
 
-/* LANGUAGE TOGGLE */
+/* LANGUAGE */
 function toggleLang(){
-    const elements = document.querySelectorAll("[data-fr]");
-    elements.forEach(el=>{
+    document.querySelectorAll("[data-fr]").forEach(el=>{
         el.innerHTML = (el.innerHTML === el.dataset.fr) ? el.dataset.en : el.dataset.fr;
     });
 }
+toggleLang();
 
-/* SCROLL CINEMATIC */
+/* SCROLL */
 const faders = document.querySelectorAll('.fade');
-
 window.addEventListener('scroll',()=>{
     faders.forEach(el=>{
-        const rect = el.getBoundingClientRect();
-        if(rect.top < window.innerHeight - 100){
+        if(el.getBoundingClientRect().top < window.innerHeight - 80){
             el.classList.add('visible');
         }
     });
+});
+
+/* CURSOR */
+const cursor = document.querySelector('.cursor');
+document.addEventListener('mousemove', e=>{
+    cursor.style.top = e.clientY + 'px';
+    cursor.style.left = e.clientX + 'px';
 });
 
 </script>
