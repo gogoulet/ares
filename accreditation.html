@@ -5,86 +5,250 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARES OPSEC — Demande d'Accréditation</title>
     <style>
-        /* RESET & BASE SYSTEM (FOND BLANC STRICT) */
+        /* RESET & BASE SYSTEM (ALIGNÉ SUR ECOSYSTEMS) */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #111111; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+            background: #f7f7f5; 
+            color: #111111; 
+            line-height: 1.7; 
+        }
+        
         a { text-decoration: none; color: inherit; }
 
-        /* NAVIGATION BAR (FOND BLANC) */
-        header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #eeeeee; position: fixed; width: 100%; top: 0; z-index: 1000; }
-        nav { max-width: 1200px; margin: 0 auto; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo { height: 32px; width: auto; display: block; }
-        .menu { display: flex; align-items: center; }
-        .menu a { margin-left: 30px; font-size: 0.9rem; color: #666666; font-weight: 400; letter-spacing: 0.5px; transition: color 0.3s; }
-        .menu a:hover, .menu a.active { color: #000000; }
-        .lang-btn { margin-left: 30px; cursor: pointer; border: 1px solid #cccccc; padding: 6px 14px; font-size: 0.8rem; font-weight: 500; letter-spacing: 1px; transition: all 0.3s; color: #111111; }
-        .lang-btn:hover { background: #000000; color: #ffffff; border-color: #000000; }
-
-        /* HERO BANNER CORRIGÉ & PARFAITEMENT CENTRÉ */
-        .hero-banner { height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 80px; background: linear-gradient(rgba(11,11,11,0.6), rgba(11,11,11,0.85)), url('accreditation.png') center/cover no-repeat; border-bottom: 1px solid #111111; }
-        .hero-container { max-width: 1200px; margin: 0 auto; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .hero-subtitle { font-size: 0.85rem; color: #bbbbbb; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 20px; font-weight: 500; }
-        .hero-title { font-size: 3.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: -1px; color: #ffffff; line-height: 1.2; max-width: 900px; }
-
-        /* INTERFACE STRUCTURELLE RESPIRANTE (Grands espaces d'origine) */
-        .content-section { max-width: 800px; margin: 120px auto 160px auto; padding: 0 40px; }
-
-        /* BLOC INTRO (Ligne noire fine épurée) */
-        .intro-block { border-left: 1px solid #000000; padding-left: 35px; margin-bottom: 80px; }
-        .intro-block p { font-size: 1.35rem; font-weight: 300; color: #222222; line-height: 1.8; }
+        /* HEADER */
+        header { 
+            position: fixed; 
+            width: 100%; 
+            background: rgba(255, 255, 255, 0.9); 
+            backdrop-filter: blur(10px); 
+            z-index: 1000; 
+        }
         
-        /* NOTICE TECHNIQUE ÉPURÉE */
-        .notice-protocol { margin-bottom: 90px; }
-        .notice-protocol h3 { color: #000000; margin-bottom: 20px; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
-        .notice-protocol p { color: #555555; font-size: 1.05rem; font-weight: 400; line-height: 1.8; }
+        nav { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 15px 40px; 
+        }
+        
+        .nav-logo { 
+            height: 35px; 
+            width: auto; 
+            display: block; 
+        }
+        
+        .menu a { 
+            margin-left: 20px; 
+            font-size: 0.95rem; 
+        }
+        
+        .lang-btn {
+            cursor: pointer;
+            border: 1px solid #111;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
 
-        /* FORMULAIRE DESIGN PURE SUR FOND BLANC */
-        .form-content { background: transparent; }
-        .form-group { margin-bottom: 55px; position: relative; }
-        .form-group label { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; color: #888888; font-weight: 600; }
+        /* HERO BANNER (CONTRÔLE GRILLE ECOSYSTEMS) */
+        .hero-banner { 
+            height: 85vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            color: #ffffff; 
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.85)), url('accreditation.png') center/cover no-repeat; 
+            border-bottom: 1px solid #222; 
+        }
+        
+        .hero-overlay { 
+            max-width: 900px; 
+            padding: 0 20px; 
+        }
+        
+        .hero-banner h1 { 
+            font-size: 3.8rem; 
+            font-weight: 700; 
+            line-height: 1.2; 
+            letter-spacing: -1px; 
+        }
+        
+        .hero-banner p { 
+            margin-top: 20px; 
+            font-size: 1.2rem; 
+            color: #ccc; 
+            text-transform: uppercase; 
+            letter-spacing: 3px; 
+            font-weight: 400; 
+        }
+
+        /* GRILLE DE MISE EN PAGE ET SECTIONS */
+        .section { 
+            max-width: 1000px; 
+            margin: 100px auto; 
+            padding: 0 20px; 
+        }
+
+        /* BLOC INTRO (SÉCURISATION DU TYPEFACE) */
+        .intro-block { 
+            border-left: 2px solid #111; 
+            padding-left: 30px; 
+            margin-bottom: 80px; 
+        }
+        
+        .intro-block p { 
+            font-size: 1.4rem; 
+            font-weight: 300; 
+            color: #222; 
+            line-height: 1.8; 
+        }
+
+        /* BLOC CONTENEUR BLANC (STYLISÉ COMME UN USE CASE) */
+        .white-card-block {
+            background: #ffffff;
+            border: 1px solid #eeeeee;
+            padding: 50px;
+            margin-bottom: 60px;
+        }
+        
+        .notice-protocol h3 { 
+            font-size: 2rem; 
+            margin-bottom: 25px; 
+            color: #111; 
+            letter-spacing: -0.5px; 
+        }
+        
+        .notice-protocol p { 
+            margin-bottom: 20px; 
+            font-size: 1.1rem; 
+            color: #333; 
+            text-align: justify; 
+        }
+
+        /* FORMULAIRE DESIGN PURE INTÉGRÉ AU BLOC BLANC */
+        .form-group { 
+            margin-bottom: 45px; 
+            position: relative; 
+        }
+        
+        .form-group label { 
+            display: block; 
+            font-size: 0.85rem; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            margin-bottom: 12px; 
+            color: #888888; 
+            font-weight: bold; 
+        }
         
         .form-group input, 
         .form-group select, 
-        .form-group textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid #dddddd; padding: 12px 0; color: #111111; font-size: 1.1rem; font-family: inherit; border-radius: 0; transition: border-color 0.3s; }
+        .form-group textarea { 
+            width: 100%; 
+            background: transparent; 
+            border: none; 
+            border-bottom: 1px solid #e5e5e0; 
+            padding: 12px 0; 
+            color: #111111; 
+            font-size: 1.1rem; 
+            font-family: inherit; 
+            border-radius: 0; 
+            transition: border-color 0.3s; 
+        }
+        
         .form-group input:focus, 
         .form-group select:focus, 
-        .form-group textarea:focus { outline: none; border-bottom: 1px solid #000000; }
+        .form-group textarea:focus { 
+            outline: none; 
+            border-bottom: 1px solid #111111; 
+        }
         
-        /* Select & Textarea */
-        .form-group select { appearance: none; -webkit-appearance: none; cursor: pointer; background: transparent; }
-        .form-group textarea { height: 100px; resize: none; }
+        .form-group select { 
+            appearance: none; 
+            -webkit-appearance: none; 
+            cursor: pointer; 
+        }
+        
+        .form-group textarea { 
+            height: 100px; 
+            resize: none; 
+        }
 
-        /* BOUTON STYLE INDEX (Cadre noir fin, inversion au survol) */
-        .btn-action { display: inline-block; width: auto; padding: 18px 40px; background: transparent; color: #111111; border: 1px solid #111111; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin-top: 20px; }
-        .btn-action:hover { background: #000000; color: #ffffff; border-color: #000000; }
+        /* BOUTONS DIRECTIFS HARMONISÉS */
+        .btn { 
+            display: inline-block; 
+            margin-top: 20px; 
+            padding: 14px 35px; 
+            border: 1px solid #111; 
+            color: #111; 
+            font-size: 0.9rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            transition: 0.3s; 
+            background: none; 
+            cursor: pointer; 
+        }
+        
+        .btn:hover { 
+            background: #111; 
+            color: #fff; 
+        }
 
-        /* FOOTER BLANC SÉCURISÉ */
-        footer { background: #fafafa; color: #666666; text-align: center; padding: 100px 40px; border-top: 1px solid #eeeeee; font-size: 0.85rem; letter-spacing: 0.5px; }
-        footer strong { color: #000000; letter-spacing: 1px; font-weight: 600; }
-        footer p { margin-top: 15px; }
-        footer a { color: #444444; transition: color 0.3s; }
-        footer a:hover { color: #000000; }
+        /* FOOTER NOIR UNIFORME */
+        footer { 
+            background: #111; 
+            color: #888; 
+            text-align: center; 
+            padding: 80px 20px; 
+            border-top: 1px solid #222; 
+            font-size: 0.9rem; 
+        }
+        
+        footer strong { 
+            color: #fff; 
+            letter-spacing: 1px; 
+        }
+        
+        footer p { 
+            margin-top: 15px; 
+        }
+        
+        footer a { 
+            color: #ccc; 
+        }
+        
+        footer a:hover { 
+            color: #fff; 
+        }
 
-        /* RESPONSIVE */
-        @media(max-width: 768px) {
-            nav { padding: 20px; }
-            .menu { display: none; }
-            .hero-banner { height: 45vh; padding-top: 60px; }
-            .hero-title { font-size: 2.2rem; }
-            .content-section { margin: 60px auto 100px auto; padding: 0 24px; }
-            .intro-block { padding-left: 20px; margin-bottom: 50px; }
-            .intro-block p { font-size: 1.15rem; }
-            .form-group { margin-bottom: 40px; }
+        /* NAVIGATION COMPATIBILITÉ */
+        .menu a.active {
+            font-weight: bold;
+            color: #000;
+        }
+
+        /* MOBILE RESPONSIVE ACCORDING TO ECOSYSTEMS */
+        @media(max-width:768px) {
+            .hero-banner { height: 70vh; }
+            .hero-banner h1 { font-size: 2.2rem; }
+            .white-card-block { padding: 30px; }
+            .notice-protocol h3 { font-size: 1.6rem; }
+            .intro-block p { font-size: 1.2rem; }
+            nav { padding: 15px 20px; }
+            .form-group { margin-bottom: 35px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAV BAR SYSTEM (FOND BLANC COHÉRENT) -->
+    <!-- NAVIGATION SYSTEM -->
     <header>
         <nav>
             <a href="./">
-                <img src="logo.png" alt="ARES" class="nav-logo">
+                <img src="logo.png" alt="ARES OPSEC WORLD" class="nav-logo">
             </a>
             <div class="menu">
                 <a href="./" data-fr="Accueil" data-en="Home">Accueil</a>
@@ -98,30 +262,32 @@
         </nav>
     </header>
 
-    <!-- HERO BANNER (CENTRAGE ABSOLU ET PARFAIT) -->
+    <!-- HERO BANNER -->
     <section class="hero-banner">
-        <div class="hero-container">
-            <p class="hero-subtitle" data-fr="Portail Restreint • Mandats Limités" data-en="Restricted Portal • Limited Engagements">Portail Restreint • Mandats Limités</p>
-            <h1 class="hero-title" data-fr="Demande d'Accréditation" data-en="Accreditation Request">Demande d'Accréditation</h1>
+        <div class="hero-overlay">
+            <p data-fr="Portail Restreint • Mandats Limités" data-en="Restricted Portal • Limited Engagements">Portail Restreint • Mandats Limités</p>
+            <h1 data-fr="Demande d'Accréditation" data-en="Accreditation Request">Demande d'Accréditation</h1>
         </div>
     </section>
 
-    <!-- INTERFACE AÉRÉE ET RESPIRANTE -->
-    <main class="content-section">
+    <!-- MAIN GRILLE DE MISE EN PAGE -->
+    <section class="section">
         
+        <!-- INTRO DU PARCOURS -->
         <div class="intro-block">
             <p data-fr="Ares n'accepte qu'un nombre restreint de mandats chaque année afin de garantir une étanchéité absolue et une attention exécutive totale à nos clients existants."
                data-en="Ares accepts only a strictly limited number of engagements each year to guarantee absolute operational insulation and total executive dedication to our existing clients.">Ares n'accepte qu'un nombre restreint de mandats chaque année afin de garantir une étanchéité absolue et une attention exécutive totale à nos clients existants.</p>
         </div>
 
-        <div class="notice-protocol">
-            <h3 data-fr="Protocole d'Admissibilité" data-en="Eligibility Protocol">Protocole d'Admissibilité</h3>
-            <p data-fr="L'ouverture d'un dossier d'évaluation est réservée aux Single Family Offices, aux gestionnaires de patrimoine UHNWI et aux comités de direction d'entreprises souveraines. Chaque soumission subit une vérification préalable d'intégrité avant toute prise de contact."
-               data-en="The opening of an evaluation file is strictly reserved for Single Family Offices, UHNWI asset managers, and sovereign corporate boards. Every submission undergoes a preliminary integrity clearance check prior to any formal communication.">L'ouverture d'un dossier d'évaluation est réservée aux Single Family Offices, aux gestionnaires de patrimoine UHNWI et aux comités de direction d'entreprises souveraines. Chaque soumission subit une vérification préalable d'intégrité avant toute prise de contact.</p>
-        </div>
+        <!-- SECTION EN BLOC BLANC ISOLÉ (Même structure graphique que la page Écosystèmes) -->
+        <div class="white-card-block">
+            <div class="notice-protocol" style="margin-bottom: 50px;">
+                <h3 data-fr="Protocole d'Admissibilité" data-en="Eligibility Protocol">Protocole d'Admissibilité</h3>
+                <p data-fr="L'ouverture d'un dossier d'évaluation est réservée aux Single Family Offices, aux gestionnaires de patrimoine UHNWI et aux comités de direction d'entreprises souveraines. Chaque soumission subit une vérification préalable d'intégrité avant toute prise de contact."
+                   data-en="The opening of an evaluation file is strictly reserved for Single Family Offices, UHNWI asset managers, and sovereign corporate boards. Every submission undergoes a preliminary integrity clearance check prior to any formal communication.">L'ouverture d'un dossier d'évaluation est réservée aux Single Family Offices, aux gestionnaires de patrimoine UHNWI et aux comités de direction d'entreprises souveraines. Chaque soumission subit une vérification préalable d'intégrité avant toute prise de contact.</p>
+            </div>
 
-        <!-- FORMULAIRE ÉPURÉ SUR FOND BLANC -->
-        <div class="form-content">
+            <!-- STRUCTURE DU FORMULAIRE INTÉGRÉE -->
             <form action="https://api.web3forms.com/submit" method="POST">
                 
                 <input type="hidden" name="access_key" value="f0209dc5-f915-47f6-995f-d01c81bc1a76">
@@ -154,15 +320,23 @@
 
                 <input type="checkbox" name="botcheck" style="display: none;">
 
-                <button type="submit" class="btn-action" data-fr="Soumettre pour Validation" data-en="Submit for Clearance">Soumettre pour Validation</button>
+                <button type="submit" class="btn" data-fr="Soumettre pour Validation" data-en="Submit for Clearance">Soumettre pour Validation</button>
             </form>
         </div>
-    </main>
+        
+    </section>
 
-    <!-- FOOTER HARMONISÉ -->
+    <!-- FOOTER NOIR HARMONISÉ -->
     <footer>
         <strong>ARES OPSEC WORLD</strong><br>
-        <span style="color:#666666; font-size:0.8rem; text-transform:uppercase; letter-spacing:1px; display:block; margin-top:5px;">Strategic Security &amp; Cyber Governance Advisory</span>
+        Strategic Security, Risk &amp; Cyber Governance Advisory<br>
+        <span style="font-size:0.8rem; color:#555;">Canada | Europe | Moyen Orient</span>
+
+        <p style="margin-top:20px;">
+            <a href="mailto:executive@aresopsec.com">executive@aresopsec.com</a> — 
+            <a href="http://aresopsec.com" target="_blank">Ares Opsec World</a>
+        </p>
+
         <p>© 2026 — All rights reserved</p>
     </footer>
 
@@ -196,6 +370,7 @@
             document.getElementById("input-desc").placeholder = translations[lang].placeholderDesc;
         }
 
+        // Initialisation automatique
         toggleLang();
     </script>
 </body>
