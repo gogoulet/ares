@@ -17,12 +17,23 @@
         .lang-btn:hover { background: #fff; color: #0b0b0b; }
 
         /* Hero section */
-        .hero { height: 60vh; background: linear-gradient(rgba(11,11,11,0.8), rgba(11,11,11,0.95)), url('accreditation.png') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; }
+        .hero { height: 50vh; background: linear-gradient(rgba(11,11,11,0.8), rgba(11,11,11,0.95)), url('accreditation.png') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; }
         .hero h1 { font-size: 2.5rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 15px; }
         .hero p { color: #888; max-width: 600px; font-size: 1.1rem; }
 
+        /* Conteneur de contenu principal */
+        .main-content { max-width: 700px; margin: -40px auto 100px auto; padding: 0 20px; position: relative; z-index: 10; }
+
+        /* TEXTES EN HAUT DU FORMULAIRE - RÉINTÉGRÉS ET AJUSTÉS */
+        .intro-block { border-left: 2px solid #fff; padding-left: 25px; margin-bottom: 40px; }
+        .intro-block p { font-size: 1.2rem; font-weight: 300; color: #e0e0e0; }
+        
+        .notice-box { background: #111; border: 1px solid #222; padding: 30px; margin-bottom: 40px; }
+        .notice-box h3 { color: #fff; margin-bottom: 10px; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .notice-box p { color: #aaa; font-size: 0.95rem; }
+
         /* Form section */
-        .form-container { max-width: 650px; margin: -80px auto 100px auto; background: #111; padding: 40px; border: 1px solid #222; box-shadow: 0 20px 40px rgba(0,0,0,0.5); position: relative; z-index: 10; }
+        .form-container { background: #111; padding: 40px; border: 1px solid #222; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
         .form-group { margin-bottom: 25px; }
         label { display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; color: #aaa; }
         input, select, textarea { width: 100%; background: #161616; border: 1px solid #333; padding: 12px; color: #fff; font-size: 1rem; border-radius: 0; transition: border-color 0.3s; }
@@ -32,7 +43,7 @@
         .submit-btn { width: 100%; background: #f4f4f4; color: #0b0b0b; border: none; padding: 15px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: background 0.3s, color 0.3s; }
         .submit-btn:hover { background: #0b0b0b; color: #f4f4f4; border: 1px solid #333; }
 
-        footer { text-align: center; padding: 40px; border-top: 1px solid #222; color: #444; font-size: 0.8rem; letter-spacing: 1px; }
+        footer { text-align: center; padding: 60px 20px; border-top: 1px solid #222; color: #444; font-size: 0.8rem; letter-spacing: 1px; }
     </style>
 </head>
 <body>
@@ -59,41 +70,55 @@
         <p data-fr="Portail d'évaluation d'admissibilité pour mandats de haute intégrité." data-en="Eligibility evaluation portal for high-integrity engagements.">Portail d'évaluation d'admissibilité pour mandats de haute intégrité.</p>
     </section>
 
-    <div class="form-container">
-        <form action="https://api.web3forms.com/submit" method="POST">
-            
-            <input type="hidden" name="access_key" value="f0209dc5-f915-47f6-995f-d01c81bc1a76">
-            <input type="hidden" name="subject" value="[ARES OPSEC] Nouvelle Demande d'Accréditation">
-            <input type="hidden" name="from_name" value="Portail ARES Web">
+    <div class="main-content">
+        
+        <div class="intro-block">
+            <p data-fr="Ares n'accepte qu'un nombre restreint de mandats chaque année afin de garantir une étanchéité absolue et une attention exécutive totale à nos clients existants."
+               data-en="Ares accepts only a strictly limited number of engagements each year to guarantee absolute operational insulation and total executive dedication to our existing clients.">Ares n'accepte qu'un nombre restreint de mandats chaque année afin de garantir une étanchéité absolue et une attention exécutive totale à nos clients existants.</p>
+        </div>
 
-            <div class="form-group">
-                <label data-fr="Identité Morale ou Profil" data-en="Corporate Entity or Profile">Identité Morale ou Profil</label>
-                <input type="text" name="identité_mandant" id="input-identity" required placeholder="Ex: Family Office / Direction Générale">
-            </div>
+        <div class="notice-box">
+            <h3 data-fr="Protocole d'Admissibilité" data-en="Eligibility Protocol">Protocole d'Admissibilité</h3>
+            <p data-fr="L'ouverture d'un dossier d'évaluation est réservée aux Single Family Offices, aux gestionnaires de patrimoine UHNWI et aux comités de direction d'entreprises souveraines. Chaque soumission subit une vérification préalable d'intégrité avant toute prise de contact."
+               data-en="The opening of an evaluation file is strictly reserved for Single Family Offices, UHNWI asset managers, and sovereign corporate boards. Every submission undergoes a preliminary integrity clearance check prior to any formal communication.">L'ouverture d'un dossier d'évaluation est réservée aux Single Family Offices, aux gestionnaires de patrimoine UHNWI et aux comités de direction d'entreprises souveraines. Chaque soumission subit une vérification préalable d'intégrité avant toute prise de contact.</p>
+        </div>
 
-            <div class="form-group">
-                <label data-fr="Niveau d'urgence requis" data-en="Required Urgency Level">Niveau d'urgence requis</label>
-                <select name="niveau_urgence" required>
-                    <option value="Standard" data-fr="Standard (Évaluation sous 72h)" data-en="Standard (72h Evaluation)">Standard (Évaluation sous 72h)</option>
-                    <option value="Prioritaire" data-fr="Prioritaire (24h)" data-en="Priority (24h)">Prioritaire (24h)</option>
-                    <option value="Critique" data-fr="Opérationnel Immédiat" data-en="Immediate Operational">Opérationnel Immédiat</option>
-                </select>
-            </div>
+        <div class="form-container">
+            <form action="https://api.web3forms.com/submit" method="POST">
+                
+                <input type="hidden" name="access_key" value="f0209dc5-f915-47f6-995f-d01c81bc1a76">
+                <input type="hidden" name="subject" value="[ARES OPSEC] Nouvelle Demande d'Accréditation">
+                <input type="hidden" name="from_name" value="Portail ARES Web">
 
-            <div class="form-group">
-                <label data-fr="Canal de communication sécurisé" data-en="Secure Communication Channel">Canal de communication sécurisé</label>
-                <input type="text" name="canal_securise" id="input-secure" required placeholder="Ex: Signal ID, Threema ID, PGP Key Link...">
-            </div>
+                <div class="form-group">
+                    <label data-fr="Identité Morale ou Profil" data-en="Corporate Entity or Profile">Identité Morale ou Profil</label>
+                    <input type="text" name="identité_mandant" id="input-identity" required placeholder="Ex: Family Office / Direction Générale">
+                </div>
 
-            <div class="form-group">
-                <label data-fr="Périmètre de l'engagement" data-en="Scope of Engagement">Périmètre de l'engagement</label>
-                <textarea name="description_mandat" id="input-desc" required placeholder="Décrivez brièvement les contours du mandat sans divulguer d'éléments nominatifs classifiés..."></textarea>
-            </div>
+                <div class="form-group">
+                    <label data-fr="Niveau d'urgence requis" data-en="Required Urgency Level">Niveau d'urgence requis</label>
+                    <select name="niveau_urgence" required>
+                        <option value="Standard" data-fr="Standard (Évaluation sous 72h)" data-en="Standard (72h Evaluation)">Standard (Évaluation sous 72h)</option>
+                        <option value="Prioritaire" data-fr="Prioritaire (24h)" data-en="Priority (24h)">Prioritaire (24h)</option>
+                        <option value="Critique" data-fr="Opérationnel Immédiat" data-en="Immediate Operational">Opérationnel Immédiat</option>
+                    </select>
+                </div>
 
-            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                <div class="form-group">
+                    <label data-fr="Canal de communication sécurisé" data-en="Secure Communication Channel">Canal de communication sécurisé</label>
+                    <input type="text" name="canal_securise" id="input-secure" required placeholder="Ex: Signal ID, Threema ID, PGP Key Link...">
+                </div>
 
-            <button type="submit" class="submit-btn" data-fr="Soumettre la demande" data-en="Submit request">Soumettre la demande</button>
-        </form>
+                <div class="form-group">
+                    <label data-fr="Périmètre de l'engagement" data-en="Scope of Engagement">Périmètre de l'engagement</label>
+                    <textarea name="description_mandat" id="input-desc" required placeholder="Décrivez brièvement les contours du mandat sans divulguer d'éléments nominatifs classifiés..."></textarea>
+                </div>
+
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                <button type="submit" class="submit-btn" data-fr="Soumettre la demande" data-en="Submit request">Soumettre la demande</button>
+            </form>
+        </div>
     </div>
 
     <footer>
@@ -116,4 +141,24 @@
             }
         };
 
-        function toggleLang
+        function toggleLang(){
+            if (arguments.length === 0 && window.event) {
+                lang = lang === "fr" ? "en" : "fr";
+            }
+
+            // Traduction des éléments avec attributs data-*
+            document.querySelectorAll("[data-fr]").forEach(el => {
+                el.innerHTML = el.dataset[lang];
+            });
+
+            // Traduction des placeholders dynamiques
+            document.getElementById("input-identity").placeholder = translations[lang].placeholderIdentity;
+            document.getElementById("input-secure").placeholder = translations[lang].placeholderSecure;
+            document.getElementById("input-desc").placeholder = translations[lang].placeholderDesc;
+        }
+
+        // Initialisation par défaut
+        toggleLang();
+    </script>
+</body>
+</html>
