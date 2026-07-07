@@ -17,6 +17,7 @@ body {
     font-family:-apple-system,BlinkMacSystemFont,sans-serif;
     background:#f7f7f5;
     color:#111;
+    line-height:1.6;
 }
 
 a {
@@ -36,6 +37,7 @@ header {
 nav {
     display:flex;
     justify-content:space-between;
+    align-items:center;
     padding:20px 40px;
 }
 
@@ -55,24 +57,34 @@ nav {
 }
 
 .hero-overlay {
-    background:rgba(0,0,0,0.45);
+    background:rgba(0,0,0,0.55);
     padding:50px;
+    max-width:800px;
 }
 
 .hero h1 {
     font-size:3rem;
+    font-weight:700;
+    line-height:1.2;
 }
 
 .hero p {
-    margin-top:15px;
+    margin-top:20px;
+    font-size:1.2rem;
+    color:#ccc;
 }
 
 /* STORY */
 .story {
-    padding:100px 20px;
+    padding:120px 20px;
     text-align:center;
-    max-width:800px;
+    max-width:900px;
     margin:auto;
+}
+
+.story p {
+    font-size:1.4rem;
+    font-weight:300;
 }
 
 /* SECTIONS */
@@ -87,6 +99,12 @@ section {padding:100px 20px;}
 h2 {
     font-size:2.4rem;
     margin-bottom:20px;
+    letter-spacing:-0.5px;
+}
+
+h3 {
+    font-size:1.4rem;
+    margin-bottom:12px;
 }
 
 /* GRID */
@@ -94,19 +112,48 @@ h2 {
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:40px;
-    max-width:900px;
+    max-width:1000px;
     margin:40px auto;
+}
+
+.three-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    max-width:1100px;
+    margin:50px auto 20px auto;
 }
 
 /* CARDS */
 .card {
     display:block;
-    padding:25px;
+    padding:35px;
+    background:#fff;
+    border:1px solid #eee;
     transition:0.3s;
 }
 
 .card:hover {
     transform:translateY(-6px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.05);
+}
+
+.client-card {
+    padding:40px 30px;
+    background:#111;
+    color:#fff;
+    border:1px solid #222;
+}
+
+.client-card h3 {
+    color:#fff;
+    border-bottom:1px solid #333;
+    padding-bottom:15px;
+}
+
+.client-card p {
+    font-size:0.95rem;
+    color:#aaa;
 }
 
 /* BUTTON */
@@ -117,6 +164,10 @@ h2 {
     border:1px solid #fff;
     color:#fff;
     cursor:pointer;
+    font-size:0.9rem;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    transition:0.3s;
 }
 
 .btn:hover {
@@ -139,34 +190,57 @@ h2 {
     background:linear-gradient(120deg,#111,#222);
     color:#fff;
     text-align:center;
+    padding:120px 20px;
 }
 
 /* FORM */
 form {
-    max-width:500px;
+    max-width:550px;
     margin:40px auto;
     display:flex;
     flex-direction:column;
-    gap:12px;
+    gap:15px;
 }
 
 input, select, textarea {
-    padding:14px;
+    padding:16px;
     border:1px solid #ddd;
+    background:#fff;
+    font-family:inherit;
 }
 
 /* FOOTER */
 footer {
     background:#111;
-    color:#bbb;
+    color:#888;
     text-align:center;
-    padding:60px 20px;
+    padding:80px 20px;
+    border-top:1px solid #222;
+    font-size:0.9rem;
+}
+
+footer strong {
+    color:#fff;
+    letter-spacing:1px;
+}
+
+footer p {
+    margin-top:15px;
+}
+
+footer a {
+    color:#ccc;
+}
+
+footer a:hover {
+    color:#fff;
 }
 
 /* MOBILE */
-@media(max-width:768px){
-.grid {grid-template-columns:1fr;}
-.hero h1 {font-size:2rem;}
+@media(max-width:9 token 768px){
+.grid, .three-grid {grid-template-columns:1fr;}
+.hero h1 {font-size:2.2rem;}
+section {padding:60px 20px;}
 }
 
 </style>
@@ -184,7 +258,7 @@ footer {
 <a href="#contact" data-fr="Contact" data-en="Contact"></a>
 </div>
 
-<div onclick="toggleLang()" style="cursor:pointer;border:1px solid #111;padding:6px 12px;">
+<div onclick="toggleLang()" style="cursor:pointer;border:1px solid #111;padding:6px 12px;font-size:0.85rem;font-weight:bold;">
 FR / EN
 </div>
 
@@ -195,11 +269,11 @@ FR / EN
 <section class="hero">
 <div class="hero-overlay">
 
-<h1 data-fr="Clarté stratégique dans des environnements complexes"
-     data-en="Strategic clarity in complex environments"></h1>
+<h1 data-fr="Architecture de sécurité souveraine pour écosystèmes d'élite"
+    data-en="Sovereign security architecture for elite ecosystems"></h1>
 
-<p data-fr="Nous conseillons ceux qui opèrent là où le risque, la visibilité et l’influence se croisent."
-   data-en="We advise those operating where risk, visibility and influence intersect."></p>
+<p data-fr="Nous conseillons et protégeons les structures opérant là où le risque critique, la souveraineté numérique et l’influence stratégique se croisent."
+   data-en="We advise and protect structures operating where critical risk, digital sovereignty, and strategic influence intersect."></p>
 
 <a href="#contact" class="btn"
    data-fr="Demande confidentielle"
@@ -211,50 +285,76 @@ FR / EN
 <!-- STORY -->
 <section class="story">
 
-<p data-fr="Lorsque les environnements deviennent complexes, la différence ne repose pas sur la réaction, mais sur la capacité à comprendre, structurer et décider."
-   data-en="When environments become complex, the difference is not reaction, but the ability to understand, structure and decide."></p>
+<p data-fr="Lorsque les environnements deviennent complexes, la différence ne repose pas sur la réaction, mais sur la capacité prédictive à comprendre, structurer, isoler et décider."
+   data-en="When environments become complex, the competitive edge relies not on reaction, but on the predictive ability to understand, structure, isolate, and decide."></p>
 
 </section>
 
-<!-- SERVICES -->
+<!-- CIBLE PROSPECTS SECTION -->
+<section style="background:#111; color:#fff;">
+<div class="centered">
+<h2 data-fr="Clientèle Élite &amp; Gouvernance du Risque" data-en="Elite Clientele &amp; Risk Governance"></h2>
+<p style="color:#aaa;" data-fr="Ares opère à de très hauts niveaux de discrétion pour des entités exigeant un isolement absolu face aux menaces modernes." data-en="Ares operates at the highest echelons of professional discretion for entities demanding absolute insulation from modern threats."></p>
+</div>
+
+<div class="three-grid">
+<div class="card client-card">
+<h3 data-fr="Family Offices" data-en="Family Offices"></h3>
+<p data-fr="Préservation de l'intégrité multigénérationnelle. Protection des patrimoines privés, sécurisation des communications exécutives et isolation des flux de données transfrontaliers contre l'espionnage ciblé." data-en="Preserving multi-generational integrity. Protecting private wealth, securing executive communications, and insulating cross-border data flows from targeted espionage."></p>
+</div>
+
+<div class="card client-card">
+<h3 data-fr="Grands Leaders &amp; Milliardaires" data-en="Global Tech &amp; Billionaires"></h3>
+<p data-fr="Souveraineté et vie privée des décideurs à forte exposition. Déploiement de protocoles de défense numérique de grade militaire et de cadres d'OPSEC physique parfaitement intégrés à des modes de vie d'élite." data-en="Sovereignty and privacy for high-exposure decision-makers. Deploying military-grade digital defense protocols and physical OPSEC frameworks seamlessly integrated into elite lifestyles."></p>
+</div>
+
+<div class="card client-card">
+<h3 data-fr="Entrepreneurs à Fort Enjeu" data-en="High-Stakes Entrepreneurs"></h3>
+<p data-fr="Protection du capital intellectuel et des infrastructures technologiques lors de phases d'expansion rapide ou de fusions-acquisitions. Neutralisation des vecteurs d'espionnage industriel." data-en="Shielding intellectual capital and technical infrastructure during rapid scaling or M&amp;A phases. Neutralizing corporate and industrial espionage vectors."></p>
+</div>
+</div>
+</section>
+
+<!-- SERVICES REDÉFINIS -->
 <section>
 
 <div class="centered">
-<h2 data-fr="Conseil stratégique" data-en="Strategic Advisory"></h2>
+<h2 data-fr="Piliers d'Intervention" data-en="Core Pillars of Intervention"></h2>
+<p data-fr="Nos services combinent l'analyse de renseignement tactique et la haute technologie numérique." data-en="Our services combine tactical intelligence analysis and advanced digital engineering."></p>
 </div>
 
 <div class="grid">
 
 <a href="./services.html" class="card">
-<h3>Risk & Intelligence</h3>
-<p data-fr="Analyse des environnements complexes"
-   data-en="Understanding complex environments"></p>
+<h3 data-fr="Ares Opsec &amp; Sécurité Opérationnelle" data-en="Ares Opsec &amp; Operational Security"></h3>
+<p data-fr="Conception de protocoles défensifs stricts pour les infrastructures corporatives et la protection des mouvements stratégiques. Neutralisation des angles morts systémiques."
+   data-en="Designing strict defensive protocols for corporate infrastructure and strategic movements. Neutralizing systemic blind spots."></p>
 </a>
 
 <a href="./services.html" class="card">
-<h3>Protection Strategy</h3>
-<p data-fr="Cadres adaptés"
-   data-en="Tailored protection frameworks"></p>
+<h3 data-fr="Sécurité Numérique &amp; Souveraineté" data-en="Digital Security &amp; Data Sovereignty"></h3>
+<p data-fr="Architecture de réseaux chiffrés isolés, protection des communications exclusives et sécurisation des données sensibles contre les menaces persistantes avancées (APT)."
+   data-en="Architecture of isolated encrypted networks, protection of proprietary communications, and securing critical assets against Advanced Persistent Threats (APTs)."></p>
 </a>
 
 <a href="./services.html" class="card">
-<h3>Crisis Governance</h3>
-<p data-fr="Décision sous pression"
-   data-en="Structured decisions under pressure"></p>
+<h3 data-fr="Audits Tactiques &amp; Tests d'Intrusion" data-en="Comprehensive Security Audits"></h3>
+<p data-fr="Validation rigoureuse de vos barrières physiques et cybernétiques via des simulations d'attaques réelles pour identifier les vulnérabilités avant leur exploitation."
+   data-en="Rigorous validation of your physical and cyber boundaries via real-world attack simulations to identify vulnerabilities before exploitation."></p>
 </a>
 
 <a href="./services.html" class="card">
-<h3>Influence</h3>
-<p data-fr="Gestion de perception"
-   data-en="Managing perception dynamics"></p>
+<h3 data-fr="Gouvernance de Crise &amp; Influence" data-en="Crisis Governance &amp; Perception"></h3>
+<p data-fr="Soutien décisionnel sous haute pression, gestion des dynamiques de perception et protection de la réputation des dirigeants face aux crises complexes."
+   data-en="Decision support under extreme pressure, management of perception dynamics, and protective reputation framing during complex crises."></p>
 </a>
 
 </div>
 
 <div class="centered">
 <a href="./services.html" class="btn light-btn"
-   data-fr="Voir les services"
-   data-en="View Services"></a>
+   data-fr="Explorer nos expertises"
+   data-en="Explore Our Expertise"></a>
 </div>
 
 </section>
@@ -279,39 +379,43 @@ FR / EN
 
 <div class="centered">
 <h2 data-fr="Accès confidentiel" data-en="Confidential Access"></h2>
+<p data-fr="Les communications initiales sont traitées sous protocoles stricts de non-divulgation." data-en="Initial communications are handled under strict non-disclosure protocols."></p>
 </div>
 
 <form>
 
-<input type="text" placeholder="Name">
-<input type="email" placeholder="Email">
+<input type="text" placeholder="Name / Entity" required>
+<input type="email" placeholder="Secure Email" required>
 
-<select>
-<option data-fr="Type de mandat" data-en="Type of engagement"></option>
-<option>Strategic Advisory</option>
-<option>Protection</option>
-<option>Crisis</option>
+<select required>
+<option value="" data-fr="Type de mandat" data-en="Type of engagement"></option>
+<option>Strategic Advisory &amp; OPSEC</option>
+<option>Digital Security &amp; Infrastructure</option>
+<option>Tactical Audits &amp; Testing</option>
+<option>Crisis Governance</option>
+</form>
+
 </select>
 
-<select>
-<option data-fr="Budget" data-en="Budget"></option>
+<select required>
+<option value="" data-fr="Budget" data-en="Budget"></option>
 <option>$10k-$25k</option>
 <option>$25k-$50k</option>
 <option>$50k+</option>
 </select>
 
-<select>
-<option data-fr="Urgence" data-en="Urgency"></option>
+<select required>
+<option value="" data-fr="Urgence" data-en="Urgency"></option>
 <option>Low</option>
 <option>Medium</option>
 <option>High</option>
 </select>
 
-<textarea placeholder="Message"></textarea>
+<textarea placeholder="Secure Brief / Message" rows="5" required></textarea>
 
 <button class="btn light-btn"
-data-fr="Envoyer"
-data-en="Submit"></button>
+data-fr="Envoyer la demande"
+data-en="Submit Secure Request"></button>
 
 </form>
 
@@ -320,7 +424,13 @@ data-en="Submit"></button>
 <footer>
 
 <strong>ARES OPSEC</strong><br>
-Strategic Security, Risk & Influence Advisory
+Strategic Security, Risk &amp; Influence Advisory<br>
+<span style="font-size:0.8rem; color:#555;">Trois-Rivières, QC, Canada</span>
+
+<p style="margin-top:20px;">
+<a href="mailto:contact@ares-world.com">contact@ares-world.com</a> — 
+<a href="https://github.com/gogoulet" target="_blank">GitHub Infrastructure</a>
+</p>
 
 <p>© 2026 — All rights reserved</p>
 
@@ -338,7 +448,7 @@ function toggleLang() {
     });
 }
 
-// init
+// Initialisation au bon langage lors du chargement
 toggleLang();
 
 </script>
