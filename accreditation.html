@@ -5,80 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARES OPSEC — Demande d'Accréditation</title>
     <style>
-        /* RESET & BASE SYSTEM (Identique Index) */
+        /* RESET & BASE SYSTEM (FOND BLANC STRICT) */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #0b0b0b; color: #f4f4f4; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #111111; line-height: 1.7; -webkit-font-smoothing: antialiased; }
         a { text-decoration: none; color: inherit; }
 
-        /* NAVIGATION BAR */
-        header { background: rgba(11, 11, 11, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #111; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        /* NAVIGATION BAR (FOND BLANC) */
+        header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #eeeeee; position: fixed; width: 100%; top: 0; z-index: 1000; }
         nav { max-width: 1200px; margin: 0 auto; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; }
         .nav-logo { height: 32px; width: auto; display: block; }
         .menu { display: flex; align-items: center; }
-        .menu a { margin-left: 30px; font-size: 0.9rem; color: #888; font-weight: 400; letter-spacing: 0.5px; transition: color 0.3s; }
-        .menu a:hover, .menu a.active { color: #fff; }
-        .lang-btn { margin-left: 30px; cursor: pointer; border: 1px solid #222; padding: 6px 14px; font-size: 0.8rem; font-weight: 500; letter-spacing: 1px; transition: all 0.3s; }
-        .lang-btn:hover { background: #fff; color: #0b0b0b; border-color: #fff; }
+        .menu a { margin-left: 30px; font-size: 0.9rem; color: #666666; font-weight: 400; letter-spacing: 0.5px; transition: color 0.3s; }
+        .menu a:hover, .menu a.active { color: #000000; }
+        .lang-btn { margin-left: 30px; cursor: pointer; border: 1px solid #cccccc; padding: 6px 14px; font-size: 0.8rem; font-weight: 500; letter-spacing: 1px; transition: all 0.3s; color: #111111; }
+        .lang-btn:hover { background: #000000; color: #ffffff; border-color: #000000; }
 
-        /* HERO BANNER CORRIGÉ (Pas de décapitation, padding-top pour le header fixe) */
-        .hero-banner { min-height: 55vh; display: flex; align-items: center; padding: 140px 40px 60px 40px; background: linear-gradient(rgba(11,11,11,0.5), #0b0b0b), url('accreditation.png') center/cover no-repeat; border-bottom: 1px solid #111; }
-        .hero-container { max-width: 1200px; margin: 0 auto; width: 100%; }
-        .hero-subtitle { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 15px; font-weight: 500; }
-        .hero-title { font-size: 3.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: -1px; color: #fff; line-height: 1.1; }
+        /* HERO BANNER CORRIGÉ & PARFAITEMENT CENTRÉ */
+        .hero-banner { height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 80px; background: linear-gradient(rgba(11,11,11,0.6), rgba(11,11,11,0.85)), url('accreditation.png') center/cover no-repeat; border-bottom: 1px solid #111111; }
+        .hero-container { max-width: 1200px; margin: 0 auto; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .hero-subtitle { font-size: 0.85rem; color: #bbbbbb; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 20px; font-weight: 500; }
+        .hero-title { font-size: 3.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: -1px; color: #ffffff; line-height: 1.2; max-width: 900px; }
 
-        /* INTERFACE STRUCURELLE (Alignée sur l'index) */
-        .content-section { max-width: 800px; margin: 80px auto 120px auto; padding: 0 40px; }
+        /* INTERFACE STRUCTURELLE RESPIRANTE (Grands espaces d'origine) */
+        .content-section { max-width: 800px; margin: 120px auto 160px auto; padding: 0 40px; }
 
-        /* BLOC INTRO (Ligne fine épurée) */
-        .intro-block { border-left: 1px solid #fff; padding-left: 30px; margin-bottom: 60px; }
-        .intro-block p { font-size: 1.25rem; font-weight: 300; color: #ccc; line-height: 1.8; }
+        /* BLOC INTRO (Ligne noire fine épurée) */
+        .intro-block { border-left: 1px solid #000000; padding-left: 35px; margin-bottom: 80px; }
+        .intro-block p { font-size: 1.35rem; font-weight: 300; color: #222222; line-height: 1.8; }
         
-        /* NOTICE TECHNIQUE (Pas de boîte grise, texte épuré) */
-        .notice-protocol { margin-bottom: 70px; }
-        .notice-protocol h3 { color: #fff; margin-bottom: 15px; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
-        .notice-protocol p { color: #888; font-size: 1rem; font-weight: 400; line-height: 1.7; }
+        /* NOTICE TECHNIQUE ÉPURÉE */
+        .notice-protocol { margin-bottom: 90px; }
+        .notice-protocol h3 { color: #000000; margin-bottom: 20px; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
+        .notice-protocol p { color: #555555; font-size: 1.05rem; font-weight: 400; line-height: 1.8; }
 
-        /* FORMULAIRE DESIGN SOUVERAIN (Champs en lignes transparentes comme l'index) */
+        /* FORMULAIRE DESIGN PURE SUR FOND BLANC */
         .form-content { background: transparent; }
-        .form-group { margin-bottom: 45px; position: relative; }
-        .form-group label { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; color: #666; font-weight: 500; }
+        .form-group { margin-bottom: 55px; position: relative; }
+        .form-group label { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; color: #888888; font-weight: 600; }
         
         .form-group input, 
         .form-group select, 
-        .form-group textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid #222; padding: 12px 0; color: #fff; font-size: 1.05rem; font-family: inherit; border-radius: 0; transition: border-color 0.3s; }
+        .form-group textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid #dddddd; padding: 12px 0; color: #111111; font-size: 1.1rem; font-family: inherit; border-radius: 0; transition: border-color 0.3s; }
         .form-group input:focus, 
         .form-group select:focus, 
-        .form-group textarea:focus { outline: none; border-bottom: 1px solid #fff; }
+        .form-group textarea:focus { outline: none; border-bottom: 1px solid #000000; }
         
-        /* Ajustement du select pour enlever le style natif vilain */
-        .form-group select { appearance: none; -webkit-appearance: none; cursor: pointer; }
+        /* Select & Textarea */
+        .form-group select { appearance: none; -webkit-appearance: none; cursor: pointer; background: transparent; }
         .form-group textarea { height: 100px; resize: none; }
 
-        /* BOUTON STYLE INDEX (Cadre fin, inversion au survol) */
-        .btn-action { display: inline-block; width: auto; padding: 16px 35px; background: transparent; color: #fff; border: 1px solid #333; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 500; cursor: pointer; transition: all 0.3s ease; }
-        .btn-action:hover { background: #fff; color: #0b0b0b; border-color: #fff; }
+        /* BOUTON STYLE INDEX (Cadre noir fin, inversion au survol) */
+        .btn-action { display: inline-block; width: auto; padding: 18px 40px; background: transparent; color: #111111; border: 1px solid #111111; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin-top: 20px; }
+        .btn-action:hover { background: #000000; color: #ffffff; border-color: #000000; }
 
-        /* FOOTER UNIFORME */
-        footer { background: #050505; color: #555; text-align: center; padding: 80px 40px; border-top: 1px solid #111; font-size: 0.85rem; letter-spacing: 0.5px; }
-        footer strong { color: #fff; letter-spacing: 1px; font-weight: 600; }
+        /* FOOTER BLANC SÉCURISÉ */
+        footer { background: #fafafa; color: #666666; text-align: center; padding: 100px 40px; border-top: 1px solid #eeeeee; font-size: 0.85rem; letter-spacing: 0.5px; }
+        footer strong { color: #000000; letter-spacing: 1px; font-weight: 600; }
         footer p { margin-top: 15px; }
-        footer a { color: #888; transition: color 0.3s; }
-        footer a:hover { color: #fff; }
+        footer a { color: #444444; transition: color 0.3s; }
+        footer a:hover { color: #000000; }
 
         /* RESPONSIVE */
         @media(max-width: 768px) {
             nav { padding: 20px; }
-            .menu { display: none; } /* Idéalement un menu burger ou simplifié sur mobile */
-            .hero-banner { padding-top: 120px; min-height: 40vh; }
+            .menu { display: none; }
+            .hero-banner { height: 45vh; padding-top: 60px; }
             .hero-title { font-size: 2.2rem; }
-            .content-section { margin: 50px auto 80px auto; padding: 0 20px; }
-            .intro-block { padding-left: 20px; }
-            .intro-block p { font-size: 1.1rem; }
+            .content-section { margin: 60px auto 100px auto; padding: 0 24px; }
+            .intro-block { padding-left: 20px; margin-bottom: 50px; }
+            .intro-block p { font-size: 1.15rem; }
+            .form-group { margin-bottom: 40px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- NAV BAR SYSTEM (FOND BLANC COHÉRENT) -->
     <header>
         <nav>
             <a href="./">
@@ -96,6 +98,7 @@
         </nav>
     </header>
 
+    <!-- HERO BANNER (CENTRAGE ABSOLU ET PARFAIT) -->
     <section class="hero-banner">
         <div class="hero-container">
             <p class="hero-subtitle" data-fr="Portail Restreint • Mandats Limités" data-en="Restricted Portal • Limited Engagements">Portail Restreint • Mandats Limités</p>
@@ -103,6 +106,7 @@
         </div>
     </section>
 
+    <!-- INTERFACE AÉRÉE ET RESPIRANTE -->
     <main class="content-section">
         
         <div class="intro-block">
@@ -116,6 +120,7 @@
                data-en="The opening of an evaluation file is strictly reserved for Single Family Offices, UHNWI asset managers, and sovereign corporate boards. Every submission undergoes a preliminary integrity clearance check prior to any formal communication.">L'ouverture d'un dossier d'évaluation est réservée aux Single Family Offices, aux gestionnaires de patrimoine UHNWI et aux comités de direction d'entreprises souveraines. Chaque soumission subit une vérification préalable d'intégrité avant toute prise de contact.</p>
         </div>
 
+        <!-- FORMULAIRE ÉPURÉ SUR FOND BLANC -->
         <div class="form-content">
             <form action="https://api.web3forms.com/submit" method="POST">
                 
@@ -131,9 +136,9 @@
                 <div class="form-group">
                     <label data-fr="Niveau d'urgence requis" data-en="Required Urgency Level">Niveau d'urgence requis</label>
                     <select name="niveau_urgence" required>
-                        <option value="Standard" style="background:#0b0b0b;" data-fr="Standard (Évaluation sous 72h)" data-en="Standard (72h Evaluation)">Standard (Évaluation sous 72h)</option>
-                        <option value="Prioritaire" style="background:#0b0b0b;" data-fr="Prioritaire (24h)" data-en="Priority (24h)">Prioritaire (24h)</option>
-                        <option value="Critique" style="background:#0b0b0b;" data-fr="Opérationnel Immédiat" data-en="Immediate Operational">Opérationnel Immédiat</option>
+                        <option value="Standard" style="background:#ffffff; color:#111;" data-fr="Standard (Évaluation sous 72h)" data-en="Standard (72h Evaluation)">Standard (Évaluation sous 72h)</option>
+                        <option value="Prioritaire" style="background:#ffffff; color:#111;" data-fr="Prioritaire (24h)" data-en="Priority (24h)">Prioritaire (24h)</option>
+                        <option value="Critique" style="background:#ffffff; color:#111;" data-fr="Opérationnel Immédiat" data-en="Immediate Operational">Opérationnel Immédiat</option>
                     </select>
                 </div>
 
@@ -144,7 +149,7 @@
 
                 <div class="form-group">
                     <label data-fr="Description sommaire du contexte" data-en="Brief Context Description">Description sommaire du contexte</label>
-                    <textarea name="description_mandat" id="input-desc" required placeholder="Décrivez brièvement les contours du mandat sans demander d'éléments classifiés..."></textarea>
+                    <textarea name="description_mandat" id="input-desc" required placeholder="Décrivez brièvement les contours du mandat..."></textarea>
                 </div>
 
                 <input type="checkbox" name="botcheck" style="display: none;">
@@ -154,9 +159,10 @@
         </div>
     </main>
 
+    <!-- FOOTER HARMONISÉ -->
     <footer>
         <strong>ARES OPSEC WORLD</strong><br>
-        <span style="color:#444; font-size:0.8rem; text-transform:uppercase; letter-spacing:1px; display:block; margin-top:5px;">Strategic Security &amp; Cyber Governance Advisory</span>
+        <span style="color:#666666; font-size:0.8rem; text-transform:uppercase; letter-spacing:1px; display:block; margin-top:5px;">Strategic Security &amp; Cyber Governance Advisory</span>
         <p>© 2026 — All rights reserved</p>
     </footer>
 
