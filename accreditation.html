@@ -1,375 +1,119 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARES OPSEC - Accréditation</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Arial', sans-serif; }
+        body { background-color: #0b0b0b; color: #f4f4f4; line-height: 1.6; overflow-x: hidden; }
+        
+        /* Navigation */
+        header { border-bottom: 1px solid #222; background: #0b0b0b; position: sticky; top: 0; z-index: 1000; }
+        nav { max-width: 1200px; margin: 0 auto; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+        .menu a { color: #aaa; text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: color 0.3s; }
+        .menu a:hover { color: #fff; }
+        .lang-btn { cursor: pointer; border: 1px solid #333; padding: 6px 12px; font-size: 0.85rem; font-weight: bold; transition: background 0.3s; }
+        .lang-btn:hover { background: #fff; color: #0b0b0b; }
 
-<title>ARES OPSEC — Demande d'Accréditation</title>
+        /* Hero section */
+        .hero { height: 60vh; background: linear-gradient(rgba(11,11,11,0.8), rgba(11,11,11,0.95)), url('accreditation.png') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; }
+        .hero h1 { font-size: 2.5rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 15px; }
+        .hero p { color: #888; max-width: 600px; font-size: 1.1rem; }
 
-<base href="./">
+        /* Form section */
+        .form-container { max-width: 650px; margin: -80px auto 100px auto; background: #111; padding: 40px; border: 1px solid #222; box-shadow: 0 20px 40px rgba(0,0,0,0.5); position: relative; z-index: 10; }
+        .form-group { margin-bottom: 25px; }
+        label { display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; color: #aaa; }
+        input, select, textarea { width: 100%; background: #161616; border: 1px solid #333; padding: 12px; color: #fff; font-size: 1rem; border-radius: 0; transition: border-color 0.3s; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: #fff; }
+        textarea { resize: vertical; min-height: 120px; }
+        
+        .submit-btn { width: 100%; background: #f4f4f4; color: #0b0b0b; border: none; padding: 15px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: background 0.3s, color 0.3s; }
+        .submit-btn:hover { background: #0b0b0b; color: #f4f4f4; border: 1px solid #333; }
 
-<style>
-
-/* RESET */
-* {margin:0;padding:0;box-sizing:border-box;}
-
-body {
-    font-family:-apple-system,BlinkMacSystemFont,sans-serif;
-    background:#f7f7f5;
-    color:#111;
-    line-height:1.7;
-}
-
-a {text-decoration:none;color:inherit;}
-
-/* HEADER */
-header {
-    position:fixed;
-    width:100%;
-    background:rgba(255,255,255,0.9);
-    backdrop-filter:blur(10px);
-    z-index:1000;
-}
-
-nav {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 40px;
-}
-
-.nav-logo {
-    height:35px;
-    width:auto;
-    display:block;
-}
-
-.menu a {
-    margin-left:20px;
-    font-size:0.95rem;
-}
-
-/* HERO OPTIMISÉ POUR ACCREDITATION.PNG À LA RACINE */
-.hero-banner {
-    height:85vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:#fff;
-    background:
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), 
-    url('accreditation.png') center/cover no-repeat;
-    border-bottom:1px solid #222;
-}
-
-.hero-overlay {
-    max-width:900px;
-    padding:0 20px;
-}
-
-.hero-banner h1 {
-    font-size:3.8rem;
-    font-weight:700;
-    line-height:1.2;
-    letter-spacing:-1px;
-}
-
-.hero-banner p {
-    margin-top:20px;
-    font-size:1.2rem;
-    color:#ccc;
-    text-transform:uppercase;
-    letter-spacing:3px;
-    font-weight:400;
-}
-
-/* SECTION STRUCTURE */
-.section {
-    max-width:800px;
-    margin:100px auto;
-    padding:0 20px;
-}
-
-.intro-block {
-    border-left:2px solid #111;
-    padding-left:30px;
-    margin-bottom:60px;
-}
-
-.intro-block p {
-    font-size:1.4rem;
-    font-weight:300;
-    color:#222;
-    line-height:1.8;
-}
-
-.notice-box {
-    background:#fff;
-    border:1px solid #eee;
-    padding:40px;
-    margin-bottom:60px;
-    font-size:1.05rem;
-    color:#444;
-}
-
-.notice-box h3 {
-    color:#111;
-    margin-bottom:15px;
-    font-size:1.2rem;
-    text-transform:uppercase;
-    letter-spacing:1px;
-}
-
-/* FORMULAIRE ULTRA-ÉPURÉ B2B D'ÉLITE */
-.form-container {
-    background:#fff;
-    border:1px solid #eee;
-    padding:60px;
-}
-
-.form-group {
-    margin-bottom:35px;
-}
-
-.form-group label {
-    display:block;
-    font-size:0.85rem;
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    margin-bottom:10px;
-    color:#111;
-}
-
-.form-group input, 
-.form-group select, 
-.form-group textarea {
-    width:100%;
-    padding:12px 0;
-    background:transparent;
-    border:none;
-    border-bottom:1px solid #ccc;
-    font-size:1.1rem;
-    color:#111;
-    font-family:inherit;
-    transition:border-color 0.3s;
-}
-
-.form-group input:focus, 
-.form-group select:focus, 
-.form-group textarea:focus {
-    outline:none;
-    border-bottom:1px solid #111;
-}
-
-.form-group textarea {
-    height:120px;
-    resize:none;
-}
-
-/* SWITCH LABELS MULTILINGUES POUR LES PLACEHOLDERS */
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color:#aaa;
-    font-size:0.95rem;
-}
-
-.btn-submit {
-    width:100%;
-    padding:16px;
-    background:#111;
-    color:#fff;
-    border:1px solid #111;
-    font-size:0.95rem;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    font-weight:600;
-    cursor:pointer;
-    transition:0.3s;
-    margin-top:20px;
-}
-
-.btn-submit:hover {
-    background:transparent;
-    color:#111;
-}
-
-/* FOOTER */
-footer {
-    background:#111;
-    color:#888;
-    text-align:center;
-    padding:80px 20px;
-    border-top:1px solid #222;
-    font-size:0.9rem;
-}
-
-footer strong {
-    color:#fff;
-    letter-spacing:1px;
-}
-
-footer p {
-    margin-top:15px;
-}
-
-footer a {
-    color:#ccc;
-}
-
-footer a:hover {
-    color:#fff;
-}
-
-/* MOBILE */
-@media(max-width:768px) {
-    .hero-banner {height:70vh;}
-    .hero-banner h1 {font-size:2.2rem;}
-    .form-container {padding:30px;}
-    .intro-block p {font-size:1.2rem;}
-    nav {padding:15px 20px;}
-}
-
-</style>
+        footer { text-align: center; padding: 40px; border-top: 1px solid #222; color: #444; font-size: 0.8rem; letter-spacing: 1px; }
+    </style>
 </head>
-
 <body>
 
-<header>
-<nav>
-<a href="./">
-    <img src="logo.png" alt="ARES OPSEC WORLD" class="nav-logo">
-</a>
+    <header>
+        <nav>
+            <a href="./">
+                <img src="logo.png" alt="ARES OPSEC" style="height:35px; width:auto; display:block;">
+            </a>
+            <div class="menu">
+                <a href="./" data-fr="Accueil" data-en="Home">Accueil</a>
+                <a href="./services.html" data-fr="Services" data-en="Services">Services</a>
+                <a href="./doctrine.html" data-fr="Doctrine" data-en="Doctrine">Doctrine</a>
+                <a href="./ecosystem.html" data-fr="Écosystèmes" data-en="Ecosystems">Écosystèmes</a>
+                <a href="./accreditation.html" data-fr="Accréditation" data-en="Accreditation" style="color:#fff;">Accréditation</a>
+                <a href="./#contact" data-fr="Contact" data-en="Contact">Contact</a>
+            </div>
+            <div onclick="toggleLang()" class="lang-btn">FR / EN</div>
+        </nav>
+    </header>
 
-<div class="menu">
-<a href="./" data-fr="Accueil" data-en="Home">Accueil</a>
-<a href="./services.html" data-fr="Services" data-en="Services">Services</a>
-<a href="./doctrine.html" data-fr="Doctrine" data-en="Doctrine">Doctrine</a>
-<a href="./ecosystem.html" data-fr="Écosystèmes" data-en="Ecosystems">Écosystèmes</a>
-<a href="./accreditation.html" data-fr="Accréditation" data-en="Accreditation">Accréditation</a>
-</div>
+    <section class="hero">
+        <h1 data-fr="Protocole d'Accréditation" data-en="Accreditation Protocol">Protocole d'Accréditation</h1>
+        <p data-fr="Portail d'évaluation d'admissibilité pour mandats de haute intégrité." data-en="Eligibility evaluation portal for high-integrity engagements.">Portail d'évaluation d'admissibilité pour mandats de haute intégrité.</p>
+    </section>
 
-<div onclick="toggleLang()" style="cursor:pointer;border:1px solid #111;padding:6px 12px;font-size:0.85rem;font-weight:bold;">
-FR / EN
-</div>
+    <div class="form-container">
+        <form action="https://api.web3forms.com/submit" method="POST">
+            
+            <input type="hidden" name="access_key" value="f0209dc5-f915-47f6-995f-d01c81bc1a76">
+            <input type="hidden" name="subject" value="[ARES OPSEC] Nouvelle Demande d'Accréditation">
+            <input type="hidden" name="from_name" value="Portail ARES Web">
 
-</nav>
-</header>
+            <div class="form-group">
+                <label data-fr="Identité Morale ou Profil" data-en="Corporate Entity or Profile">Identité Morale ou Profil</label>
+                <input type="text" name="identité_mandant" id="input-identity" required placeholder="Ex: Family Office / Direction Générale">
+            </div>
 
-<!-- HERO -->
-<section class="hero-banner">
-<div class="hero-overlay">
-    <p data-fr="Portail Restreint • Mandats Limités" data-en="Restricted Portal • Limited Engagements">Portail Restreint • Mandats Limités</p>
-    <h1 data-fr="Demande d'Accréditation" data-en="Accreditation Request">Demande d'Accréditation</h1>
-</div>
-</section>
+            <div class="form-group">
+                <label data-fr="Niveau d'urgence requis" data-en="Required Urgency Level">Niveau d'urgence requis</label>
+                <select name="niveau_urgence" required>
+                    <option value="Standard" data-fr="Standard (Évaluation sous 72h)" data-en="Standard (72h Evaluation)">Standard (Évaluation sous 72h)</option>
+                    <option value="Prioritaire" data-fr="Prioritaire (24h)" data-en="Priority (24h)">Prioritaire (24h)</option>
+                    <option value="Critique" data-fr="Opérationnel Immédiat" data-en="Immediate Operational">Opérationnel Immédiat</option>
+                </select>
+            </div>
 
-<!-- CONTENT -->
-<section class="section">
-    
-<div class="intro-block">
-    <p data-fr="Ares n'accepte qu'un nombre restreint de mandats chaque année afin de garantir une étanchéité absolue et une attention exécutive totale à nos clients existants."
-       data-en="Ares accepts only a strictly limited number of engagements each year to guarantee absolute operational insulation and total executive dedication to our existing clients.">Ares n'accepte qu'un nombre restreint de mandats chaque année afin de garantir une étanchéité absolue et une attention exécutive totale à nos clients existants.</p>
-</div>
+            <div class="form-group">
+                <label data-fr="Canal de communication sécurisé" data-en="Secure Communication Channel">Canal de communication sécurisé</label>
+                <input type="text" name="canal_securise" id="input-secure" required placeholder="Ex: Signal ID, Threema ID, PGP Key Link...">
+            </div>
 
-<div class="notice-box">
-    <h3 data-fr="Protocole d'Admissibilité" data-en="Eligibility Protocol">Protocole d'Admissibilité</h3>
-    <p data-fr="L'ouverture d'un dossier d'évaluation est réservée aux Single Family Offices, aux gestionnaires de patrimoine UHNWI et aux comités de direction d'entreprises souveraines. Chaque soumission subit une vérification préalable d'intégrité avant toute prise de contact."
-       data-en="The opening of an evaluation file is strictly reserved for Single Family Offices, UHNWI asset managers, and sovereign corporate boards. Every submission undergoes a preliminary integrity clearance check prior to any formal communication."></p>
-</div>
+            <div class="form-group">
+                <label data-fr="Périmètre de l'engagement" data-en="Scope of Engagement">Périmètre de l'engagement</label>
+                <textarea name="description_mandat" id="input-desc" required placeholder="Décrivez brièvement les contours du mandat sans divulguer d'éléments nominatifs classifiés..."></textarea>
+            </div>
 
-<!-- FORM -->
-<div class="form-container">
-    <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Protocole de transmission sécurisé activé.');">
-        
-        <div class="form-group">
-            <label data-fr="Identité de l'Entité ou du Mandant" data-en="Entity or Principal Identity">Identité de l'Entité ou du Mandant</label>
-            <input type="text" required placeholder="Ex: Family Office / Direction Générale" id="input-identity">
-        </div>
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-        <div class="form-group">
-            <label data-fr="Point de Contact Officiel (Email)" data-en="Official Point of Contact (Email)">Point de Contact Officiel (Email)</label>
-            <input type="email" required placeholder="executive@yourstructure.com" id="input-email">
-        </div>
+            <button type="submit" class="submit-btn" data-fr="Soumettre la demande" data-en="Submit request">Soumettre la demande</button>
+        </form>
+    </div>
 
-        <div class="form-group">
-            <label data-fr="Nature Globale du Mandat" data-en="General Nature of the Mandate">Nature Globale du Mandat</label>
-            <select id="input-nature">
-                <option value="cyber" data-fr="Gouvernance Cyber &amp; Infrastructure" data-en="Cyber Governance &amp; Infrastructure">Gouvernance Cyber &amp; Infrastructure</option>
-                <option value="opsec" data-fr="Sanctuarisation de Style de Vie (OPSEC)" data-en="Lifestyle Sanctuarization (OPSEC)">Sanctuarisation de Style de Vie (OPSEC)</option>
-                <option value="crisis" data-fr="Gestion de Crise / Menace Asymétrique" data-en="Crisis Management / Asymmetric Threat">Gestion de Crise / Menace Asymétrique</option>
-            </select>
-        </div>
+    <footer>
+        &copy; 2026 ARES OPSEC WORLD. ALL RIGHTS RESERVED.
+    </footer>
 
-        <div class="form-group">
-            <label data-fr="Canal de Communication Sécurisé Privilégié (Optionnel)" data-en="Preferred Secure Communication Channel (Optional)">Canal de Communication Sécurisé Privilégié (Optionnel)</label>
-            <input type="text" placeholder="Ex: Signal ID, Threema ID, PGP Key Link..." id="input-secure">
-        </div>
+    <script>
+        let lang = "fr";
 
-        <div class="form-group">
-            <label data-fr="Description Sommaire du Contexte" data-en="Brief Context Description">Description Sommaire du Contexte</label>
-            <textarea placeholder="..." id="input-desc"></textarea>
-        </div>
+        const translations = {
+            fr: {
+                placeholderIdentity: "Ex: Family Office / Direction Générale",
+                placeholderSecure: "Ex: Signal ID, Threema ID, PGP Key Link...",
+                placeholderDesc: "Décrivez brièvement les contours du mandat sans divulguer d'éléments nominatifs classifiés..."
+            },
+            en: {
+                placeholderIdentity: "e.g., Family Office / Corporate Board",
+                placeholderSecure: "e.g., Signal ID, Threema ID, PGP Key Link...",
+                placeholderDesc: "Briefly outline the parameters of the engagement without disclosing classified nominal elements..."
+            }
+        };
 
-        <button type="submit" class="btn-submit" data-fr="Soumettre pour Validation OPSEC" data-en="Submit for OPSEC Clearance">Soumettre pour Validation OPSEC</button>
-
-    </form>
-</div>
-
-</section>
-
-<footer>
-<strong>ARES OPSEC WORLD</strong><br>
-Strategic Security, Risk &amp; Cyber Governance Advisory<br>
-<span style="font-size:0.8rem; color:#555;">Canada | Europe | Moyen Orient</span>
-
-<p style="margin-top:20px;">
-<a href="mailto:executive@aresopsec.com">executive@aresopsec.com</a> — 
-<a href="http://aresopsec.com" target="_blank">Ares Opsec World</a>
-</p>
-
-<p>© 2026 — All rights reserved</p>
-</footer>
-
-<script>
-
-let lang = "fr";
-
-// Dictionnaire pour les placeholders et options dynamiques qui ne supportent pas l'attribut data-fr direct
-const translations = {
-    fr: {
-        placeholderIdentity: "Ex: Family Office / Direction Générale",
-        placeholderSecure: "Ex: Signal ID, Threema ID, PGP Key Link...",
-        placeholderDesc: "Décrivez brièvement les contours du mandat sans divulguer d'éléments nominatifs classifiés..."
-    },
-    en: {
-        placeholderIdentity: "e.g., Family Office / Corporate Board",
-        placeholderSecure: "e.g., Signal ID, Threema ID, PGP Key Link...",
-        placeholderDesc: "Briefly outline the parameters of the engagement without disclosing classified nominal elements..."
-    }
-};
-
-function toggleLang(){
-    if (arguments.length === 0 && window.event) {
-        lang = lang === "fr" ? "en" : "fr";
-    }
-
-    // Traduction des textes standards
-    document.querySelectorAll("[data-fr]").forEach(el=>{
-        el.innerHTML = el.dataset[lang];
-    });
-
-    // Traduction des placeholders spécifiques
-    document.getElementById("input-identity").placeholder = translations[lang].placeholderIdentity;
-    document.getElementById("input-secure").placeholder = translations[lang].placeholderSecure;
-    document.getElementById("input-desc").placeholder = translations[lang].placeholderDesc;
-}
-
-// Initialisation au chargement
-toggleLang();
-
-</script>
-
-</body>
-</html>
+        function toggleLang
