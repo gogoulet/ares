@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ARES OPSEC — Écosystèmes Protégés</title>
+
+<base href="./">
+
+<style>
+
+/* RESET */
+* {margin:0;padding:0;box-sizing:border-box;}
+
+body {
+    font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+    background:#f7f7f5;
+    color:#111;
+    line-height:1.7;
+}
+
+a {text-decoration:none;color:inherit;}
+
+/* HEADER */
+header {
+    position:fixed;
+    width:100%;
+    background:rgba(255,255,255,0.9);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+nav {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+}
+
+.nav-logo {
+    height:35px;
+    width:auto;
+    display:block;
+}
+
+.menu a {
+    margin-left:20px;
+    font-size:0.95rem;
+}
+
+/* HERO OPTIMISÉ POUR ECOSYSTEM.PNG À LA RACINE */
+.hero-banner {
+    height:85vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.85)), 
+    url('ecosystem.png') center/cover no-repeat;
+    border-bottom:1px solid #222;
+}
+
+.hero-overlay {
+    max-width:900px;
+    padding:0 20px;
+}
+
+.hero-banner h1 {
+    font-size:3.8rem;
+    font-weight:700;
+    line-height:1.2;
+    letter-spacing:-1px;
+}
+
+.hero-banner p {
+    margin-top:20px;
+    font-size:1.2rem;
+    color:#ccc;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-weight:400;
+}
+
+/* SECTION */
+.section {
+    max-width:1000px;
+    margin:100px auto;
+    padding:0 20px;
+}
+
+.intro-block {
+    border-left:2px solid #111;
+    padding-left:30px;
+    margin-bottom:80px;
+}
+
+.intro-block p {
+    font-size:1.4rem;
+    font-weight:300;
+    color:#222;
+    line-height:1.8;
+}
+
+/* STORIES / USE CASES */
+.story-block {
+    background:#fff;
+    border:1px solid #eee;
+    padding:50px;
+    margin-bottom:60px;
+}
+
+.story-block:last-child {
+    margin-bottom:0;
+}
+
+.story-meta {
+    font-size:0.85rem;
+    font-weight:bold;
+    color:#888;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+
+.story-block h2 {
+    font-size:2rem;
+    margin-bottom:25px;
+    color:#111;
+    letter-spacing:-0.5px;
+}
+
+.story-block p {
+    margin-bottom:20px;
+    font-size:1.1rem;
+    color:#333;
+    text-align:justify;
+}
+
+.story-block p:last-child {
+    margin-bottom:0;
+}
+
+/* HIGHLIGHT BOX INSIDE STORY */
+.protocol-badge {
+    margin-top:30px;
+    padding:20px;
+    background:#f7f7f5;
+    border-left:3px solid #111;
+    font-size:1rem;
+    font-weight:500;
+}
+
+/* CTA */
+.cta {
+    text-align:center;
+    margin:120px auto;
+    padding:0 20px;
+}
+
+.cta h2 {
+    font-size:2.5rem;
+    margin-bottom:15px;
+}
+
+.cta p {
+    color:#666;
+    font-size:1.1rem;
+}
+
+.btn {
+    display:inline-block;
+    margin-top:35px;
+    padding:14px 35px;
+    border:1px solid #111;
+    color:#111;
+    font-size:0.9rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    transition:0.3s;
+    background:none;
+    cursor:pointer;
+}
+
+.btn:hover {
+    background:#111;
+    color:#fff;
+}
+
+/* FOOTER */
+footer {
+    background:#111;
+    color:#888;
+    text-align:center;
+    padding:80px 20px;
+    border-top:1px solid #222;
+    font-size:0.9rem;
+}
+
+footer strong {
+    color:#fff;
+    letter-spacing:1px;
+}
+
+footer p {
+    margin-top:15px;
+}
+
+footer a {
+    color:#ccc;
+}
+
+footer a:hover {
+    color:#fff;
+}
+
+/* MOBILE */
+@media(max-width:768px) {
+    .hero-banner {height:70vh;}
+    .hero-banner h1 {font-size:2.2rem;}
+    .story-block h2 {font-size:1.6rem;}
+    .story-block {padding:30px;}
+    .intro-block p {font-size:1.2rem;}
+    nav {padding:15px 20px;}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<a href="./">
+    <img src="logo.png" alt="ARES OPSEC WORLD" class="nav-logo">
+</a>
+
+<div class="menu">
+<a href="./" data-fr="Accueil" data-en="Home">Accueil</a>
+<a href="./services.html" data-fr="Services" data-en="Services">Services</a>
+<a href="./doctrine.html" data-fr="Doctrine" data-en="Doctrine">Doctrine</a>
+<a href="./ecosystem.html" data-fr="Écosystèmes" data-en="Ecosystems">Écosystèmes</a>
+<a href="./#contact" data-fr="Contact" data-en="Contact">Contact</a>
+</div>
+
+<div onclick="toggleLang()" style="cursor:pointer;border:1px solid #111;padding:6px 12px;font-size:0.85rem;font-weight:bold;">
+FR / EN
+</div>
+
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero-banner">
+<div class="hero-overlay">
+    <p data-fr="Scénarios d'Intervention • Cas Anonymisés" data-en="Operational Scenarios • Anonymized Cases">Scénarios d'Intervention • Cas Anonymisés</p>
+    <h1 data-fr="Écosystèmes Protégés" data-en="Protected Ecosystems">Écosystèmes Protégés</h1>
+</div>
+</section>
+
+<!-- INTRO -->
+<section class="section">
+<div class="intro-block">
+    <p data-fr="Le secret professionnel absolu nous interdit de nommer nos clients. Cependant, la protection du patrimoine immatériel se comprend mieux à travers les menaces complexes que nous neutralisons au quotidien. Voici comment la doctrine ARES s'articule en conditions réelles."
+       data-en="Absolute professional secrecy strictly prevents us from naming our clients. However, the protection of intangible assets is best understood through the complex threats we neutralize daily. Here is how the ARES doctrine articulates in real-world conditions.">Le secret professionnel absolu nous interdit de nommer nos clients. Cependant, la protection du patrimoine immatériel se comprend mieux à travers les menaces complexes que nous neutralisons au quotidien. Voici comment la doctrine ARES s'articule en conditions réelles.</p>
+</div>
+
+<!-- STORY 1 -->
+<div class="story-block">
+    <div class="story-meta">Scenario alpha / High-Exposure Mobility</div>
+    <h2 data-fr="Le Dirigeant en Transhumance Numérique" data-en="The Executive in Digital Transhumance">Le Dirigeant en Transhumance Numérique</h2>
+    <p data-fr="Un chef d'entreprise ultra-exposé devait mener une série de négociations stratégiques lors de déplacements multi-destinations dans des zones à haut risque d'espionnage industriel et de surveillance étatique."
+       data-en="A highly exposed corporate leader was scheduled to lead a series of critical negotiations across multiple global destinations flagged for severe industrial espionage and state-sponsored surveillance risks."></p>
+    <p data-fr="Ares a sanctuarisé l'ensemble de ses mouvements en déployant une architecture éphémère d'isolation. Ses terminaux grand public ont été remplacés par des dispositifs sécurisés sur mesure, opérant exclusivement sur des tunnels chiffrés isolés, avec neutralisation active des vecteurs d'interception locaux (IMSI-catchers, réseaux Wi-Fi hostiles)."
+       data-en="Ares insulated the entirety of their movements by deploying an ephemeral architecture of digital isolation. Consumer-grade devices were replaced with bespoke secured hardware operating strictly over dedicated, encrypted tunnels, actively neutralizing local interception vectors (IMSI-catchers, hostile Wi-Fi networks)."></p>
+    <div class="protocol-badge" data-fr="Résultat : Intégrité totale des communications critiques et exclusion complète de l'empreinte numérique durant le transit." data-en="Result: Undamaged integrity of critical communications and total exclusion of digital footprints during transit.">Résultat : Intégrité totale des communications critiques et exclusion complète de l'empreinte numérique durant le transit.</div>
+</div>
+
+<!-- STORY 2 -->
+<div class="story-block">
+    <div class="story-meta">Scenario bravo / Family Office Governance</div>
+    <h2 data-fr="La Transition Multigénérationnelle" data-en="The Multi-Generational Transition">La Transition Multigénérationnelle</h2>
+    <p data-fr="Un Single Family Office gérait un transfert massif de gouvernance et d'actifs vers la génération suivante. Les nouveaux héritiers, fortement actifs sur les réseaux sociaux, constituaient des cibles de choix pour l'ingénierie sociale et le chantage informationnel."
+       data-en="A Single Family Office was executing a massive transfer of governance and sovereign assets to the next generation. The incoming heirs, highly active on social media platforms, represented prime targets for social engineering and informational extortion."></p>
+    <p data-fr="Ares a procédé à un audit de pénétration complet de l'infrastructure familiale et à une réduction drastique de la surface d'attaque publique des membres de la famille. Nous avons mis en place des protocoles de communication étanches partagés entre la direction financière et les résidences privées, accompagnés d'un encadrement opérationnel discret pour pérenniser les réflexes OPSEC."
+       data-en="Ares performed a comprehensive penetration audit of the family’s estate infrastructure and enforced a drastic reduction of the public attack surface. We established sealed communication protocols shared between financial executives and private residences, backed by discreet operational coaching to anchor enduring OPSEC reflexes."></p>
+    <div class="protocol-badge" data-fr="Résultat : Protection du patrimoine familial contre les fraudes au président et sanctuarisation de la vie privée des héritiers." data-en="Result: Preservation of family wealth against spear-phishing and structural containment of the heirs' private spheres.">Résultat : Protection du patrimoine familial contre les fraudes au président et sanctuarisation de la vie privée des héritiers.</div>
+</div>
+
+<!-- STORY 3 -->
+<div class="story-block">
+    <div class="story-meta">Scenario charlie / Corporate Warfare &amp; M&amp;A</div>
+    <h2 data-fr="Fusions-Acquisitions et Concurrence Asymétrique" data-en="M&amp;A Transactions and Asymmetric Warfare">Fusions-Acquisitions et Concurrence Asymétrique</h2>
+    <p data-fr="Lors d'une transaction de fusion-acquisition majeure impliquant plusieurs milliards, un comité exécutif restreint suspectait des fuites d'informations et des écoutes ciblées visant à saboter les négociations au profit d'un concurrent étranger."
+       data-en="During a major multi-billion M&A transaction, a restricted executive committee suspected information leaks and targeted wiretapping designed to sabotage negotiations to the advantage of a foreign competitor."></p>
+    <p data-fr="Nos unités ont immédiatement appliqué un protocole d'interposition : isolation complète du房 (bureau de crise), dépistage de compromissions électroniques (TSCM) et basculement de l'ensemble des échanges documentaires et décisionnels sur une infrastructure souveraine ARES temporaire, totalement déconnectée des serveurs de l'entreprise ciblée."
+       data-en="Our teams instantly applied an interposition protocol: full physical and digital isolation of the war room, Technical Surveillance Counter-Measures (TSCM), and a complete migration of all documentary and decision-making traffic to a temporary ARES sovereign infrastructure entirely decoupled from corporate servers."></p>
+    <div class="protocol-badge" data-fr="Résultat : Clôture de la transaction sous un contrôle informationnel absolu, sans aucune interférence extérieure." data-en="Result: Closing of the transaction under absolute informational mastery, with zero external interference.">Résultat : Clôture de la transaction sous un contrôle informationnel absolu, sans aucune interférence extérieure.</div>
+</div>
+
+</section>
+
+<!-- CTA -->
+<section class="cta">
+<h2 data-fr="Chaque vulnérabilité est un choix." data-en="Every vulnerability is a choice.">Chaque vulnérabilité est un choix.</h2>
+<p data-fr="Laissez nos analystes cartographier vos risques avant qu'ils ne deviennent des crises." data-en="Allow our analysts to map your risks before they escalate into crises.">Laissez nos analystes cartographier vos risques avant qu'ils ne deviennent des crises.</p>
+<a href="./#contact" class="btn"
+data-fr="Solliciter une évaluation discrète"
+data-en="Request Discreet Evaluation">Solliciter une évaluation discrète</a>
+</section>
+
+<footer>
+<strong>ARES OPSEC WORLD</strong><br>
+Strategic Security, Risk &amp; Cyber Governance Advisory<br>
+<span style="font-size:0.8rem; color:#555;">Canada | Europe | Moyen Orient</span>
+
+<p style="margin-top:20px;">
+<a href="mailto:executive@aresopsec.com">executive@aresopsec.com</a> — 
+<a href="http://aresopsec.com" target="_blank">Ares Opsec World</a>
+</p>
+
+<p>© 2026 — All rights reserved</p>
+</footer>
+
+<script>
+
+let lang = "fr";
+
+function toggleLang(){
+    if (arguments.length === 0 && window.event) {
+        lang = lang === "fr" ? "en" : "fr";
+    }
+
+    document.querySelectorAll("[data-fr]").forEach(el=>{
+        el.innerHTML = el.dataset[lang];
+    });
+}
+
+// Initialisation au chargement
+toggleLang();
+
+</script>
+
+</body>
+</html>
