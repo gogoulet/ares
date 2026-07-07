@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ARES OPSEC — Notre Doctrine Opérationnelle</title>
+
+<base href="./">
+
+<style>
+
+/* RESET */
+* {margin:0;padding:0;box-sizing:border-box;}
+
+body {
+    font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+    background:#f7f7f5;
+    color:#111;
+    line-height:1.7;
+}
+
+a {text-decoration:none;color:inherit;}
+
+/* HEADER */
+header {
+    position:fixed;
+    width:100%;
+    background:rgba(255,255,255,0.9);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+nav {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+}
+
+.nav-logo {
+    height:35px;
+    width:auto;
+    display:block;
+}
+
+.menu a {
+    margin-left:20px;
+    font-size:0.95rem;
+}
+
+/* HERO NOIR - STYLE DOCTRINAL */
+.hero-banner {
+    height:60vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    background:linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95));
+    border-bottom:1px solid #222;
+}
+
+.hero-overlay {
+    max-width:900px;
+    padding:0 20px;
+}
+
+.hero-banner h1 {
+    font-size:3.5rem;
+    font-weight:700;
+    line-height:1.2;
+    letter-spacing:-1px;
+}
+
+.hero-banner p {
+    margin-top:20px;
+    font-size:1.2rem;
+    color:#888;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-weight:400;
+}
+
+/* SECTION */
+.section {
+    max-width:1000px;
+    margin:100px auto;
+    padding:0 20px;
+}
+
+.intro-block {
+    border-left:2px solid #111;
+    padding-left:30px;
+    margin-bottom:80px;
+}
+
+.intro-block p {
+    font-size:1.4rem;
+    font-weight:300;
+    color:#222;
+    line-height:1.8;
+}
+
+/* DOCTRINE PILLARS */
+.doctrine-item {
+    margin-bottom:100px;
+}
+
+.doctrine-item:last-child {
+    margin-bottom:0;
+}
+
+.doctrine-meta {
+    font-size:0.85rem;
+    font-weight:bold;
+    color:#888;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+.doctrine-item h2 {
+    font-size:2.2rem;
+    margin-bottom:25px;
+    color:#111;
+    letter-spacing:-0.5px;
+}
+
+.doctrine-item p {
+    margin-bottom:20px;
+    font-size:1.1rem;
+    color:#333;
+    text-align:justify;
+}
+
+/* PROTOCOLS STEP DESIGN */
+.protocol-grid {
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:30px;
+    margin-top:40px;
+}
+
+.protocol-card {
+    background:#fff;
+    border:1px solid #eee;
+    padding:30px;
+}
+
+.protocol-num {
+    font-size:1.5rem;
+    font-weight:700;
+    color:#111;
+    border-bottom:1px solid #111;
+    padding-bottom:10px;
+    margin-bottom:15px;
+}
+
+.protocol-card h4 {
+    font-size:1.1rem;
+    margin-bottom:10px;
+}
+
+.protocol-card p {
+    font-size:0.95rem;
+    color:#666;
+    line-height:1.5;
+}
+
+/* CTA */
+.cta {
+    text-align:center;
+    margin:120px auto;
+    padding:0 20px;
+}
+
+.cta h2 {
+    font-size:2.5rem;
+    margin-bottom:15px;
+}
+
+.cta p {
+    color:#666;
+    font-size:1.1rem;
+}
+
+.btn {
+    display:inline-block;
+    margin-top:35px;
+    padding:14px 35px;
+    border:1px solid #111;
+    color:#111;
+    font-size:0.9rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    transition:0.3s;
+    background:none;
+    cursor:pointer;
+}
+
+.btn:hover {
+    background:#111;
+    color:#fff;
+}
+
+/* FOOTER */
+footer {
+    background:#111;
+    color:#888;
+    text-align:center;
+    padding:80px 20px;
+    border-top:1px solid #222;
+    font-size:0.9rem;
+}
+
+footer strong {
+    color:#fff;
+    letter-spacing:1px;
+}
+
+footer p {
+    margin-top:15px;
+}
+
+footer a {
+    color:#ccc;
+}
+
+footer a:hover {
+    color:#fff;
+}
+
+/* MOBILE */
+@media(max-width:768px) {
+    .hero-banner h1 {font-size:2.2rem;}
+    .doctrine-item h2 {font-size:1.8rem;}
+    .intro-block p {font-size:1.2rem;}
+    .protocol-grid {grid-template-columns:1fr;}
+    nav {padding:15px 20px;}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<a href="./">
+    <img src="logo.png" alt="ARES OPSEC WORLD" class="nav-logo">
+</a>
+
+<div class="menu">
+<a href="./" data-fr="Accueil" data-en="Home">Accueil</a>
+<a href="./services.html" data-fr="Services" data-en="Services">Services</a>
+<a href="./#contact" data-fr="Contact" data-en="Contact">Contact</a>
+</div>
+
+<div onclick="toggleLang()" style="cursor:pointer;border:1px solid #111;padding:6px 12px;font-size:0.85rem;font-weight:bold;">
+FR / EN
+</div>
+
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero-banner">
+<div class="hero-overlay">
+    <p data-fr="Souveraineté • Isolement • Contrôle" data-en="Sovereignty • Insulation • Control">Souveraineté • Isolement • Contrôle</p>
+    <h1 data-fr="La Doctrine ARES" data-en="The ARES Doctrine">La Doctrine ARES</h1>
+</div>
+</section>
+
+<!-- INTRO -->
+<section class="section">
+<div class="intro-block">
+    <p data-fr="Nous ne considérons pas la sécurité comme une suite de logiciels ou de gardes statiques. Pour l'élite financière et opérationnelle, la sécurité est un état d'étanchéité absolue et de maîtrise informationnelle face aux menaces asymétriques."
+       data-en="We do not view security as a mere suite of software or static guards. For the financial and operational elite, security is a state of absolute insulation and informational mastery against asymmetric threats.">Nous ne considérons pas la sécurité comme une suite de logiciels ou de gardes statiques. Pour l'élite financière et opérationnelle, la sécurité est un état d'étanchéité absolue et de maîtrise informationnelle face aux menaces asymétriques.</p>
+</div>
+
+<!-- ITEM 1: ASYMMETRIC VISION -->
+<div class="doctrine-item">
+    <div class="doctrine-meta">Principle 01 / Vision</div>
+    <h2 data-fr="Neutralisation de l'Asymétrie" data-en="Neutralizing Asymmetry">Neutralisation de l'Asymétrie</h2>
+    <p data-fr="Les adversaires modernes — qu'il s'agisse d'officines d'espionnage industriel, d'attaquants cybernétiques parrainés ou de structures de dénigrement médiatique — exploitent toujours le maillon le plus faible et le moins visible. Notre doctrine repose sur l'élimination systématique de vos angles morts."
+       data-en="Modern adversaries—be they corporate espionage outfits, state-sponsored cyber attackers, or media smear campaigns—always exploit the weakest, least visible link. Our doctrine is built on the systematic elimination of your blind spots.">Les adversaires modernes — qu'il s'agisse d'officines d'espionnage industriel, d'attaquants cybernétiques parrainés ou de structures de dénigrement médiatique — exploitent toujours le maillon le plus faible et le moins visible. Notre doctrine repose sur l'élimination systématique de vos angles morts.</p>
+    <p data-fr="Nous n'attendons pas l'incident. Ares cartographie les vecteurs de vulnérabilité interconnectés (habitudes numériques de la famille, infrastructures du family office, vulnérabilités physiques des résidences) pour imposer des barrières proactives de grade militaire."
+       data-en="We do not wait for the incident to occur. Ares maps interconnected vulnerability vectors (family digital habits, family office infrastructures, physical estate vulnerabilities) to enforce proactive, military-grade boundaries.">Nous n'attendons pas l'incident. Ares cartographie les vecteurs de vulnérabilité interconnectés (habitudes numériques de la famille, infrastructures du family office, vulnérabilités physiques des résidences) pour imposer des barrières proactives de grade militaire.</p>
+</div>
+
+<!-- ITEM 2: INTERNAL OPSEC -->
+<div class="doctrine-item">
+    <div class="doctrine-meta">Principle 02 / Integrity</div>
+    <h2 data-fr="Étanchéité des Flux &amp; Zéro Confiance" data-en="Zero-Trust &amp; Insulation">Étanchéité des Flux &amp; Zéro Confiance</h2>
+    <p data-fr="La confiance aveugle est le vecteur principal des compromissions majeures. ARES applique un modèle strict de Zero-Trust (Confiance Zéro) à toutes les architectures numériques et humaines que nous concevons. Aucun privilège n'est permanent, aucune communication sensible ne circule sur des canaux tiers non contrôlés."
+       data-en="Blind trust is the primary vector of major compromises. ARES enforces a strict Zero-Trust model across all digital and human architectures we engineer. No privilege is permanent; no sensitive communication transits through uncontrolled third-party channels.">La confiance aveugle est le vecteur principal des compromissions majeures. ARES applique un modèle strict de Zero-Trust (Confiance Zéro) à toutes les architectures numériques et humaines que nous concevons. Aucun privilège n'est permanent, aucune communication sensible ne circule sur des canaux tiers non contrôlés.</p>
+    <p data-fr="Pour préserver l'anonymat et la sécurité de nos propres mandats, nos cellules opérationnelles fonctionnent de manière compartimentée. Vos données stratégiques sont isolées, chiffrées hors ligne et subissent une destruction certifiée dès la clôture des opérations."
+       data-en="To preserve the anonymity and security of our own engagements, our operational cells function in a compartmentalized manner. Your strategic data is isolated, encrypted offline, and undergoes certified destruction upon operational closure.">Pour préserver l'anonymat et la sécurité de nos propres mandats, nos cellules opérationnelles fonctionnent de manière compartimentée. Vos données stratégiques sont isolées, chiffrées hors ligne et subissent une destruction certifiée dès la clôture des opérations.</p>
+</div>
+
+<!-- ITEM 3: FRAMEWORK / STEPS -->
+<div class="doctrine-item">
+    <div class="doctrine-meta">Framework / Execution</div>
+    <h2 data-fr="Le Cadre d'Engagement Tactique" data-en="The Tactical Engagement Framework">Le Cadre d'Engagement Tactique</h2>
+    <p data-fr="Chaque mandat confié à Ares suit un protocole rigide en trois phases, garantissant un contrôle immédiat sur la crise ou la structure à sanctuariser."
+       data-en="Every engagement embedded with Ares follows a rigid three-phase protocol, guaranteeing immediate control over the crisis or the structure to be insulated.">Chaque mandat confié à Ares suit un protocole rigide en trois phases, garantissant un contrôle immédiat sur la crise ou la structure à sanctuariser.</p>
+    
+    <div class="protocol-grid">
+        <div class="protocol-card">
+            <div class="protocol-num">I</div>
+            <h4 data-fr="Isolation Initiale" data-en="Initial Insulation">Isolation Initiale</h4>
+            <p data-fr="Intervention d'urgence pour sécuriser les communications immédiates, geler les fuites potentielles et couper les accès suspects." data-en="Emergency intervention to secure immediate communications, freeze potential leaks, and sever suspicious access points.">Intervention d'urgence pour sécuriser les communications immédiates, geler les fuites potentielles et couper les accès suspects.</p>
+        </div>
+        <div class="protocol-card">
+            <div class="protocol-num">II</div>
+            <h4 data-fr="Remédiation Structurelle" data-en="Structural Remediation">Remédiation Structurelle</h4>
+            <p data-fr="Refonte complète des protocoles OPSEC physiques et numériques. Déploiement de notre architecture souveraine sur mesure." data-en="Complete overhaul of physical and digital OPSEC protocols. Deployment of our bespoke sovereign architecture.">Refonte complète des protocoles OPSEC physiques et numériques. Déploiement de notre architecture souveraine sur mesure.</p>
+        </div>
+        <div class="protocol-card">
+            <div class="protocol-num">III</div>
+            <h4 data-fr="Gouvernance Active" data-en="Active Governance">Gouvernance Active</h4>
+            <p data-fr="Surveillance continue des signaux faibles, audits de pénétration réguliers et soutien décisionnel exécutif permanent." data-en="Continuous monitoring of weak signals, regular penetration audits, and permanent executive decision support.">Surveillance continue des signaux faibles, audits de pénétration réguliers et soutien décisionnel exécutif permanent.</p>
+        </div>
+    </div>
+</div>
+
+</section>
+
+<!-- CTA -->
+<section class="cta">
+<h2 data-fr="Le contrôle ne se délègue pas. Il se sécurise." data-en="Control cannot be delegated. It must be secured.">Le contrôle ne se délègue pas. Il se sécurise.</h2>
+<p data-fr="Contactez nos conseillers sous protocole chiffré pour évaluer votre éligibilité opérationnelle." data-en="Contact our advisors under encrypted protocols to assess your operational eligibility.">Contactez nos conseillers sous protocole chiffré pour évaluer votre éligibilité opérationnelle.</p>
+<a href="./#contact" class="btn"
+data-fr="Ouvrir un dossier confidentiel"
+data-en="Open Confidential Case">Ouvrir un dossier confidentiel</a>
+</section>
+
+<footer>
+<strong>ARES OPSEC WORLD</strong><br>
+Strategic Security, Risk &amp; Cyber Governance Advisory<br>
+<span style="font-size:0.8rem; color:#555;">Canada | Europe | Moyen Orient</span>
+
+<p style="margin-top:20px;">
+<a href="mailto:executive@aresopsec.com">executive@aresopsec.com</a> — 
+<a href="http://aresopsec.com" target="_blank">Ares Opsec World</a>
+</p>
+
+<p>© 2026 — All rights reserved</p>
+</footer>
+
+<script>
+
+let lang = "fr";
+
+function toggleLang(){
+    // Permet d'alterner si appelé par l'événement clic
+    if (arguments.length === 0 && window.event) {
+        lang = lang === "fr" ? "en" : "fr";
+    }
+
+    document.querySelectorAll("[data-fr]").forEach(el=>{
+        el.innerHTML = el.dataset[lang];
+    });
+}
+
+// Initialisation au chargement pour s'assurer que la langue par défaut s'affiche correctement
+toggleLang();
+
+</script>
+
+</body>
+</html>
