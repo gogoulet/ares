@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ARES OPSEC — Services</title>
+<title>ARES OPSEC — Elite Security &amp; Cyber Governance Services</title>
 
 <base href="./">
 
@@ -34,6 +34,7 @@ header {
 nav {
     display:flex;
     justify-content:space-between;
+    align-items:center;
     padding:20px 40px;
 }
 
@@ -44,38 +45,46 @@ nav {
 
 /* HERO */
 .hero-banner {
-    height:70vh;
+    height:80vh;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
     color:#fff;
-
     background:
-    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
     url('assets/convoy.jpg') center/cover;
 }
 
 .hero-overlay {
-    max-width:800px;
+    max-width:900px;
+    padding:0 20px;
 }
 
 .hero-banner h1 {
-    font-size:3.2rem;
+    font-size:3.5rem;
+    font-weight:700;
+    line-height:1.2;
+    letter-spacing:-1px;
 }
 
 .hero-banner p {
-    margin-top:10px;
-    opacity:0.85;
+    margin-top:20px;
+    font-size:1.3rem;
+    color:#ccc;
+    font-weight:300;
 }
 
 /* BUTTON */
 .btn {
     display:inline-block;
-    margin-top:25px;
-    padding:14px 30px;
+    margin-top:35px;
+    padding:14px 35px;
     border:1px solid #fff;
     color:#fff;
+    font-size:0.9rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
     transition:0.3s;
 }
 
@@ -86,29 +95,93 @@ nav {
 
 /* SECTION */
 .section {
-    max-width:900px;
-    margin:100px auto;
+    max-width:1000px;
+    margin:120px auto;
     padding:0 20px;
 }
 
+.intro-text {
+    font-size:1.5rem;
+    font-weight:300;
+    text-align:center;
+    color:#222;
+    line-height:1.8;
+}
+
 .service {
-    margin-bottom:100px;
+    margin-bottom:120px;
+    padding-bottom:60px;
+    border-bottom:1px solid #e5e5e0;
+}
+
+.service:last-child {
+    border-bottom:none;
+    margin-bottom:60px;
 }
 
 .service h2 {
-    font-size:2.2rem;
-    margin-bottom:20px;
+    font-size:2.4rem;
+    margin-bottom:25px;
+    color:#111;
+    letter-spacing:-0.5px;
 }
 
 .service p {
-    margin-bottom:18px;
-    opacity:0.8;
+    margin-bottom:20px;
+    font-size:1.1rem;
+    color:#333;
+    text-align:justify;
+}
+
+.service-details {
+    margin-top:30px;
+    background:#fff;
+    padding:30px;
+    border:1px solid #eee;
+}
+
+.service-details h4 {
+    font-size:1rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:15px;
+    color:#111;
+}
+
+.service-details ul {
+    list-style:none;
+}
+
+.service-details ul li {
+    position:relative;
+    padding-left:20px;
+    margin-bottom:10px;
+    font-size:0.95rem;
+    color:#555;
+}
+
+.service-details ul li::before {
+    content:"—";
+    position:absolute;
+    left:0;
+    color:#111;
 }
 
 /* CTA */
 .cta {
     text-align:center;
-    margin:120px auto;
+    margin:140px auto;
+    padding:0 20px;
+}
+
+.cta h2 {
+    font-size:2.5rem;
+    margin-bottom:15px;
+}
+
+.cta p {
+    color:#666;
+    font-size:1.1rem;
 }
 
 .cta .btn {
@@ -124,14 +197,37 @@ nav {
 /* FOOTER */
 footer {
     background:#111;
-    color:#bbb;
+    color:#888;
     text-align:center;
-    padding:60px 20px;
+    padding:80px 20px;
+    border-top:1px solid #222;
+    font-size:0.9rem;
+}
+
+footer strong {
+    color:#fff;
+    letter-spacing:1px;
+}
+
+footer p {
+    margin-top:15px;
+}
+
+footer a {
+    color:#ccc;
+}
+
+footer a:hover {
+    color:#fff;
 }
 
 /* MOBILE */
 @media(max-width:768px){
-.hero-banner h1 {font-size:2rem;}
+    .hero-banner h1 {font-size:2.2rem;}
+    .hero-banner p {font-size:1.1rem;}
+    .service h2 {font-size:1.8rem;}
+    .intro-text {font-size:1.2rem;}
+    nav {padding:20px 20px;}
 }
 
 </style>
@@ -149,7 +245,7 @@ footer {
 <a href="./index.html#contact" data-fr="Contact" data-en="Contact"></a>
 </div>
 
-<div onclick="toggleLang()" style="cursor:pointer;border:1px solid #111;padding:6px 12px;">
+<div onclick="toggleLang()" style="cursor:pointer;border:1px solid #111;padding:6px 12px;font-size:0.85rem;font-weight:bold;">
 FR / EN
 </div>
 
@@ -158,29 +254,25 @@ FR / EN
 
 <!-- HERO -->
 <section class="hero-banner">
-
 <div class="hero-overlay">
 
-<h1 data-fr="Services stratégiques"
-    data-en="Strategic Services"></h1>
+<h1 data-fr="Architecture de Résilience &amp; Défense Opérationnelle"
+    data-en="Resilience Architecture &amp; Operational Defense"></h1>
 
-<p data-fr="Comprendre. Structurer. Contrôler."
-   data-en="Understand. Structure. Control."></p>
+<p data-fr="Protocoles de sécurité souverains conçus pour la protection des patrimoines, des infrastructures technologiques et des structures de gouvernance d'élite."
+   data-en="Sovereign security protocols engineered for the protection of wealth, technological infrastructures, and elite governance structures."></p>
 
 <a href="#services" class="btn"
-data-fr="Explorer les services"
-data-en="Explore Services"></a>
+data-fr="Découvrir nos expertises"
+data-en="Discover Our Expertise"></a>
 
 </div>
-
 </section>
 
 <!-- INTRO -->
 <section class="section">
-
-<p data-fr="ARES OPSEC intervient dans des environnements où la complexité et la visibilité rendent les décisions critiques. Nous apportons structure et clarté là où les enjeux sont réels."
-   data-en="ARES OPSEC operates in environments where complexity and visibility make decisions critical. We bring structure and clarity where stakes are real."></p>
-
+<p class="intro-text" data-fr="ARES OPSEC déploie des stratégies de contre-intelligence, de sécurité numérique et de gestion de risques critiques là où l'exposition publique et les intérêts financiers exigent une étanchéité absolue."
+   data-en="ARES OPSEC deploys advanced counter-intelligence, digital security, and critical risk management strategies where public exposure and substantial financial interests demand absolute insulation."></p>
 </section>
 
 <!-- SERVICES -->
@@ -188,110 +280,101 @@ data-en="Explore Services"></a>
 
 <!-- SERVICE 1 -->
 <div class="service">
+<h2>Strategic Risk &amp; Intelligence</h2>
+<p data-fr="L'anticipation tactique est la clé de voûte de la préservation des actifs de grande envergure. Nos services de renseignement d'affaires et d'analyse de risques permettent aux family offices et aux grands entrepreneurs de cartographier avec précision les menaces géopolitiques, réglementaires et cybernétiques qui pèsent sur leurs écosystèmes."
+   data-en="Tactical anticipation is the cornerstone of high-value asset preservation. Our strategic intelligence and corporate risk analysis allow family offices and major entrepreneurs to precisely map geopolitical, regulatory, and cyber threats confronting their ecosystems."></p>
 
-<h2>Strategic Risk & Intelligence</h2>
+<p data-fr="Nous éliminons l'asymétrie d'information en menant des investigations approfondies sur les parties prenantes, les partenaires potentiels et les infrastructures tierces. En transformant des signaux faibles et des données complexes en rapports d'intelligence clairs, nous offrons aux décideurs le contrôle nécessaire pour orchestrer des fusions, des acquisitions ou des expansions de marchés en toute sécurité."
+   data-en="We eradicate information asymmetry by conducting deep-dive investigations into stakeholders, potential partners, and third-party infrastructures. By translating weak signals and complex data into transparent intelligence reports, we grant decision-makers the absolute control required to orchestrate mergers, acquisitions, or market expansions safely."></p>
 
-<p data-fr="Comprendre un environnement est la première étape pour réduire le risque. Nous analysons les dynamiques en présence et les vulnérabilités."
-   data-en="Understanding an environment is the first step to reducing risk. We analyze dynamics and vulnerabilities."></p>
-
-<p data-fr="Nous identifions les acteurs clés, les tensions et les trajectoires possibles."
-   data-en="We identify key actors, tensions and potential trajectories."></p>
-
-<p data-fr="Cette lecture permet d’anticiper plutôt que de réagir."
-   data-en="This allows anticipation rather than reaction."></p>
-
-<p data-fr="Nous transformons l’incertitude en information exploitable."
-   data-en="We turn uncertainty into actionable insight."></p>
-
-<p data-fr="Cela devient un levier stratégique pour la prise de décision."
-   data-en="This becomes a strategic decision-making tool."></p>
-
+<div class="service-details">
+<h4 data-fr="Champs d'application tactiques" data-en="Tactical Core Focus"></h4>
+<ul>
+<li data-fr="Enquêtes de réputation et due diligence approfondie avant transactions majeures." data-en="Reputational background checks and deep-dive due diligence prior to major transactions."></li>
+<li data-fr="Modélisation de menaces asymétriques et cartographie des risques géopolitiques pour les actifs transfrontaliers." data-en="Asymmetric threat modeling and geopolitical risk mapping for cross-border assets."></li>
+<li data-fr="Veille technologique et détection avancée de fuites d'informations sur le Dark Web." data-en="Technological surveillance and advanced detection of information leaks on the Dark Web."></li>
+</ul>
+</div>
 </div>
 
 <!-- SERVICE 2 -->
 <div class="service">
+<h2>Digital Security &amp; Data Sovereignty</h2>
+<p data-fr="À l'ère de l'interconnexion globale, les réseaux privés des milliardaires et des family offices constituent des cibles de choix pour l'espionnage industriel et les cyberattaques sophistiquées. Ares conçoit des architectures numériques sur mesure et de grade militaire, assurant une étanchéité complète de vos serveurs, bases de données et canaux de communication."
+   data-en="In an era of global hyper-connectivity, the private networks of billionaires and family offices represent prime targets for industrial espionage and sophisticated cyberattacks. Ares designs bespoke, military-grade digital architectures, ensuring the comprehensive insulation of your servers, databases, and communication channels."></p>
 
-<h2>Protection Strategy</h2>
+<p data-fr="Nous mettons en œuvre des protocoles stricts de souveraineté des données pour neutraliser les menaces persistantes avancées (APT), le rançongiciel et le vol d'identité. De la sécurisation complète de vos systèmes de gestion internes à la protection de vos infrastructures cloud critiques, nous faisons en sorte que votre capital technologique et vos secrets d'affaires restent inaccessibles à toute entité malveillante."
+   data-en="We implement strict data sovereignty protocols to neutralize Advanced Persistent Threats (APTs), ransomware, and identity theft. From completely securing your internal management systems to shielding your critical cloud infrastructure, we ensure your technological capital and corporate secrets remain strictly inaccessible to any malicious entity."></p>
 
-<p data-fr="La protection efficace repose sur une structure cohérente adaptée à votre réalité."
-   data-en="Effective protection relies on a coherent structure tailored to your reality."></p>
-
-<p data-fr="Nous intégrons les dimensions physiques, comportementales et opérationnelles."
-   data-en="We integrate physical, behavioral and operational dimensions."></p>
-
-<p data-fr="Chaque stratégie vise à réduire l’exposition sans freiner les activités."
-   data-en="Each strategy reduces exposure without limiting operations."></p>
-
-<p data-fr="Nous privilégions la discrétion et l’efficacité."
-   data-en="We prioritize discretion and efficiency."></p>
-
-<p data-fr="L’objectif est un environnement maîtrisé et stable."
-   data-en="The goal is a controlled and stable environment."></p>
-
+<div class="service-details">
+<h4 data-fr="Ingénierie numérique" data-en="Digital Engineering Focus"></h4>
+<ul>
+<li data-fr="Déploiement de réseaux chiffrés de bout en bout et d'infrastructures de communication exclusives." data-en="Deployment of end-to-end encrypted networks and exclusive communication infrastructures."></li>
+<li data-fr="Sécurisation des codes sources, des outils d'onboarding numériques et des dépôts technologiques corporatifs." data-en="Securing source code, digital onboarding systems, and corporate technological repositories."></li>
+<li data-fr="Gestion et isolement de la confidentialité numérique personnelle pour les dirigeants et leurs cercles restreints." data-en="Management and insulation of personal digital privacy for executives and their immediate circles."></li>
+</ul>
+</div>
 </div>
 
 <!-- SERVICE 3 -->
 <div class="service">
+<h2>Tactical Audits &amp; Penetration Testing</h2>
+<p data-fr="La résilience d'un empire industriel ou d'une structure de gestion patrimoniale ne peut reposer sur des suppositions. Nos audits de sécurité globaux pénètrent de manière agressive vos barrières physiques, humaines et numériques pour tester en temps réel la robustesse de vos protocoles OPSEC existants."
+   data-en="The resilience of an industrial empire or wealth management structure cannot rely on assumptions. Our comprehensive security audits aggressively penetrate your physical, human, and digital boundaries to test the real-time robustness of your existing OPSEC protocols."></p>
 
-<h2>Crisis Governance</h2>
+<p data-fr="En simulant des cyberattaques de haut niveau, des tactiques d'ingénierie sociale ou des intrusions physiques, nos experts découvrent les failles cachées et les angles morts systémiques avant que des adversaires réels ne les exploitent. À la suite de ces simulations tactiques, nous fournissons un plan de remédiation technique précis et immédiatement applicable pour élever instantanément votre niveau de défense."
+   data-en="By simulating high-tier cyberattacks, social engineering tactics, or physical breaches, our experts uncover hidden flaws and systemic blind spots before real adversaries exploit them. Following these tactical simulations, we provide a precise, immediately actionable remediation framework to instantly elevate your defensive posture."></p>
 
-<p data-fr="Dans une crise, la clarté devient essentielle."
-   data-en="In a crisis, clarity becomes essential."></p>
-
-<p data-fr="Nous structurons la réponse pour maintenir le contrôle."
-   data-en="We structure response to maintain control."></p>
-
-<p data-fr="Nous priorisons les décisions critiques."
-   data-en="We prioritize critical decisions."></p>
-
-<p data-fr="Nous réduisons l’incertitude et le chaos."
-   data-en="We reduce uncertainty and chaos."></p>
-
-<p data-fr="L’objectif est une stabilisation rapide."
-   data-en="The goal is rapid stabilization."></p>
-
+<div class="service-details">
+<h4 data-fr="Évaluation des vulnérabilités" data-en="Vulnerability Assessment Focus"></h4>
+<ul>
+<li data-fr="Tests d'intrusion cybernétique (Red Teaming) ciblant les réseaux d'entreprises et les terminaux privés." data-en="Cyber penetration testing (Red Teaming) targeting enterprise networks and private endpoints."></li>
+<li data-fr="Évaluation des vulnérabilités humaines face aux attaques par harponnage (spear-phishing) et ingénierie sociale." data-en="Assessment of human vulnerabilities against spear-phishing and social engineering vectors."></li>
+<li data-fr="Audits physiques de résilience des sièges sociaux, résidences de prestige et systèmes de surveillance." data-en="Physical resilience audits of corporate headquarters, prestige estates, and surveillance systems."></li>
+</ul>
+</div>
 </div>
 
 <!-- SERVICE 4 -->
 <div class="service">
+<h2>Crisis Governance &amp; Perception</h2>
+<p data-fr="Lorsqu'un incident critique survient, le chaos et l'incertitude peuvent détruire une réputation commerciale ou un héritage familial en quelques heures. Ares intervient immédiatement au niveau exécutif pour structurer des cellules de crise militarisées, stabiliser la gouvernance interne et maintenir un contrôle absolu sur les flux de communication."
+   data-en="When a critical incident strikes, chaos and uncertainty can destroy a corporate reputation or family legacy within hours. Ares intervenes instantly at the executive level to structure militarized crisis rooms, stabilize internal governance, and maintain absolute control over communication channels."></p>
 
-<h2>Influence & Perception</h2>
+<p data-fr="Nous analysons les dynamiques de perception des parties prenantes, des médias et des marchés pour concevoir des contre-mesures stratégiques efficaces. Notre méthodologie prédictive permet de neutraliser l'impact des campagnes de dénigrement, du chantage opérationnel ou de l'espionnage industriel, protégeant ainsi l'autorité légitime et l'alignement à long terme des dirigeants d'exception."
+   data-en="We analyze the perception dynamics of stakeholders, media outlets, and global markets to deploy highly effective strategic countermeasures. Our predictive methodology neutralizes the impact of smear campaigns, operational extortion, or corporate warfare, thereby safeguarding the legitimate authority and long-term alignment of exceptional leaders."></p>
 
-<p data-fr="La perception influence les résultats."
-   data-en="Perception influences outcomes."></p>
-
-<p data-fr="Nous analysons les parties prenantes."
-   data-en="We analyze stakeholders."></p>
-
-<p data-fr="Nous anticipons les réactions."
-   data-en="We anticipate reactions."></p>
-
-<p data-fr="Nous alignons les actions avec l’environnement."
-   data-en="We align actions with the environment."></p>
-
-<p data-fr="Cela renforce la position stratégique."
-   data-en="This strengthens strategic positioning."></p>
-
+<div class="service-details">
+<h4 data-fr="Gestion stratégique des crises" data-en="Strategic Crisis Management"></h4>
+<ul>
+<li data-fr="Structure immédiate de cellules de crise et protocoles d'aide à la décision sous extrême pression." data-en="Instant deployment of crisis governance cells and decision-making support under extreme pressure."></li>
+<li data-fr="Gestion des dynamiques de perception, contre-narratifs et isolation médiatique défensive." data-en="Perception dynamics orchestration, counter-narrative formulation, and defensive media isolation."></li>
+<li data-fr="Plans de contingence post-crise et réalignement structurel de la sécurité à long terme." data-en="Post-crisis contingency frameworks and long-term security structural realignment."></li>
+</ul>
+</div>
 </div>
 
 </section>
 
 <!-- CTA -->
 <section class="cta">
-
-<h2 data-fr="Chaque situation mérite une approche structurée"
-    data-en="Every situation requires a structured approach"></h2>
-
+<h2 data-fr="L'excellence exige une étanchéité absolue" data-en="Excellence Demands Absolute Insulation"></h2>
+<p data-fr="Toutes nos interventions s'exécutent sous des clauses de non-divulgation et d'anonymat d'une rigueur d'élite." data-en="All engagements are executed under elite, non-disclosure and strict anonymity clauses."></p>
 <a href="./index.html#contact" class="btn"
-data-fr="Faire une demande"
-data-en="Request Access"></a>
-
+data-fr="Initier un protocole de contact"
+data-en="Initiate Contact Protocol"></a>
 </section>
 
 <footer>
 
 <strong>ARES OPSEC</strong><br>
-Strategic Security, Risk & Influence Advisory
+Strategic Security, Risk &amp; Cyber Governance Advisory<br>
+<span style="font-size:0.8rem; color:#555;">Trois-Rivières, QC, Canada</span>
+
+<p style="margin-top:20px;">
+<a href="mailto:contact@ares-world.com">contact@ares-world.com</a> — 
+<a href="https://github.com/gogoulet" target="_blank">GitHub Infrastructure</a>
+</p>
 
 <p>© 2026 — All rights reserved</p>
 
@@ -309,6 +392,7 @@ function toggleLang(){
     });
 }
 
+// Initialisation automatique de la langue au chargement
 toggleLang();
 
 </script>
