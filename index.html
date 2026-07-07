@@ -76,7 +76,7 @@ nav {
 
 /* MANIFESTE DYNAMIQUE (SOUS LE HERO) */
 .manifesto-section {
-    padding:140px 40px;
+    padding:120px 40px;
     background:#fff;
     border-bottom:1px solid #eee;
 }
@@ -91,16 +91,16 @@ nav {
 }
 
 .manifesto-text h2 {
-    font-size:2rem;
-    line-height:1.4;
+    font-size:2.4rem;
+    line-height:1.3;
     font-weight:300;
     color:#111;
+    letter-spacing:-0.5px;
 }
 
 .manifesto-text h2 strong {
     font-weight:700;
     color:#000;
-    border-bottom:2px solid #111;
 }
 
 .manifesto-metrics {
@@ -321,7 +321,6 @@ FR / EN
 </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
 <div class="hero-overlay">
 
@@ -338,13 +337,12 @@ FR / EN
 </div>
 </section>
 
-<!-- SECTION MANIFESTE REDYNAMISÉE -->
 <section class="manifesto-section">
 <div class="manifesto-container">
     
     <div class="manifesto-text">
-        <h2 data-fr="Lorsque les environnements deviennent complexes, la supériorité ne repose pas sur la réaction, mais sur la capacité prédictive à <strong>comprendre, structurer, isoler et décider</strong> avant l'impact."
-            data-en="When environments turn complex, superiority relies not on reaction, but on the predictive capacity to <strong>understand, structure, isolate, and decide</strong> before impact."></h2>
+        <h2 data-fr="Anticiper la menace. <br>Isoler vos actifs. <br><strong>Garantir votre contrôle.</strong>"
+            data-en="Anticipate the threat. <br>Isolate your assets. <br><strong>Guarantee your control.</strong>"></h2>
     </div>
 
     <div class="manifesto-metrics">
@@ -365,7 +363,6 @@ FR / EN
 </div>
 </section>
 
-<!-- CIBLE PROSPECTS SECTION -->
 <section style="background:#111; color:#fff;">
 <div class="centered">
 <h2 data-fr="Clientèle Élite &amp; Gouvernance du Risque" data-en="Elite Clientele &amp; Risk Governance"></h2>
@@ -390,7 +387,6 @@ FR / EN
 </div>
 </section>
 
-<!-- SERVICES REDÉFINIS -->
 <section>
 
 <div class="centered">
@@ -402,157 +398,4 @@ FR / EN
 
 <a href="./services.html" class="card">
 <h3 data-fr="Ares Opsec &amp; Sécurité Opérationnelle" data-en="Ares Opsec &amp; Operational Security"></h3>
-<p data-fr="Conception de protocoles défensifs stricts pour les infrastructures corporatives et la protection des mouvements stratégiques. Neutralisation des angles morts systémiques."
-   data-en="Designing strict defensive protocols for corporate infrastructure and strategic movements. Neutralizing systemic blind spots."></p>
-</a>
-
-<a href="./services.html" class="card">
-<h3 data-fr="Sécurité Numérique &amp; Souveraineté" data-en="Digital Security &amp; Data Sovereignty"></h3>
-<p data-fr="Architecture de réseaux chiffrés isolés, protection des communications exclusives et sécurisation des données sensibles contre les menaces persistantes avancées (APT)."
-   data-en="Architecture of isolated encrypted networks, protection of proprietary communications, and securing critical assets against Advanced Persistent Threats (APTs)."></p>
-</a>
-
-<a href="./services.html" class="card">
-<h3 data-fr="Audits Tactiques &amp; Tests d'Intrusion" data-en="Comprehensive Security Audits"></h3>
-<p data-fr="Validation rigoureuse de vos barrières physiques et cybernétiques via des simulations d'attaques réelles pour identifier les vulnérabilités avant leur exploitation."
-   data-en="Rigorous validation of your physical and cyber boundaries via real-world attack simulations to identify vulnerabilities before exploitation."></p>
-</a>
-
-<a href="./services.html" class="card">
-<h3 data-fr="Gouvernance de Crise &amp; Influence" data-en="Crisis Governance &amp; Perception"></h3>
-<p data-fr="Soutien décisionnel sous haute pression, gestion des dynamiques de perception et protection de la réputation des dirigeants face aux crises complexes."
-   data-en="Decision support under extreme pressure, management of perception dynamics, and protective reputation framing during complex crises."></p>
-</a>
-
-</div>
-
-<div class="centered">
-<a href="./services.html" class="btn light-btn"
-   data-fr="Explorer nos expertises"
-   data-en="Explore Our Expertise"></a>
-</div>
-
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-
-<h2 data-fr="Ce n’est pas une question de sécurité"
-    data-en="This is not about security"></h2>
-
-<p data-fr="C’est une question de contrôle."
-   data-en="This is about control."></p>
-
-<a href="#contact" class="btn"
-   data-fr="Parler à un conseiller"
-   data-en="Speak with an advisor"></a>
-
-</section>
-
-<!-- FORM (STRUCTURE HTML ET BALISES NETTOYÉES) -->
-<section id="contact">
-
-<div class="centered">
-<h2 data-fr="Accès confidentiel" data-en="Confidential Access"></h2>
-<p data-fr="Les communications initiales sont traitées sous protocoles stricts de non-divulgation." data-en="Initial communications are handled under strict non-disclosure protocols."></p>
-</div>
-
-<form id="secureContactForm">
-
-<input type="text" name="name" placeholder="Name / Entity" required>
-<input type="email" name="email" placeholder="Secure Email" required>
-
-<select name="engagement_type" required>
-<option value="" data-fr="Type de mandat" data-en="Type of engagement"></option>
-<option value="Strategic Advisory">Strategic Advisory &amp; OPSEC</option>
-<option value="Digital Security">Digital Security &amp; Infrastructure</option>
-<option value="Tactical Audits">Tactical Audits &amp; Testing</option>
-<option value="Crisis Governance">Crisis Governance</option>
-</select>
-
-<select name="budget" required>
-<option value="" data-fr="Budget" data-en="Budget"></option>
-<option>$10k-$25k</option>
-<option>$25k-$50k</option>
-<option>$50k+</option>
-</select>
-
-<select name="urgency" required>
-<option value="" data-fr="Urgence" data-en="Urgency"></option>
-<option>Low</option>
-<option>Medium</option>
-<option>High</option>
-</select>
-
-<textarea name="message" placeholder="Secure Brief / Message" rows="5" required></textarea>
-
-<button type="submit" class="btn light-btn"
-data-fr="Envoyer la demande"
-data-en="Submit Secure Request"></button>
-
-<div id="formStatus"></div>
-
-</form>
-
-</section>
-
-<footer>
-
-<strong>ARES OPSEC WORLD</strong><br>
-Strategic Security, Risk &amp; Influence Advisory<br>
-<span style="font-size:0.8rem; color:#555;">Canada | Europe | Moyen Orient</span>
-
-<p style="margin-top:20px;">
-<a href="mailto:executive@aresopsec.com">executive@aresopsec.com</a> — 
-<a href="http://aresopsec.com" target="_blank">Ares Opsec</a>
-</p>
-
-<p>© 2026 — All rights reserved</p>
-
-</footer>
-
-<script>
-
-let currentLang = "fr";
-
-function toggleLang() {
-    currentLang = currentLang === "fr" ? "en" : "fr";
-
-    document.querySelectorAll("[data-fr]").forEach(el => {
-        el.innerHTML = el.dataset[currentLang];
-    });
-}
-
-// SCRIPTS DE GESTION DU FORMULAIRE SECURISE
-document.getElementById("secureContactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    
-    const statusDiv = document.getElementById("formStatus");
-    
-    const msgSuccess = currentLang === "fr" 
-        ? "✓ Demande transmise avec succès. Alignement des protocoles en cours." 
-        : "✓ Request successfully transmitted. Aligning communication protocols.";
-        
-    const msgSending = currentLang === "fr" 
-        ? "Transmission sécurisée en cours..." 
-        : "Securing transmission...";
-
-    statusDiv.style.display = "block";
-    statusDiv.style.color = "#111";
-    statusDiv.innerHTML = msgSending;
-
-    // Simulation d'envoi (Prêt à être interfaçé avec une API ou service tiers)
-    setTimeout(() => {
-        statusDiv.style.color = "green";
-        statusDiv.innerHTML = msgSuccess;
-        document.getElementById("secureContactForm").reset();
-    }, 1500);
-});
-
-// Initialisation au bon langage lors du chargement
-toggleLang();
-
-</script>
-
-</body>
-</html>
+<p data-fr="Conception de protocoles défensifs stricts pour les infrastructures corporatives et la protection des
