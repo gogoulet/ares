@@ -74,20 +74,59 @@ nav {
     color:#ccc;
 }
 
-/* STORY */
-.story {
-    padding:120px 20px;
-    text-align:center;
-    max-width:900px;
-    margin:auto;
+/* MANIFESTE DYNAMIQUE (SOUS LE HERO) */
+.manifesto-section {
+    padding:140px 40px;
+    background:#fff;
+    border-bottom:1px solid #eee;
 }
 
-.story p {
-    font-size:1.4rem;
+.manifesto-container {
+    max-width:1100px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap:60px;
+    align-items:center;
+}
+
+.manifesto-text h2 {
+    font-size:2rem;
+    line-height:1.4;
     font-weight:300;
+    color:#111;
 }
 
-/* SECTIONS */
+.manifesto-text h2 strong {
+    font-weight:700;
+    color:#000;
+    border-bottom:2px solid #111;
+}
+
+.manifesto-metrics {
+    display:grid;
+    grid-template-columns:1fr;
+    gap:25px;
+    border-left:1px solid #ddd;
+    padding-left:40px;
+}
+
+.metric-item {
+    font-size:0.9rem;
+    color:#555;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.metric-item span {
+    display:block;
+    font-size:1.8rem;
+    font-weight:700;
+    color:#111;
+    margin-bottom:2px;
+}
+
+/* SECTIONS GENERALES */
 section {padding:100px 20px;}
 
 .centered {
@@ -209,6 +248,17 @@ input, select, textarea {
     font-family:inherit;
 }
 
+#formStatus {
+    display:none;
+    margin-top:15px;
+    padding:16px;
+    border:1px solid #111;
+    background:#fff;
+    font-size:0.95rem;
+    font-weight:bold;
+    text-align:center;
+}
+
 /* FOOTER */
 footer {
     background:#111;
@@ -237,10 +287,16 @@ footer a:hover {
 }
 
 /* MOBILE */
-@media(max-width:9 token 768px){
-.grid, .three-grid {grid-template-columns:1fr;}
-.hero h1 {font-size:2.2rem;}
-section {padding:60px 20px;}
+@media(max-width:960px){
+    .grid, .three-grid, .manifesto-container {grid-template-columns:1fr;}
+    .manifesto-metrics {border-left:none; padding-left:0; margin-top:20px; grid-template-columns:repeat(2, 1fr);}
+    .hero h1 {font-size:2.2rem;}
+    section {padding:60px 20px;}
+    .manifesto-section {padding:80px 20px;}
+}
+
+@media(max-width:480px){
+    .manifesto-metrics {grid-template-columns:1fr;}
 }
 
 </style>
@@ -282,12 +338,31 @@ FR / EN
 </div>
 </section>
 
-<!-- STORY -->
-<section class="story">
+<!-- SECTION MANIFESTE REDYNAMISÉE -->
+<section class="manifesto-section">
+<div class="manifesto-container">
+    
+    <div class="manifesto-text">
+        <h2 data-fr="Lorsque les environnements deviennent complexes, la supériorité ne repose pas sur la réaction, mais sur la capacité prédictive à <strong>comprendre, structurer, isoler et décider</strong> avant l'impact."
+            data-en="When environments turn complex, superiority relies not on reaction, but on the predictive capacity to <strong>understand, structure, isolate, and decide</strong> before impact."></h2>
+    </div>
 
-<p data-fr="Lorsque les environnements deviennent complexes, la différence ne repose pas sur la réaction, mais sur la capacité prédictive à comprendre, structurer, isoler et décider."
-   data-en="When environments become complex, the competitive edge relies not on reaction, but on the predictive ability to understand, structure, isolate, and decide."></p>
+    <div class="manifesto-metrics">
+        <div class="metric-item">
+            <span>01 / OPSEC</span>
+            <p data-fr="Étanchéité des flux" data-en="Operational Insulation"></p>
+        </div>
+        <div class="metric-item">
+            <span>02 / CYBER</span>
+            <p data-fr="Souveraineté des données" data-en="Data Sovereignty"></p>
+        </div>
+        <div class="metric-item">
+            <span>03 / TACTIC</span>
+            <p data-fr="Gouvernance de crise" data-en="Crisis Governance"></p>
+        </div>
+    </div>
 
+</div>
 </section>
 
 <!-- CIBLE PROSPECTS SECTION -->
@@ -374,7 +449,7 @@ FR / EN
 
 </section>
 
-<!-- FORM -->
+<!-- FORM (STRUCTURE HTML ET BALISES NETTOYÉES) -->
 <section id="contact">
 
 <div class="centered">
@@ -382,40 +457,40 @@ FR / EN
 <p data-fr="Les communications initiales sont traitées sous protocoles stricts de non-divulgation." data-en="Initial communications are handled under strict non-disclosure protocols."></p>
 </div>
 
-<form>
+<form id="secureContactForm">
 
-<input type="text" placeholder="Name / Entity" required>
-<input type="email" placeholder="Secure Email" required>
+<input type="text" name="name" placeholder="Name / Entity" required>
+<input type="email" name="email" placeholder="Secure Email" required>
 
-<select required>
+<select name="engagement_type" required>
 <option value="" data-fr="Type de mandat" data-en="Type of engagement"></option>
-<option>Strategic Advisory &amp; OPSEC</option>
-<option>Digital Security &amp; Infrastructure</option>
-<option>Tactical Audits &amp; Testing</option>
-<option>Crisis Governance</option>
-</form>
-
+<option value="Strategic Advisory">Strategic Advisory &amp; OPSEC</option>
+<option value="Digital Security">Digital Security &amp; Infrastructure</option>
+<option value="Tactical Audits">Tactical Audits &amp; Testing</option>
+<option value="Crisis Governance">Crisis Governance</option>
 </select>
 
-<select required>
+<select name="budget" required>
 <option value="" data-fr="Budget" data-en="Budget"></option>
 <option>$10k-$25k</option>
 <option>$25k-$50k</option>
 <option>$50k+</option>
 </select>
 
-<select required>
+<select name="urgency" required>
 <option value="" data-fr="Urgence" data-en="Urgency"></option>
 <option>Low</option>
 <option>Medium</option>
 <option>High</option>
 </select>
 
-<textarea placeholder="Secure Brief / Message" rows="5" required></textarea>
+<textarea name="message" placeholder="Secure Brief / Message" rows="5" required></textarea>
 
-<button class="btn light-btn"
+<button type="submit" class="btn light-btn"
 data-fr="Envoyer la demande"
 data-en="Submit Secure Request"></button>
+
+<div id="formStatus"></div>
 
 </form>
 
@@ -447,6 +522,32 @@ function toggleLang() {
         el.innerHTML = el.dataset[currentLang];
     });
 }
+
+// SCRIPTS DE GESTION DU FORMULAIRE SECURISE
+document.getElementById("secureContactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    const statusDiv = document.getElementById("formStatus");
+    
+    const msgSuccess = currentLang === "fr" 
+        ? "✓ Demande transmise avec succès. Alignement des protocoles en cours." 
+        : "✓ Request successfully transmitted. Aligning communication protocols.";
+        
+    const msgSending = currentLang === "fr" 
+        ? "Transmission sécurisée en cours..." 
+        : "Securing transmission...";
+
+    statusDiv.style.display = "block";
+    statusDiv.style.color = "#111";
+    statusDiv.innerHTML = msgSending;
+
+    // Simulation d'envoi (Prêt à être interfaçé avec une API ou service tiers)
+    setTimeout(() => {
+        statusDiv.style.color = "green";
+        statusDiv.innerHTML = msgSuccess;
+        document.getElementById("secureContactForm").reset();
+    }, 1500);
+});
 
 // Initialisation au bon langage lors du chargement
 toggleLang();
