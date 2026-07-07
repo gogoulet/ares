@@ -38,7 +38,14 @@ nav {
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 40px;
+    padding:15px 40px; /* Légèrement réduit pour équilibrer le logo */
+}
+
+/* Style du Logo ajusté pour le menu */
+.nav-logo {
+    height:35px; /* Hauteur optimisée pour la barre de navigation */
+    width:auto;
+    display:block;
 }
 
 .menu a {
@@ -306,10 +313,12 @@ footer a:hover {
 
 <header>
 <nav>
-<div><strong>ARES OPSEC WORLD</strong></div>
+<a href="./">
+    <img src="logo.png" alt="ARES OPSEC WORLD" class="nav-logo">
+</a>
 
 <div class="menu">
-<a href="./index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+<a href="./" data-fr="Accueil" data-en="Home">Accueil</a>
 <a href="./services.html" data-fr="Services" data-en="Services">Services</a>
 <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
 </div>
@@ -321,7 +330,6 @@ FR / EN
 </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
 <div class="hero-overlay">
 
@@ -338,7 +346,6 @@ FR / EN
 </div>
 </section>
 
-<!-- SECTION MANIFESTE SIMPLIFIÉE & SLOGAN -->
 <section class="manifesto-section">
 <div class="manifesto-container">
     
@@ -365,7 +372,6 @@ FR / EN
 </div>
 </section>
 
-<!-- CIBLE PROSPECTS SECTION -->
 <section style="background:#111; color:#fff;">
 <div class="centered">
 <h2 data-fr="Clientèle Élite &amp; Gouvernance du Risque" data-en="Elite Clientele &amp; Risk Governance">Clientèle Élite &amp; Gouvernance du Risque</h2>
@@ -390,7 +396,6 @@ FR / EN
 </div>
 </section>
 
-<!-- SERVICES REDÉFINIS (CORRIGÉ : NETTOYAGE DES ATTRIBUTS SUR LES LIENS EN CONSERVANT LA STRUCTURE CORRECTIONS) -->
 <section>
 
 <div class="centered">
@@ -434,7 +439,6 @@ FR / EN
 
 </section>
 
-<!-- CTA -->
 <section class="cta-section">
 
 <h2 data-fr="Ce n’est pas une question de sécurité"
@@ -449,7 +453,6 @@ FR / EN
 
 </section>
 
-<!-- FORM (FONCTIONNEL - TRANSMISSION DIRECTE VIA FORMSUBMIT) -->
 <section id="contact">
 
 <div class="centered">
@@ -516,7 +519,6 @@ Strategic Security, Risk &amp; Influence Advisory<br>
 let currentLang = "fr";
 
 function toggleLang() {
-    // Si l'événement vient du clic sur l'élément d'interface, on alterne la langue
     if (arguments.length === 0 && window.event) {
         currentLang = currentLang === "fr" ? "en" : "fr";
     }
@@ -526,7 +528,6 @@ function toggleLang() {
     });
 }
 
-// SCRIPTS DE GESTION DU FORMULAIRE DE CONTACT RÉEL (AJAX SANS RECHARGEMENT)
 document.getElementById("secureContactForm").addEventListener("submit", function(e) {
     e.preventDefault();
     
@@ -571,7 +572,6 @@ document.getElementById("secureContactForm").addEventListener("submit", function
     });
 });
 
-// Rendu initial de la page sans inversion destructrice
 toggleLang();
 
 </script>
